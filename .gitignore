@@ -1,2 +1,5 @@
 # Source media retained locally but not required by the deployed static site.
 assets/video/
+
+# Private working notes for the job search.
+research/

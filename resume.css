@@ -1,0 +1,46 @@
+:root {
+  --ink: #111;
+  --muted: #4f4f4f;
+  --line: #b8b8b8;
+  --paper: #fff;
+  --accent: #607f18;
+}
+
+* { box-sizing: border-box; }
+html { background: #ecebe7; }
+body { margin: 0; color: var(--ink); font-family: Arial, Helvetica, sans-serif; font-size: 9.8pt; line-height: 1.27; }
+a { color: inherit; text-underline-offset: 2px; }
+.resume-actions { max-width: 8.5in; margin: 20px auto 0; display: flex; justify-content: flex-end; gap: 18px; font-size: 13px; }
+.resume-actions a, .resume-actions button { padding: 9px 12px; color: #fff; background: #111; border: 0; font: inherit; text-decoration: none; cursor: pointer; }
+.resume-actions a:first-child { margin-right: auto; color: #111; background: transparent; }
+.resume { width: 8.5in; min-height: 11in; margin: 14px auto 40px; padding: .4in .5in; background: var(--paper); box-shadow: 0 10px 40px rgba(0,0,0,.11); }
+.resume-header { padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+.resume h1 { margin: 0; font-size: 24pt; line-height: 1; letter-spacing: -.03em; }
+.resume-title { margin: 6px 0 7px; color: var(--muted); font-size: 12.5pt; font-weight: 700; }
+.resume-contact { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0; font-size: 9.5pt; }
+.resume section { margin-top: 8px; }
+.resume h2 { margin: 0 0 5px; padding-bottom: 2px; border-bottom: 1px solid var(--line); font-size: 10.5pt; line-height: 1.2; letter-spacing: .06em; text-transform: uppercase; }
+.resume h3 { margin: 0; font-size: 10.25pt; line-height: 1.3; }
+.resume p { margin: 0 0 3px; }
+.resume strong { font-weight: 700; }
+.resume article + article { margin-top: 6px; }
+.role-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; }
+.role-heading > p { flex: 0 0 auto; color: var(--muted); font-size: 9.25pt; }
+.resume ul { margin: 3px 0 0; padding-left: 17px; }
+.resume li { margin-bottom: 2px; padding-left: 1px; }
+.education h3 { font-weight: 700; }
+
+@media (max-width: 850px) {
+  html { background: #fff; }
+  .resume-actions { margin: 12px 16px 0; }
+  .resume { width: 100%; min-height: 0; margin: 0; padding: 28px 20px 48px; box-shadow: none; }
+  .resume-contact, .role-heading { align-items: flex-start; flex-direction: column; gap: 2px; }
+}
+
+@media print {
+  @page { size: Letter; margin: 0; }
+  html, body { background: #fff; }
+  .resume-actions { display: none; }
+  .resume { width: 8.5in; min-height: 11in; margin: 0; padding: .34in .46in; box-shadow: none; }
+  .resume a { text-decoration: none; }
+}

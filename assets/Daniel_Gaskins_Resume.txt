@@ -1,0 +1,44 @@
+DANIEL GASKINS
+Applied Machine Learning & Research Engineer
+hello@danielgaskins.com | danielgaskins.com
+United States | Open to relocation
+
+SUMMARY
+
+Applied machine learning and research engineer with founder-level ownership across model development, evaluation, data workflows, deployment, and user-facing products. Physics-trained experimentalist who turns ambiguous product questions into measurable ML problems and carries promising models into dependable software.
+
+TECHNICAL SKILLS
+
+Machine Learning: Model training and evaluation, experiment design, error analysis, performance optimization, NLP, computer vision, gradient-boosted trees
+Frameworks: PyTorch, TensorFlow, scikit-learn, LightGBM
+Software & Systems: Python, C++, JavaScript, TypeScript, Scala, Java, React, data workflows, inference, deployment, production engineering
+
+PROFESSIONAL EXPERIENCE
+
+Perfsy — Founder & Applied Machine Learning Engineer | 2021–Present
+- Build ML-driven performance optimization systems across model development, data workflows, backend services, and product integration.
+- Design and run experiments, evaluate model behavior, inspect failure cases, and turn findings into successive model and product iterations.
+- Own technical decisions from early research and prototyping through production engineering, deployment, and user feedback.
+
+Namelor — Founder & Product Engineer | 2019–2021
+- Built and operated a software product end to end, including product requirements, interface development, backend architecture, and deployment.
+- Translated ambiguous user needs into technical decisions and shipped iterative improvements across the full application stack.
+
+Casabauhaus — Founder & AI Research Engineer | 2017–2019
+- Prototyped and tested AI-assisted design tools intended to support architectural exploration without flattening the human creative process.
+- Worked across research engineering, model behavior, interaction design, and product development to evaluate technically and creatively useful approaches.
+
+SELECTED OPEN-SOURCE PROJECT
+
+lgbm-to-code — ML Deployment Tooling | pypi.org/project/lgbm-to-code
+- Developed a code generator that converts trained LightGBM models into plain Python, C++, or JavaScript conditionals.
+- Enabled portable inference without a runtime dependency on LightGBM.
+
+EDUCATION
+
+University of California, San Diego
+B.S., Condensed Matter Physics
+
+ADDITIONAL
+
+Authorized to work in the United States. Open to remote, hybrid, or on-site roles and relocation.
