@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Daniel Gaskins is a physicist turned founder and ML engineer. He trains models, builds the systems around them, and finds out where they break."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta property="og:title" content="Daniel Gaskins — Applied ML Engineer" />
+    <meta
+      property="og:description"
+      content="I train models, build the systems around them, and stick around to find out where they break."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://danielgaskins.com" />
+    <title>Daniel Gaskins — Applied ML Engineer</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="#top" aria-label="Daniel Gaskins, home">
+        <span>DG</span>
+        <span class="wordmark__name">Daniel Gaskins</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#capabilities">How I work</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="mailto:hello@danielgaskins.com">Talk with me</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero section-shell">
+        <div class="hero__copy" data-reveal>
+          <p class="eyebrow"><span class="status-dot"></span> Applied ML / research engineering</p>
+          <h1>
+            I like models that
+            <span class="hero__emphasis">survive the real world.</span>
+          </h1>
+          <p class="hero__lede">
+            I’m Daniel, a physicist turned founder and ML engineer. I train models, build
+            the systems around them, and stick around to find out where they break.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#work">
+              See what I’ve built
+              <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg>
+            </a>
+            <a class="button button--quiet" href="mailto:hello@danielgaskins.com">hello@danielgaskins.com</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-label="An interactive machine-learning pipeline with field notes for each stage" data-reveal>
+          <div class="lab-card">
+            <div class="lab-card__head">
+              <span>MODEL FIELD NOTES / 01</span>
+              <span class="lab-card__live"><i></i> LIVE</span>
+            </div>
+            <div class="pipeline" data-pipeline>
+              <div class="pipeline__rail"></div>
+              <div class="pipeline__pulse"></div>
+              <button class="pipeline__node pipeline__node--data is-active" type="button" data-stage="DATA" data-insight="If the data is wrong, nothing downstream can save it." aria-pressed="true">
+                <span>01</span>
+                <strong>DATA</strong>
+                <small>curate + prepare</small>
+              </button>
+              <button class="pipeline__node pipeline__node--train" type="button" data-stage="TRAIN" data-insight="A run without a hypothesis is just a GPU bill." aria-pressed="false">
+                <span>02</span>
+                <strong>TRAIN</strong>
+                <small>iterate + learn</small>
+              </button>
+              <button class="pipeline__node pipeline__node--eval" type="button" data-stage="EVAL" data-insight="A metric matters only if it catches a real failure." aria-pressed="false">
+                <span>03</span>
+                <strong>EVAL</strong>
+                <small>measure + inspect</small>
+              </button>
+              <button class="pipeline__node pipeline__node--ship" type="button" data-stage="SHIP" data-insight="The first production run is the next experiment." aria-pressed="false">
+                <span>04</span>
+                <strong>SHIP</strong>
+                <small>serve + observe</small>
+              </button>
+            </div>
+            <div class="lab-card__insight" aria-live="polite">
+              <span data-lab-stage>FIELD NOTE / DATA</span>
+              <strong data-lab-insight>If the data is wrong, nothing downstream can save it.</strong>
+            </div>
+          </div>
+          <div class="visual-note visual-note--top">PICK A STAGE</div>
+          <div class="visual-note visual-note--bottom">PHYSICS / ML / SOFTWARE</div>
+        </div>
+      </section>
+
+      <section class="signal-strip" aria-label="Core disciplines">
+        <div class="signal-strip__track">
+          <span>ASK THE QUESTION</span><i>+</i><span>BUILD THE DATA</span><i>+</i><span>RUN THE EXPERIMENT</span><i>+</i>
+          <span>FIND THE FAILURE</span><i>+</i><span>SHIP THE SYSTEM</span><i>+</i><span>WATCH IT LEARN</span><i>+</i>
+          <span aria-hidden="true">ASK THE QUESTION</span><i aria-hidden="true">+</i><span aria-hidden="true">BUILD THE DATA</span><i aria-hidden="true">+</i>
+        </div>
+      </section>
+
+      <section id="work" class="work section-shell section-block">
+        <div class="section-intro" data-reveal>
+          <p class="section-index">01 / SELECTED WORK</p>
+          <h2>I learned by building the whole thing.</h2>
+          <p>
+            My companies did not come with clean boundaries between research, engineering,
+            and product. I made the calls, wrote the code, and lived with the consequences.
+            That is the kind of ownership I want to keep.
+          </p>
+        </div>
+
+        <div class="work-list">
+          <article class="work-card work-card--no-link" data-reveal>
+            <div class="work-card__number">01</div>
+            <div class="work-card__body">
+              <div class="work-card__meta">
+                <span>2021—PRESENT</span>
+                <span>FOUNDER / APPLIED ML ENGINEER</span>
+              </div>
+              <h3>Perfsy</h3>
+              <p>
+                Perfsy is where I work on ML-driven performance optimization. Building it
+                means moving constantly between experiments, model behavior, data workflows,
+                and the product around them.
+              </p>
+              <ul class="tag-list" aria-label="Perfsy areas">
+                <li>Applied ML</li><li>Model development</li><li>Data systems</li><li>Production engineering</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="work-card work-card--no-link" data-reveal>
+            <div class="work-card__number">02</div>
+            <div class="work-card__body">
+              <div class="work-card__meta">
+                <span>2019—2021</span>
+                <span>FOUNDER / PRODUCT ENGINEER</span>
+              </div>
+              <h3>Namelor</h3>
+              <p>
+                Namelor taught me what “end to end” actually costs. I handled the product
+                decisions, interface work, backend architecture, and deployment—the useful
+                and unglamorous parts alike.
+              </p>
+              <ul class="tag-list" aria-label="Namelor areas">
+                <li>Product strategy</li><li>Full-stack systems</li><li>UX engineering</li><li>Deployment</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="work-card" data-reveal>
+            <div class="work-card__number">03</div>
+            <div class="work-card__body">
+              <div class="work-card__meta">
+                <span>2017—2019</span>
+                <span>FOUNDER / AI RESEARCH ENGINEER</span>
+              </div>
+              <h3>Casabauhaus</h3>
+              <p>
+                Could a machine help an architect think without flattening the creative process?
+                Casabauhaus was my attempt to find out. I built and tested AI-assisted design
+                tools around that tension.
+              </p>
+              <ul class="tag-list" aria-label="Casabauhaus areas">
+                <li>AI-assisted design</li><li>Prototyping</li><li>Creative tools</li><li>Research engineering</li>
+              </ul>
+            </div>
+            <a class="work-card__link" href="https://casabauhaus.com" target="_blank" rel="noreferrer" aria-label="Visit Casabauhaus">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" /></svg>
+            </a>
+          </article>
+
+          <article class="work-card work-card--artifact" data-reveal>
+            <div class="work-card__number">04</div>
+            <div class="work-card__body">
+              <div class="work-card__meta">
+                <span>OPEN SOURCE</span>
+                <span>ML DEPLOYMENT TOOLING</span>
+              </div>
+              <h3>lgbm-to-code</h3>
+              <p>
+                I wanted LightGBM models to run where LightGBM could not. So I wrote a small
+                code generator that turns a trained model into plain Python, C++, or JavaScript
+                conditionals, with no runtime dependency on LightGBM.
+              </p>
+              <ul class="tag-list" aria-label="lgbm-to-code technologies">
+                <li>Python</li><li>LightGBM</li><li>C++</li><li>JavaScript</li>
+              </ul>
+            </div>
+            <a class="work-card__link" href="https://pypi.org/project/lgbm-to-code/" target="_blank" rel="noreferrer" aria-label="View lgbm-to-code on PyPI">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" /></svg>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section id="capabilities" class="capabilities section-block">
+        <div class="section-shell capabilities__inner">
+          <div class="section-intro section-intro--light" data-reveal>
+            <p class="section-index">02 / HOW I WORK</p>
+            <h2>I care about what happens after <code>model.fit()</code>.</h2>
+            <p>
+              The dataset is messy. The metric lies. Latency enters the room. I like that part:
+              finding the failure, tightening the loop, and turning a promising model into
+              software people can rely on.
+            </p>
+          </div>
+
+          <div class="capability-grid">
+            <article data-reveal>
+              <span>01</span>
+              <h3>Train the model</h3>
+              <p>Start with a question. Build the dataset, run the experiment, and keep honest notes.</p>
+            </article>
+            <article data-reveal>
+              <span>02</span>
+              <h3>Try to break it</h3>
+              <p>Write the test that could prove the idea wrong. Read the misses, not just the mean.</p>
+            </article>
+            <article data-reveal>
+              <span>03</span>
+              <h3>Build the system</h3>
+              <p>Give the model dependable data, inference, monitoring, and deployment paths.</p>
+            </article>
+            <article data-reveal>
+              <span>04</span>
+              <h3>Watch it work</h3>
+              <p>Put it in front of a real user and stay close enough to see what breaks.</p>
+            </article>
+          </div>
+
+          <div class="stack" data-reveal>
+            <p>TOOLS I REACH FOR</p>
+            <div class="stack__items">
+              <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span>
+              <span>TypeScript</span><span>React</span><span>C++</span><span>Scala</span><span>Java</span>
+              <span>NLP</span><span>Computer Vision</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about section-shell section-block">
+        <div class="about__statement" data-reveal>
+          <p class="section-index">03 / ABOUT</p>
+          <blockquote>
+            I studied matter at its smallest scales. Then I started companies. Both taught me
+            the same thing: <em>a good answer begins with a better question.</em>
+          </blockquote>
+        </div>
+
+        <div class="about__details" data-reveal>
+          <figure class="about__portrait">
+            <div class="about__portrait-frame">
+              <img
+                src="./assets/img/daniel-gaskins-portrait.webp"
+                width="1122"
+                height="1402"
+                loading="lazy"
+                decoding="async"
+                alt="Portrait of Daniel Gaskins"
+              />
+            </div>
+            <figcaption>Daniel Gaskins / Founder + ML engineer</figcaption>
+          </figure>
+          <p>
+            I’m Daniel. I studied condensed matter physics at UC San Diego, then chose the less
+            tidy education of founding software companies.
+          </p>
+          <p>
+            I have spent the years since moving between equations, code, product decisions,
+            and users. I’m happiest with a hard problem, a fast feedback loop, and teammates
+            who care more about getting it right than looking right.
+          </p>
+          <dl class="facts">
+            <div><dt>Education</dt><dd>B.S., Condensed Matter Physics<br />University of California, San Diego</dd></div>
+            <div><dt>Best fit</dt><dd>Applied ML<br />Research Engineering<br />Model Training & Evaluation</dd></div>
+            <div><dt>Location</dt><dd>US work authorized<br />Open to relocation</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="section-shell contact__inner" data-reveal>
+          <p class="section-index">04 / CONTACT</p>
+          <h2>Let’s find the part that does not work yet.</h2>
+          <p>
+            If you are training models, building the systems around them, or turning research
+            into a product, I would like to hear what is hard.
+          </p>
+          <div class="contact__actions">
+            <a class="button button--primary" href="mailto:hello@danielgaskins.com">
+              Tell me what you’re building
+              <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg>
+            </a>
+            <a class="button button--quiet" href="https://calendly.com/danielgaskins99" target="_blank" rel="noreferrer">Put 30 minutes on the calendar</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span data-year></span> Daniel Gaskins</p>
+      <p>Physics · Models · Products</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
