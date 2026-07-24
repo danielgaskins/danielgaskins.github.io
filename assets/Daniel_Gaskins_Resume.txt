@@ -15,7 +15,7 @@ Software & Systems: Python, C++, JavaScript, TypeScript, Scala, Java, data workf
 
 SELECTED TECHNICAL PROJECTS
 
-Faultline — ML Agent Evaluation Benchmark | 2026
+Faultline — ML Agent Evaluation Benchmark | github.com/danielgaskins/faultline | 2026
 - Built a reproducible Python harness for evaluating agents that repair ML-system failures, with versioned tasks, hidden deterministic graders, content digests, provenance, and explicit infrastructure outcomes.
 - Created five versioned failure tasks spanning entity and temporal leakage, metric aggregation, train/serve skew, and reproducibility; integration tests require every broken baseline to fail and every reference repair to pass.
 
