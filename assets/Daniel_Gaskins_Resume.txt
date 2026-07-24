@@ -5,13 +5,13 @@ United States | Open to relocation
 
 SUMMARY
 
-Founder and applied ML engineer who carries ambiguous problems from experimental design through model evaluation, deployment, and user feedback. Physics-trained, strongest at failure analysis, end-to-end ownership, and turning promising models into reliable software.
+Applied ML engineer and founder experienced in agent-assisted automation, computer vision, experiment design, and model evaluation. Strongest at finding signal in messy data, diagnosing failure modes, and carrying useful results into working software and operations.
 
 TECHNICAL SKILLS
 
-Machine Learning: Model training and evaluation, experiment design, error analysis, data leakage, train/serve parity, NLP, computer vision, gradient-boosted trees
+Machine Learning: Model training and evaluation, experiment design, error analysis, data leakage, train/serve parity, NLP, computer vision, gradient-boosted trees, CLIP
 Frameworks: PyTorch, TensorFlow, scikit-learn, LightGBM
-Software & Systems: Python, C++, JavaScript, TypeScript, Scala, Java, data workflows, inference, deployment, testing, CI/CD
+Software & Systems: Python, C++, JavaScript, TypeScript, Scala, Java, agent-assisted automation, API integrations, data workflows, inference, testing, CI/CD
 
 SELECTED TECHNICAL PROJECTS
 
@@ -25,23 +25,20 @@ lgbm-to-code — Cross-Runtime ML Inference | github.com/danielgaskins/lgbm-to-c
 
 PROFESSIONAL EXPERIENCE
 
-Perfsy — Founder & Applied Machine Learning Engineer | 2021–Present
-- Develop ML-driven performance optimization software across dataset construction, model experiments, backend services, and product integration.
-- Define evaluation criteria, inspect failure cases, and carry findings through deployment and user feedback.
-- Own technical and product tradeoffs from early research through production operation.
+Casabauhaus — Founder & Operator | 2022–Present
+- Operate a vintage-furniture business spanning sourcing, pricing, merchandising, sales, and customer delivery.
+- Design and operate agent-assisted, API-driven workflows for pricing, social-media execution, data analysis and reporting, revenue-seasonality analysis, and Shopify site operations.
+- Developed furniture-valuation and mid-century classification models used in sourcing decisions, including a fine-tuned CLIP model built before modern vision-language models were widely practical.
 
-Namelor — Founder & Product Engineer | 2019–2021
-- Built and operated a software product end to end, including product requirements, interface development, backend architecture, and deployment.
-- Translated ambiguous user needs into technical decisions and shipped iterative improvements across the full application stack.
-
-Casabauhaus — Founder & AI Research Engineer | 2017–2019
-- Prototyped and tested AI-assisted design tools intended to support architectural exploration without flattening the human creative process.
-- Worked across research engineering, model behavior, interaction design, and product development to evaluate technically and creatively useful approaches.
+Perfsy — Founder & Machine Learning Engineer | 2021–2022
+- Built a computer-vision pipeline to extract structured fields from scanned DMV vehicle titles.
+- Normalized scan orientation with OpenCV and experimented with character primitives, autoencoders, convolutional features, and DNN classifiers.
+- Created data and evaluation workflows to inspect recognition failures and iterate on model behavior.
 
 EDUCATION
 
 University of California, San Diego
-B.S., Condensed Matter Physics
+Physics coursework — approximately three years; degree not completed
 
 ADDITIONAL
 
