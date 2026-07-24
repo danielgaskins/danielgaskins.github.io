@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Résumé for Daniel Gaskins, an applied machine learning and research engineer focused on model training, evaluation, and production systems."
+      content="Résumé for Daniel Gaskins, an applied machine learning engineer focused on model evaluation, experimentation, and reliable production systems."
     />
     <title>Daniel Gaskins — Applied Machine Learning Engineer — Résumé</title>
     <link rel="canonical" href="https://danielgaskins.com/resume.html" />
@@ -22,10 +22,11 @@
     <main class="resume">
       <header class="resume-header">
         <h1>Daniel Gaskins</h1>
-        <p class="resume-title">Applied Machine Learning &amp; Research Engineer</p>
+        <p class="resume-title">Applied Machine Learning Engineer</p>
         <p class="resume-contact">
           <a href="mailto:hello@danielgaskins.com">hello@danielgaskins.com</a>
-          <span>danielgaskins.com</span>
+          <a href="https://danielgaskins.com">danielgaskins.com</a>
+          <a href="https://github.com/danielgaskins">github.com/danielgaskins</a>
           <span>United States · Open to relocation</span>
         </p>
       </header>
@@ -33,18 +34,41 @@
       <section aria-labelledby="summary-heading">
         <h2 id="summary-heading">Summary</h2>
         <p>
-          Applied machine learning and research engineer with founder-level ownership across
-          model development, evaluation, data workflows, deployment, and user-facing products.
-          Physics-trained experimentalist who turns ambiguous product questions into measurable
-          ML problems and carries promising models into dependable software.
+          Founder and applied ML engineer who carries ambiguous problems from experimental design
+          through model evaluation, deployment, and user feedback. Physics-trained, strongest at
+          failure analysis, end-to-end ownership, and turning promising models into reliable software.
         </p>
       </section>
 
       <section aria-labelledby="skills-heading">
         <h2 id="skills-heading">Technical Skills</h2>
-        <p><strong>Machine Learning:</strong> Model training and evaluation, experiment design, error analysis, performance optimization, NLP, computer vision, gradient-boosted trees</p>
+        <p><strong>Machine Learning:</strong> Model training and evaluation, experiment design, error analysis, data leakage, train/serve parity, NLP, computer vision, gradient-boosted trees</p>
         <p><strong>Frameworks:</strong> PyTorch, TensorFlow, scikit-learn, LightGBM</p>
-        <p><strong>Software &amp; Systems:</strong> Python, C++, JavaScript, TypeScript, Scala, Java, React, data workflows, inference, deployment, production engineering</p>
+        <p><strong>Software &amp; Systems:</strong> Python, C++, JavaScript, TypeScript, Scala, Java, data workflows, inference, deployment, testing, CI/CD</p>
+      </section>
+
+      <section aria-labelledby="project-heading">
+        <h2 id="project-heading">Selected Technical Projects</h2>
+        <article>
+          <div class="role-heading">
+            <h3>Faultline — ML Agent Evaluation Benchmark</h3>
+            <p>2026</p>
+          </div>
+          <ul>
+            <li>Built a reproducible Python harness for evaluating agents that repair ML-system failures, with versioned tasks, hidden deterministic graders, content digests, provenance, and explicit infrastructure outcomes.</li>
+            <li>Created five versioned failure tasks spanning entity and temporal leakage, metric aggregation, train/serve skew, and reproducibility; integration tests require every broken baseline to fail and every reference repair to pass.</li>
+          </ul>
+        </article>
+        <article>
+          <div class="role-heading">
+            <h3>lgbm-to-code — Cross-Runtime ML Inference</h3>
+            <p><a href="https://github.com/danielgaskins/lgbm-to-code">GitHub</a> · <a href="https://pypi.org/project/lgbm-to-code/">PyPI</a></p>
+          </div>
+          <ul>
+            <li>Built a code generator that turns trained, one-output LightGBM models into dependency-free Python, C++17, or JavaScript raw-score inference.</li>
+            <li>Added executed and compiled parity tests across all three runtimes at 1e-12 tolerances, including missing-value routing and explicit rejection of unsupported model types.</li>
+          </ul>
+        </article>
       </section>
 
       <section aria-labelledby="experience-heading">
@@ -56,9 +80,9 @@
             <p>2021–Present</p>
           </div>
           <ul>
-            <li>Build ML-driven performance optimization systems across model development, data workflows, backend services, and product integration.</li>
-            <li>Design and run experiments, evaluate model behavior, inspect failure cases, and turn findings into successive model and product iterations.</li>
-            <li>Own technical decisions from early research and prototyping through production engineering, deployment, and user feedback.</li>
+            <li>Develop ML-driven performance optimization software across dataset construction, model experiments, backend services, and product integration.</li>
+            <li>Define evaluation criteria, inspect failure cases, and carry findings through deployment and user feedback.</li>
+            <li>Own technical and product tradeoffs from early research through production operation.</li>
           </ul>
         </article>
 
@@ -81,20 +105,6 @@
           <ul>
             <li>Prototyped and tested AI-assisted design tools intended to support architectural exploration without flattening the human creative process.</li>
             <li>Worked across research engineering, model behavior, interaction design, and product development to evaluate technically and creatively useful approaches.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section aria-labelledby="project-heading">
-        <h2 id="project-heading">Selected Open-Source Project</h2>
-        <article>
-          <div class="role-heading">
-            <h3>lgbm-to-code — ML Deployment Tooling</h3>
-            <p><a href="https://pypi.org/project/lgbm-to-code/">pypi.org/project/lgbm-to-code</a></p>
-          </div>
-          <ul>
-            <li>Developed a code generator that converts trained LightGBM models into plain Python, C++, or JavaScript conditionals.</li>
-            <li>Enabled portable inference without a runtime dependency on LightGBM.</li>
           </ul>
         </article>
       </section>

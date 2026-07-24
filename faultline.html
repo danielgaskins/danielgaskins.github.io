@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Faultline is Daniel Gaskins's reproducible evaluation benchmark for agents repairing machine-learning system failures."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta property="og:title" content="Faultline — ML Agent Evaluation Case Study" />
+    <meta
+      property="og:description"
+      content="Five ML failure classes, hidden deterministic graders, reproducible manifests, and an honest publication gate."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://danielgaskins.com/faultline.html" />
+    <link rel="canonical" href="https://danielgaskins.com/faultline.html" />
+    <title>Faultline — ML Agent Evaluation — Daniel Gaskins</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="./" aria-label="Daniel Gaskins, home">
+        <span>DG</span>
+        <span class="wordmark__name">Daniel Gaskins</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="./#work">Work</a>
+        <a href="./#capabilities">How I work</a>
+        <a href="./#about">About</a>
+        <a href="./resume.html">Résumé</a>
+        <a class="nav-cta" href="mailto:hello@danielgaskins.com">Talk with me</a>
+      </nav>
+    </header>
+
+    <main id="main" class="case-study">
+      <section class="case-hero section-shell">
+        <p class="eyebrow"><span class="status-dot"></span> Development case study / 2026</p>
+        <h1>Can an agent fix the pipeline without breaking the experiment?</h1>
+        <p class="case-hero__lede">
+          Faultline is a reproducible evaluation harness for agents repairing machine-learning
+          system failures. It is built around the mistakes that make a model look better while
+          making the underlying evidence worse.
+        </p>
+        <div class="case-hero__actions">
+          <a class="button button--primary" href="#method">See the evaluation design</a>
+          <a class="button button--quiet" href="./assets/Daniel_Gaskins_Resume.pdf" download>Download résumé</a>
+        </div>
+      </section>
+
+      <section class="case-signal" aria-label="Current project scope">
+        <div class="section-shell case-signal__grid">
+          <div><strong>05</strong><span>failure classes</span></div>
+          <div><strong>11</strong><span>framework tests</span></div>
+          <div><strong>02</strong><span>required outcomes per task</span></div>
+          <div><strong>00</strong><span>headline model claims—yet</span></div>
+        </div>
+      </section>
+
+      <section id="method" class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">01 / THE CONTRACT</p>
+        </div>
+        <div class="case-section__body">
+          <h2>A benchmark should fail before the model does.</h2>
+          <p class="case-section__lead">
+            Each task begins as a small repository with a plausible ML defect. An agent receives
+            the issue and public tests. The grader adds hidden checks only inside a temporary
+            grading copy, then records what happened without confusing infrastructure trouble
+            with model behavior.
+          </p>
+          <div class="case-flow" aria-label="Faultline task lifecycle">
+            <div><span>01</span><strong>Prepare</strong><small>versioned public workspace</small></div>
+            <i>→</i>
+            <div><span>02</span><strong>Repair</strong><small>agent edits + complete trace</small></div>
+            <i>→</i>
+            <div><span>03</span><strong>Grade</strong><small>hidden deterministic checks</small></div>
+            <i>→</i>
+            <div><span>04</span><strong>Record</strong><small>digests, provenance, outcome</small></div>
+          </div>
+          <p>
+            A checked-in task is valid only when the broken baseline fails for the intended
+            reason and the reference repair passes the combined public and hidden suite.
+            Integration tests enforce both sides of that contract for every task.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section case-section--dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">02 / CURRENT TASKS</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Five ways a clean score can lie.</h2>
+            <div class="case-task-list">
+              <article>
+                <span>DATA LEAKAGE</span>
+                <h3>One customer, two partitions</h3>
+                <p>Repeated entities cross the evaluation boundary and make generalization look stronger than it is.</p>
+              </article>
+              <article>
+                <span>METRIC DESIGN</span>
+                <h3>The retry changes the ranking</h3>
+                <p>Micro-averaging lets frequently retried tasks outweigh every other task in the benchmark.</p>
+              </article>
+              <article>
+                <span>REPRODUCIBILITY</span>
+                <h3>A seed with side effects</h3>
+                <p>Initialization mutates the training data and contaminates randomness elsewhere in the process.</p>
+              </article>
+              <article>
+                <span>TEMPORAL LEAKAGE</span>
+                <h3>A label from next month</h3>
+                <p>A historical split trains on outcomes that were not observable at the evaluation cutoff.</p>
+              </article>
+              <article>
+                <span>TRAIN / SERVE SKEW</span>
+                <h3>Inference quietly retrains preprocessing</h3>
+                <p>Online standardization uses the request batch instead of the statistics learned during training.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">03 / THE AUDIT</p>
+        </div>
+        <div class="case-section__body">
+          <h2>The first broken task was mine.</h2>
+          <p class="case-section__lead">
+            The entity-split prompt originally asked for a test set that was “reasonably close”
+            to the requested size. Its hidden grader enforced a numerical tolerance the agent
+            could not infer. That made the evaluation underspecified.
+          </p>
+          <div class="case-comparison">
+            <div>
+              <span>BEFORE</span>
+              <p>“Reasonably close” in the issue; an unstated tolerance in the grader.</p>
+            </div>
+            <div>
+              <span>AFTER</span>
+              <p>Closest attainable complete-entity partition, with the tie-break stated and tested directly.</p>
+            </div>
+          </div>
+          <p>
+            I kept the correction in the evaluation card because this is the work: not merely
+            writing tests, but asking whether the tests have earned the right to decide.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section case-section--paper-dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">04 / WHAT COUNTS</p>
+          </div>
+          <div class="case-section__body">
+            <h2>No leaderboard before the benchmark is ready.</h2>
+            <div class="case-columns">
+              <div>
+                <h3>Measured now</h3>
+                <ul>
+                  <li>Task and workspace content digests</li>
+                  <li>Public and hidden deterministic outcomes</li>
+                  <li>Human and assistant provenance</li>
+                  <li>Timeouts and infrastructure failures</li>
+                  <li>Baseline-fail / reference-pass validity</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Publication gate</h3>
+                <ul>
+                  <li>At least 20 independently audited tasks</li>
+                  <li>A protected holdout or procedural variants</li>
+                  <li>Repeated trials and uncertainty intervals</li>
+                  <li>Cost, latency, and invalid-run reporting</li>
+                  <li>Blinded human review of sampled trajectories</li>
+                </ul>
+              </div>
+            </div>
+            <div class="case-note">
+              <span>AI COLLABORATION</span>
+              <p>
+                I use coding agents while building Faultline and record that assistance in run
+                manifests. I remain responsible for the research question, task validity,
+                accepted changes, independent reproduction, and every published claim.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next section-shell">
+        <p class="section-index">05 / NEXT EXPERIMENT</p>
+        <h2>Run agents, study the misses, then decide what deserves training.</h2>
+        <p>
+          The next release adds complete trajectory capture, repeated trials, cost and latency,
+          and a larger audited task set. Only after that evaluation is stable will failure traces
+          become candidates for a held-out post-training study.
+        </p>
+        <div class="case-next__actions">
+          <a class="button button--primary" href="mailto:hello@danielgaskins.com">Ask me about the design</a>
+          <a class="button button--quiet" href="./#work">Back to selected work</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span data-year></span> Daniel Gaskins</p>
+      <p>Physics · Models · Products</p>
+      <a href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>

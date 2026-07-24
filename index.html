@@ -144,17 +144,61 @@
       <section id="work" class="work section-shell section-block">
         <div class="section-intro" data-reveal>
           <p class="section-index">01 / SELECTED WORK</p>
-          <h2>I learned by building the whole thing.</h2>
+          <h2>I build the test before I trust the result.</h2>
           <p>
-            My companies did not come with clean boundaries between research, engineering,
-            and product. I made the calls, wrote the code, and lived with the consequences.
-            That is the kind of ownership I want to keep.
+            Recent work starts with an uncomfortable question: how could this result be wrong?
+            I turn that question into a test, build the surrounding system, and keep the failure
+            visible long enough to learn from it.
           </p>
         </div>
 
         <div class="work-list">
-          <article class="work-card work-card--no-link" data-reveal>
+          <article class="work-card work-card--artifact" data-reveal>
             <div class="work-card__number">01</div>
+            <div class="work-card__body">
+              <div class="work-card__meta">
+                <span>2026 / ACTIVE</span>
+                <span>ML AGENT EVALUATION</span>
+              </div>
+              <h3>Faultline</h3>
+              <p>
+                Can an agent fix an ML pipeline without quietly invalidating the experiment?
+                Faultline turns five realistic failure classes into versioned tasks with hidden
+                graders, reproducible run manifests, and explicit infrastructure outcomes.
+              </p>
+              <ul class="tag-list" aria-label="Faultline areas">
+                <li>Agent evaluation</li><li>ML failure analysis</li><li>Python</li><li>Reproducibility</li>
+              </ul>
+            </div>
+            <a class="work-card__link" href="./faultline.html" aria-label="Read the Faultline case study">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" /></svg>
+            </a>
+          </article>
+
+          <article class="work-card work-card--artifact" data-reveal>
+            <div class="work-card__number">02</div>
+            <div class="work-card__body">
+              <div class="work-card__meta">
+                <span>OPEN SOURCE</span>
+                <span>CROSS-RUNTIME ML INFERENCE</span>
+              </div>
+              <h3>lgbm-to-code</h3>
+              <p>
+                A trained, one-output LightGBM model becomes dependency-free Python, C++17,
+                or JavaScript. Executed and compiled tests compare every target against
+                LightGBM raw scores at 1e-12 tolerances.
+              </p>
+              <ul class="tag-list" aria-label="lgbm-to-code technologies">
+                <li>Python</li><li>LightGBM</li><li>C++17</li><li>JavaScript</li>
+              </ul>
+            </div>
+            <a class="work-card__link" href="https://github.com/danielgaskins/lgbm-to-code" target="_blank" rel="noreferrer" aria-label="View lgbm-to-code on GitHub">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" /></svg>
+            </a>
+          </article>
+
+          <article class="work-card work-card--no-link" data-reveal>
+            <div class="work-card__number">03</div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>2021—PRESENT</span>
@@ -173,7 +217,7 @@
           </article>
 
           <article class="work-card work-card--no-link" data-reveal>
-            <div class="work-card__number">02</div>
+            <div class="work-card__number">04</div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>2019—2021</span>
@@ -192,7 +236,7 @@
           </article>
 
           <article class="work-card" data-reveal>
-            <div class="work-card__number">03</div>
+            <div class="work-card__number">05</div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>2017—2019</span>
@@ -209,28 +253,6 @@
               </ul>
             </div>
             <a class="work-card__link" href="https://casabauhaus.com" target="_blank" rel="noreferrer" aria-label="Visit Casabauhaus">
-              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" /></svg>
-            </a>
-          </article>
-
-          <article class="work-card work-card--artifact" data-reveal>
-            <div class="work-card__number">04</div>
-            <div class="work-card__body">
-              <div class="work-card__meta">
-                <span>OPEN SOURCE</span>
-                <span>ML DEPLOYMENT TOOLING</span>
-              </div>
-              <h3>lgbm-to-code</h3>
-              <p>
-                I wanted LightGBM models to run where LightGBM could not. So I wrote a small
-                code generator that turns a trained model into plain Python, C++, or JavaScript
-                conditionals, with no runtime dependency on LightGBM.
-              </p>
-              <ul class="tag-list" aria-label="lgbm-to-code technologies">
-                <li>Python</li><li>LightGBM</li><li>C++</li><li>JavaScript</li>
-              </ul>
-            </div>
-            <a class="work-card__link" href="https://pypi.org/project/lgbm-to-code/" target="_blank" rel="noreferrer" aria-label="View lgbm-to-code on PyPI">
               <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" /></svg>
             </a>
           </article>
@@ -277,7 +299,8 @@
             <div class="stack__items">
               <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span><span>LightGBM</span>
               <span>TypeScript</span><span>React</span><span>C++</span><span>Scala</span><span>Java</span>
-              <span>Model evaluation</span><span>Experiment design</span><span>NLP</span><span>Computer Vision</span>
+              <span>Model evaluation</span><span>Agent evaluation</span><span>Experiment design</span><span>CI/CD</span>
+              <span>NLP</span><span>Computer Vision</span>
             </div>
           </div>
         </div>

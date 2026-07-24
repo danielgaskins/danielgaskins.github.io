@@ -40,7 +40,18 @@ a { color: inherit; text-underline-offset: 2px; }
 @media print {
   @page { size: Letter; margin: 0; }
   html, body { background: #fff; }
+  body { font-size: 9.1pt; line-height: 1.19; }
   .resume-actions { display: none; }
-  .resume { width: 8.5in; min-height: 11in; margin: 0; padding: .34in .46in; box-shadow: none; }
+  .resume { width: 8.5in; min-height: 11in; margin: 0; padding: .28in .44in; box-shadow: none; }
+  .resume-header { padding-bottom: 6px; }
+  .resume h1 { font-size: 22pt; }
+  .resume-title { margin: 4px 0 5px; font-size: 11.5pt; }
+  .resume-contact { font-size: 8.8pt; }
+  .resume section { margin-top: 6px; }
+  .resume h2 { margin-bottom: 3px; font-size: 10pt; }
+  .resume h3 { font-size: 9.7pt; }
+  .resume article + article { margin-top: 4px; }
+  .resume ul { margin-top: 2px; }
+  .resume li { margin-bottom: 1px; }
   .resume a { text-decoration: none; }
 }

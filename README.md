@@ -15,6 +15,8 @@ Then open `http://localhost:8000`.
 ## Structure
 
 - `index.html` — content and page structure
+- `faultline.html` — ML agent-evaluation project case study
+- `resume.html` / `resume.css` — browser and print versions of the résumé
 - `styles.css` — responsive visual system
 - `script.js` — navigation, header, and reveal interactions
 - `favicon.svg` — vector favicon
