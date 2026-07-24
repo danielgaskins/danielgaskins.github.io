@@ -81,6 +81,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
 .hero__emphasis { display: block; color: var(--green); }
 .hero__lede { max-width: 620px; margin: 34px 0 0; font-size: clamp(18px, 1.5vw, 23px); line-height: 1.55; color: #4d514b; }
 .hero__actions, .contact__actions { display: flex; align-items: center; gap: 26px; margin-top: 38px; }
+.contact__actions { flex-wrap: wrap; }
 .button {
   min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 30px;
   padding: 0 20px; text-decoration: none; font-size: 13px; font-weight: 700;
