@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Faultline is Daniel Gaskins's reproducible evaluation benchmark for agents repairing machine-learning system failures."
+      content="Mendmark is Daniel Gaskins's reproducible evaluation benchmark for agents repairing machine-learning system failures."
     />
     <meta name="theme-color" content="#0b0d0c" />
-    <meta property="og:title" content="Faultline — ML Agent Evaluation Case Study" />
+    <meta property="og:title" content="Mendmark — ML Agent Evaluation Case Study" />
     <meta
       property="og:description"
       content="Five ML failure classes, hidden deterministic graders, reproducible manifests, and an honest publication gate."
     />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://danielgaskins.com/faultline.html" />
-    <link rel="canonical" href="https://danielgaskins.com/faultline.html" />
-    <title>Faultline — ML Agent Evaluation — Daniel Gaskins</title>
+    <meta property="og:url" content="https://danielgaskins.com/mendmark.html" />
+    <link rel="canonical" href="https://danielgaskins.com/mendmark.html" />
+    <title>Mendmark — ML Agent Evaluation — Daniel Gaskins</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,13 +55,13 @@
         <p class="eyebrow"><span class="status-dot"></span> Development case study / 2026</p>
         <h1>Can an agent fix the pipeline without breaking the experiment?</h1>
         <p class="case-hero__lede">
-          Faultline is a reproducible evaluation harness for agents repairing machine-learning
+          Mendmark is a reproducible evaluation harness for agents repairing machine-learning
           system failures. It is built around the mistakes that make a model look better while
           making the underlying evidence worse.
         </p>
         <div class="case-hero__actions">
           <a class="button button--primary" href="#method">See the evaluation design</a>
-          <a class="button button--quiet" href="https://github.com/danielgaskins/faultline" target="_blank" rel="noreferrer">View source on GitHub</a>
+          <a class="button button--quiet" href="https://github.com/danielgaskins/mendmark" target="_blank" rel="noreferrer">View source on GitHub</a>
         </div>
       </section>
 
@@ -86,7 +86,7 @@
             grading copy, then records what happened without confusing infrastructure trouble
             with model behavior.
           </p>
-          <div class="case-flow" aria-label="Faultline task lifecycle">
+          <div class="case-flow" aria-label="Mendmark task lifecycle">
             <div><span>01</span><strong>Prepare</strong><small>versioned public workspace</small></div>
             <i>→</i>
             <div><span>02</span><strong>Repair</strong><small>agent edits + complete trace</small></div>
@@ -201,7 +201,7 @@
             <div class="case-note">
               <span>AI COLLABORATION</span>
               <p>
-                I use coding agents while building Faultline and record that assistance in run
+                I use coding agents while building Mendmark and record that assistance in run
                 manifests. I remain responsible for the research question, task validity,
                 accepted changes, independent reproduction, and every published claim.
               </p>

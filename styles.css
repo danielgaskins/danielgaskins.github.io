@@ -201,7 +201,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
 .site-footer { min-height: 100px; display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 20px; font: 400 10px var(--mono); color: var(--muted); }
 .site-footer a { text-decoration: none; }
 
-/* Faultline case study */
+/* Mendmark case study */
 .case-study { padding-top: 76px; }
 .case-hero { min-height: 780px; padding-block: 120px 100px; display: flex; flex-direction: column; justify-content: center; }
 .case-hero h1 { max-width: 1280px; margin: 0; font-size: clamp(62px, 7.5vw, 126px); line-height: .91; letter-spacing: -.07em; font-weight: 500; }
