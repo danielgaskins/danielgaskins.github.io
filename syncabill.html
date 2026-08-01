@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="How Daniel Gaskins built SyncABill, an AI invoice workflow with human review, accounting integrations, and deterministic financial controls."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta property="og:title" content="SyncABill — Applied AI Case Study" />
+    <meta
+      property="og:description"
+      content="Gemini reads the invoice. Deterministic code controls what reaches QuickBooks or Xero."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://danielgaskins.com/syncabill.html" />
+    <link rel="canonical" href="https://danielgaskins.com/syncabill.html" />
+    <title>SyncABill — Applied AI — Daniel Gaskins</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="./" aria-label="Daniel Gaskins, home">
+        <span>DG</span>
+        <span class="wordmark__name">Daniel Gaskins</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="./#work">Work</a>
+        <a href="./#capabilities">How I work</a>
+        <a href="./#about">About</a>
+        <a href="./resume.html">Résumé</a>
+        <a class="nav-cta" href="mailto:hello@danielgaskins.com">Talk with me</a>
+      </nav>
+    </header>
+
+    <main id="main" class="case-study">
+      <section class="case-hero section-shell">
+        <p class="eyebrow"><span class="status-dot"></span> Applied AI case study / 2025—present</p>
+        <h1>An invoice can be read correctly and still create the wrong bill.</h1>
+        <p class="case-hero__lede">
+          I built SyncABill to turn emailed and uploaded invoices into reviewable accounting
+          records. Gemini reads the document. Deterministic code controls what happens next.
+        </p>
+        <div class="case-hero__actions">
+          <a class="button button--primary" href="#workflow">See the workflow</a>
+          <a class="button button--quiet" href="https://syncabill.com" target="_blank" rel="noreferrer">Visit SyncABill</a>
+        </div>
+      </section>
+
+      <section class="case-signal" aria-label="SyncABill scope">
+        <div class="section-shell case-signal__grid">
+          <div><strong>04</strong><span>invoice intake paths</span></div>
+          <div><strong>02</strong><span>accounting integrations</span></div>
+          <div><strong>01</strong><span>controller-owned review policy</span></div>
+          <div><strong>00</strong><span>model-authorized financial writes</span></div>
+        </div>
+      </section>
+
+      <section id="workflow" class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">01 / THE WORKFLOW</p>
+        </div>
+        <div class="case-section__body">
+          <h2>The model reads. The application decides.</h2>
+          <p class="case-section__lead">
+            Invoices arrive by upload, forwarding, Gmail, or Microsoft 365. Before Gemini runs,
+            SyncABill checks the file, rejects exact duplicates, reserves plan usage, and keeps
+            the original document for review.
+          </p>
+          <div class="case-flow" aria-label="SyncABill invoice lifecycle">
+            <div><span>01</span><strong>Receive</strong><small>email, inbox, or upload</small></div>
+            <i>→</i>
+            <div><span>02</span><strong>Extract</strong><small>Gemini returns structured fields</small></div>
+            <i>→</i>
+            <div><span>03</span><strong>Check</strong><small>rules, arithmetic, and accounts</small></div>
+            <i>→</i>
+            <div><span>04</span><strong>Sync</strong><small>approved bill reaches the ledger</small></div>
+          </div>
+          <p>
+            The model proposes vendor names, dates, totals, line items, and expense accounts.
+            Application code checks the response, resolves the account against the real ledger,
+            and applies the controller’s review rules before QuickBooks Online or Xero receives it.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section case-section--dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">02 / WHY THE SHELL MATTERS</p>
+          </div>
+          <div class="case-section__body">
+            <h2>A fluent answer is not permission to move money.</h2>
+            <div class="case-task-list">
+              <article>
+                <span>ACCESS</span>
+                <h3>Who may act?</h3>
+                <p>Firebase identity, workspace membership, and roles decide who can review, approve, or sync a bill.</p>
+              </article>
+              <article>
+                <span>ACCURACY</span>
+                <h3>Does the bill add up?</h3>
+                <p>Ordinary code checks totals and confirms that suggested accounts exist in the connected ledger.</p>
+              </article>
+              <article>
+                <span>REVIEW</span>
+                <h3>Should a person see it?</h3>
+                <p>The account controller sets the review policy. The model does not choose its own level of oversight.</p>
+              </article>
+              <article>
+                <span>RETRIES</span>
+                <h3>Will a retry create two bills?</h3>
+                <p>Content hashes, operation locks, duplicate checks, and provider idempotency protect the manual sync path.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">03 / SECURITY</p>
+        </div>
+        <div class="case-section__body">
+          <h2>Financial documents make security part of the product.</h2>
+          <p class="case-section__lead">
+            I completed Google’s CASA Tier 2 security assessment and brought SyncABill to SOC 2
+            readiness. The product uses least-privilege OAuth, encrypted provider credentials,
+            signed uploads, role checks, audit events, and bounded retries.
+          </p>
+          <div class="case-comparison">
+            <div>
+              <span>MODEL OUTPUT</span>
+              <p>A candidate set of facts parsed from an untrusted document.</p>
+            </div>
+            <div>
+              <span>APPLICATION DECISION</span>
+              <p>A checked, authorized, recorded action with a visible failure state.</p>
+            </div>
+          </div>
+          <p>
+            CASA Tier 2 is a completed security assessment. SOC 2 readiness means the controls
+            were prepared for an audit. It is not a claim that SyncABill completed SOC 2 certification.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section case-section--paper-dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">04 / THE AUDIT</p>
+          </div>
+          <div class="case-section__body">
+            <h2>The architecture review found work worth doing.</h2>
+            <div class="case-columns">
+              <div>
+                <h3>What is working</h3>
+                <ul>
+                  <li>File checks and deduplication before model spend</li>
+                  <li>Structured extraction followed by deterministic validation</li>
+                  <li>Controller-owned review rules</li>
+                  <li>Manual ledger locks and provider idempotency</li>
+                  <li>Persistent status and audit history</li>
+                </ul>
+              </div>
+              <div>
+                <h3>What comes next</h3>
+                <ul>
+                  <li>Move integration secrets behind a backend-only boundary</li>
+                  <li>Give automatic sync the manual path’s safety controls</li>
+                  <li>Add a labeled invoice evaluation set</li>
+                  <li>Record model, prompt, cost, and correction data</li>
+                  <li>Move long-running work to a durable queue</li>
+                </ul>
+              </div>
+            </div>
+            <div class="case-note">
+              <span>CURRENT STATE</span>
+              <p>
+                SyncABill is an early production product. Accounting auto-sync is disabled.
+                The current production model is Gemini 2.5 Flash-Lite, and a newer model will
+                not replace it until a versioned invoice test set can show that the change is safer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next section-shell">
+        <p class="section-index">05 / WHAT I OWNED</p>
+        <h2>From the first workflow to the security review.</h2>
+        <p>
+          I founded the product and own its requirements, architecture, testing, review,
+          failure handling, integrations, and operation. I use coding agents to implement
+          software, then inspect and test what they produce. The product decisions and accepted
+          results remain my responsibility.
+        </p>
+        <div class="case-next__actions">
+          <a class="button button--primary" href="mailto:hello@danielgaskins.com">Ask me about the system</a>
+          <a class="button button--quiet" href="./#work">Back to selected work</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span data-year></span> Daniel Gaskins</p>
+      <p>Physics · Models · Products</p>
+      <a href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>

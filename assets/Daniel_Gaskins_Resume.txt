@@ -5,11 +5,11 @@ United States | Open to relocation
 
 SUMMARY
 
-Applied ML engineer and founder experienced in agent-assisted automation, computer vision, experiment design, and model evaluation. Strongest at finding signal in messy data, diagnosing failure modes, and carrying useful results into working software and operations.
+Applied AI engineer and founder who has built document-processing, computer-vision, agent-evaluation, and business-automation systems. Strongest at turning an unclear problem into a testable workflow, finding where it fails, and carrying the result into production.
 
 TECHNICAL SKILLS
 
-Machine Learning: Model training and evaluation, experiment design, error analysis, data leakage, train/serve parity, NLP, computer vision, gradient-boosted trees, CLIP
+Machine Learning: LLM document extraction, model training and evaluation, experiment design, error analysis, data leakage, train/serve parity, NLP, computer vision, gradient-boosted trees, CLIP
 Frameworks: PyTorch, TensorFlow, scikit-learn, LightGBM
 Software & Systems: Python, C++, JavaScript, TypeScript, Scala, Java, agent-assisted automation, API integrations, data workflows, inference, testing, CI/CD
 
@@ -25,15 +25,19 @@ lgbm-to-code — Cross-Runtime ML Inference | github.com/danielgaskins/lgbm-to-c
 
 PROFESSIONAL EXPERIENCE
 
+SyncABill — Founder & Applied AI Engineer | 2025–Present
+- Built and deployed an invoice workflow that uses Gemini to extract structured data from emailed and uploaded documents, then sends approved bills to QuickBooks Online or Xero.
+- Designed deterministic checks for tenancy, file validity, duplicates, plan usage, invoice arithmetic, configurable human review, ledger accounts, retries, and audit history.
+- Completed Google's CASA Tier 2 security assessment and brought the product to SOC 2 readiness.
+
 Casabauhaus — Founder & Operator | 2022–Present
-- Operate a vintage-furniture business spanning sourcing, pricing, merchandising, sales, and customer delivery.
-- Design and operate agent-assisted, API-driven workflows for pricing, social-media execution, data analysis and reporting, revenue-seasonality analysis, and Shopify site operations.
+- Operate a vintage-furniture business spanning sourcing, pricing, merchandising, sales, and delivery, supported by agent and API workflows for reporting, social media, seasonality analysis, and Shopify.
 - Developed furniture-valuation and mid-century classification models used in sourcing decisions, including a fine-tuned CLIP model built before modern vision-language models were widely practical.
 
 Perfsy — Founder & Machine Learning Engineer | 2021–2022
 - Built a computer-vision pipeline to extract structured fields from scanned DMV vehicle titles.
 - Normalized scan orientation with OpenCV and experimented with character primitives, autoencoders, convolutional features, and DNN classifiers.
-- Created data and evaluation workflows to inspect recognition failures and iterate on model behavior.
+- Created data and evaluation workflows to inspect recognition failures and improve the pipeline.
 
 EDUCATION
 

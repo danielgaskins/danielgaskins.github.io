@@ -214,7 +214,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
 .case-signal__grid > div:last-child { border-right: 0; }
 .case-signal strong { color: var(--acid); font: 300 clamp(44px, 4vw, 68px)/1 var(--mono); }
 .case-signal span { color: #9ca198; font: 400 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
-.case-section { padding-block: 145px; display: grid; grid-template-columns: 180px 1fr; gap: 5vw; }
+.case-section { padding-block: 145px; display: grid; grid-template-columns: 180px 1fr; gap: 5vw; scroll-margin-top: 64px; }
 .case-section__inner { display: grid; grid-template-columns: 180px 1fr; gap: 5vw; }
 .case-section__body { min-width: 0; }
 .case-section h2, .case-next h2 { max-width: 1040px; margin: 0; font-size: clamp(48px, 5vw, 82px); line-height: .98; letter-spacing: -.055em; font-weight: 500; }

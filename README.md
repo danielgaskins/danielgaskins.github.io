@@ -16,6 +16,7 @@ Then open `http://localhost:8000`.
 
 - `index.html` — content and page structure
 - `mendmark.html` — ML agent-evaluation project case study
+- `syncabill.html` — applied AI invoice-workflow case study
 - `resume.html` / `resume.css` — browser and print versions of the résumé
 - `styles.css` — responsive visual system
 - `script.js` — navigation, header, and reveal interactions
