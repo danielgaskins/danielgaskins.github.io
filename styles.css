@@ -36,7 +36,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
 .skip-link:focus { transform: translateY(0); }
 .section-shell { width: var(--shell); margin-inline: auto; }
 .section-block { padding-block: 150px; }
-#top, #work, #capabilities, #about, #contact { scroll-margin-top: 64px; }
+#top, #work, #capabilities, #notes, #about, #contact { scroll-margin-top: 64px; }
 
 .site-header {
   position: fixed; inset: 0 0 auto 0; z-index: 100; height: 76px;
@@ -176,6 +176,14 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
 .stack__items { display: flex; flex-wrap: wrap; gap: 10px; }
 .stack__items span { padding: 11px 15px; border: 1px solid var(--light-line); font: 400 11px var(--mono); }
 
+.notes { border-bottom: 1px solid var(--line); }
+.note-card { padding: 65px 0 5px 180px; }
+.note-card__meta { display: flex; gap: 24px; margin-bottom: 20px; color: var(--muted); font: 400 10px var(--mono); letter-spacing: .05em; }
+.note-card h3 { max-width: 920px; margin: 0; font-size: clamp(38px, 4.5vw, 68px); line-height: 1.05; letter-spacing: -.05em; font-weight: 500; }
+.note-card > p { max-width: 720px; margin: 24px 0 30px; color: var(--muted); font-size: 16px; line-height: 1.75; }
+.note-card > a { display: inline-flex; align-items: center; gap: 24px; padding-bottom: 6px; border-bottom: 1px solid var(--line); text-decoration: none; font-size: 13px; font-weight: 700; }
+.note-card svg { width: 16px; height: 16px; }
+
 .about { display: grid; grid-template-columns: 1.4fr .8fr; gap: 10vw; }
 .about blockquote { max-width: 850px; margin: 95px 0 0; font-size: clamp(40px, 4vw, 68px); line-height: 1.12; letter-spacing: -.05em; font-weight: 500; }
 .about blockquote em { color: var(--green); font-style: normal; }
@@ -248,6 +256,27 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
 .case-next { padding-block: 150px; }
 .case-next > p:not(.section-index) { max-width: 760px; margin: 35px 0 0; color: var(--muted); font-size: 17px; line-height: 1.75; }
 
+/* Technical field notes */
+.note-page { padding-top: 76px; }
+.note-hero { padding-block: 130px 95px; border-bottom: 1px solid var(--line); }
+.note-hero h1 { max-width: 1180px; margin: 0; font-size: clamp(58px, 7vw, 112px); line-height: .94; letter-spacing: -.065em; font-weight: 500; }
+.note-hero__lede { max-width: 800px; margin: 38px 0 0; color: var(--muted); font-size: clamp(19px, 1.7vw, 26px); line-height: 1.55; }
+.note-byline { display: flex; flex-wrap: wrap; gap: 18px 32px; margin-top: 44px; color: var(--muted); font: 400 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+.note-layout { padding-block: 110px 145px; display: grid; grid-template-columns: 250px minmax(0, 820px); gap: clamp(60px, 9vw, 150px); }
+.note-rail { align-self: start; position: sticky; top: 100px; padding-top: 12px; border-top: 1px solid var(--line); }
+.note-rail span { color: var(--green); font: 500 9px var(--mono); letter-spacing: .08em; }
+.note-rail strong { display: block; margin-top: 26px; font-size: 18px; line-height: 1.5; font-weight: 500; }
+.note-body { min-width: 0; }
+.note-body p, .note-body li { color: #454943; font-size: 18px; line-height: 1.85; }
+.note-body .note-deck { margin-top: 0; color: var(--ink); font-size: clamp(22px, 2vw, 30px); line-height: 1.55; }
+.note-body h2 { margin: 85px 0 25px; font-size: clamp(36px, 4vw, 58px); line-height: 1.05; letter-spacing: -.045em; font-weight: 500; }
+.note-body ol, .note-body ul { margin: 30px 0; padding-left: 26px; }
+.note-body li { padding-left: 10px; margin-bottom: 9px; }
+.note-callout { margin: 55px 0; padding: 32px; color: #e7e8df; background: var(--ink); }
+.note-callout span { color: var(--acid); font: 500 9px var(--mono); letter-spacing: .08em; }
+.note-callout strong { display: block; max-width: 650px; margin-top: 25px; font-size: clamp(24px, 3vw, 38px); line-height: 1.25; font-weight: 500; }
+.note-actions { display: flex; align-items: center; gap: 28px; margin-top: 60px; }
+
 .reveal-ready [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal-ready [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
@@ -268,6 +297,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
   .capability-grid article:nth-child(-n+2) { border-bottom: 1px solid var(--light-line); }
   .capability-grid article:nth-child(3) { padding-left: 0; }
   .about { grid-template-columns: 1fr; gap: 75px; }
+  .note-card { padding-left: 120px; }
+  .note-layout { grid-template-columns: 180px minmax(0, 1fr); gap: 60px; }
   .about__details { max-width: 680px; margin-left: auto; }
   .about__portrait { margin-left: 0; }
   .case-section, .case-section__inner { grid-template-columns: 120px 1fr; }
@@ -296,6 +327,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
   .work-card { grid-template-columns: 64px 1fr 48px; gap: 22px; }
   .work-card--no-link { grid-template-columns: 64px 1fr; }
   .work-card--artifact { margin-inline: -20px; padding-inline: 20px; }
+  .note-card { padding-left: 0; }
 }
 
 @media (max-width: 720px) {
@@ -334,6 +366,14 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
   .capability-grid article, .capability-grid article:not(:first-child), .capability-grid article:nth-child(3) { min-height: 230px; padding: 28px 0; border-right: 0; border-bottom: 1px solid var(--light-line); }
   .capability-grid h3 { margin-top: 45px; }
   .stack { grid-template-columns: 1fr; gap: 24px; }
+  .note-page { padding-top: 64px; }
+  .note-hero { padding-block: 100px 70px; }
+  .note-hero h1 { font-size: clamp(50px, 14vw, 72px); }
+  .note-layout { padding-block: 70px 90px; grid-template-columns: 1fr; gap: 45px; }
+  .note-rail { position: static; }
+  .note-body p, .note-body li { font-size: 17px; }
+  .note-body h2 { margin-top: 65px; }
+  .note-actions { align-items: stretch; flex-direction: column; gap: 18px; }
   .about blockquote { margin-top: 55px; font-size: 42px; }
   .about__details { padding-top: 0; }
   .about__portrait { width: min(100% - 12px, 360px); margin-bottom: 46px; }

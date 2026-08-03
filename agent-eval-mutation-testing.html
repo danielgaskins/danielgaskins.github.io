@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A practical explanation of mutation testing for agent evals, with examples of broken tool calls that a passing score can miss."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta property="og:title" content="Your agent eval passed. Would it catch a broken tool call?" />
+    <meta
+      property="og:description"
+      content="Plant a controlled fault, rerun the same evals, and see whether the score changes."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://danielgaskins.com/agent-eval-mutation-testing.html" />
+    <link rel="canonical" href="https://danielgaskins.com/agent-eval-mutation-testing.html" />
+    <title>Your agent eval passed. Would it catch a broken tool call? | Daniel Gaskins</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Your agent eval passed. Would it catch a broken tool call?",
+        "author": {"@type": "Person", "name": "Daniel Gaskins", "url": "https://danielgaskins.com/"},
+        "datePublished": "2026-08-03",
+        "mainEntityOfPage": "https://danielgaskins.com/agent-eval-mutation-testing.html"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="./" aria-label="Daniel Gaskins, home">
+        <span>DG</span>
+        <span class="wordmark__name">Daniel Gaskins</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="./#work">Work</a>
+        <a href="./#notes">Notes</a>
+        <a href="./#about">About</a>
+        <a href="./resume.html">Résumé</a>
+        <a class="nav-cta" href="mailto:hello@danielgaskins.com">Talk with me</a>
+      </nav>
+    </header>
+
+    <main id="main" class="note-page">
+      <article>
+        <header class="note-hero section-shell">
+          <p class="eyebrow"><span class="status-dot"></span> Field note / Agent evaluation</p>
+          <h1>Your agent eval passed. Would it catch a broken tool call?</h1>
+          <p class="note-hero__lede">
+            A green score can mean the agent worked. It can also mean the test never looked at
+            the part that broke. Mutation testing makes that difference visible.
+          </p>
+          <div class="note-byline">
+            <span>Daniel Gaskins</span>
+            <time datetime="2026-08-03">August 3, 2026</time>
+            <span>6 minute read</span>
+          </div>
+        </header>
+
+        <div class="note-layout section-shell">
+          <aside class="note-rail" aria-label="Article summary">
+            <span>THE QUESTION</span>
+            <strong>Can your eval recognize a failure you already understand?</strong>
+          </aside>
+
+          <div class="note-body">
+            <p class="note-deck">
+              Imagine a customer asks an agent to refund order 104. A correct run looks up the
+              order, calls the refund tool once with the right amount, and tells the customer what
+              happened. The eval passes. The team ships.
+            </p>
+
+            <p>Now change the trace in four small ways:</p>
+
+            <ol>
+              <li>Remove the refund call.</li>
+              <li>Change the refund from $29.99 to $299.99.</li>
+              <li>Call the refund tool twice.</li>
+              <li>Return an error from the tool while the final answer still claims success.</li>
+            </ol>
+
+            <p>
+              Run the same eval after each change. If it stays green, the agent is no longer the
+              immediate problem. The test cannot recognize a failure the team already knows about.
+            </p>
+
+            <h2>Test the scoreboard</h2>
+
+            <p>
+              Software teams have used mutation testing for years. A mutation tool changes working
+              code in a controlled way, then checks whether the test suite notices. A test that
+              catches the change kills the mutation. A test that misses it leaves a survivor.
+            </p>
+
+            <p>
+              Agent evals need the same pressure. Their inputs are different. The dangerous change
+              may live in a tool argument, a repeated side effect, a hidden tool error, or an answer
+              that no longer matches the action taken.
+            </p>
+
+            <div class="note-callout">
+              <span>THE SIMPLE RULE</span>
+              <strong>Plant one known failure. A useful eval should change from pass to fail.</strong>
+            </div>
+
+            <h2>What Mendmark does</h2>
+
+            <p>
+              I built Mendmark to make this check repeatable. It begins with a passing agent case
+              and the tools that case is allowed to use. It creates controlled mutations, reruns the
+              team’s existing evaluators, and reports what they missed.
+            </p>
+
+            <p>The current operators can:</p>
+
+            <ul>
+              <li>Remove a required tool call.</li>
+              <li>Add an undeclared tool.</li>
+              <li>Change, remove, or corrupt a tool argument.</li>
+              <li>Corrupt a tool result.</li>
+              <li>Repeat a side effect.</li>
+              <li>Reorder the trace.</li>
+              <li>Hide a tool failure behind a success message.</li>
+              <li>Remove or damage the final response.</li>
+            </ul>
+
+            <p>
+              The report names each survivor. It also tracks coverage by tool, notices when a tool
+              contract changes, and can fail CI when a serious fault survives or an old detection
+              disappears.
+            </p>
+
+            <h2>What the score means</h2>
+
+            <p>
+              A mutation kill rate describes the eval suite against the faults that were planted.
+              It does not prove the agent is safe, correct, or ready for production. Unknown failures
+              still exist. Product-specific risks still need product-specific tests.
+            </p>
+
+            <p>
+              The useful output is often the survivor itself. “Our refund eval ignores the amount”
+              gives an engineer something concrete to fix. “The agent scored 0.87” does not.
+            </p>
+
+            <h2>Why this matters now</h2>
+
+            <p>
+              Agents can act through tools. A weak answer is annoying. A repeated refund, deleted
+              record, or false claim of success can change the state of a real system. Every new tool
+              gives the agent another way to fail and gives the eval suite another obligation.
+            </p>
+
+            <p>
+              Teams already test their agents. The next question is whether those tests deserve the
+              authority they have been given.
+            </p>
+
+            <div class="note-actions">
+              <a class="button button--primary" href="https://github.com/danielgaskins/mendmark" target="_blank" rel="noreferrer">Run Mendmark locally</a>
+              <a class="button button--quiet" href="./mendmark.html">Read the project case study</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span data-year></span> Daniel Gaskins</p>
+      <p>Physics · Models · Products</p>
+      <a href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>

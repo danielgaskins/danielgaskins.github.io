@@ -73,6 +73,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#capabilities">How I work</a>
+        <a href="#notes">Notes</a>
         <a href="#about">About</a>
         <a href="./resume.html">Résumé</a>
         <a class="nav-cta" href="mailto:hello@danielgaskins.com">Talk with me</a>
@@ -318,9 +319,36 @@
         </div>
       </section>
 
+      <section id="notes" class="notes section-shell section-block">
+        <div class="section-intro" data-reveal>
+          <p class="section-index">03 / FIELD NOTES</p>
+          <h2>Write down the failure before it becomes folklore.</h2>
+          <p>
+            Short technical notes about agent evaluation, model failures, and the systems built
+            around uncertain outputs.
+          </p>
+        </div>
+
+        <article class="note-card" data-reveal>
+          <div class="note-card__meta">
+            <span>AUGUST 3, 2026</span>
+            <span>AGENT EVALUATION</span>
+          </div>
+          <h3>Your agent eval passed. Would it catch a broken tool call?</h3>
+          <p>
+            Plant one known failure, rerun the same evals, and see whether the score changes. A
+            practical introduction to mutation testing for agent tool use.
+          </p>
+          <a href="./agent-eval-mutation-testing.html">
+            Read the field note
+            <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg>
+          </a>
+        </article>
+      </section>
+
       <section id="about" class="about section-shell section-block">
         <div class="about__statement" data-reveal>
-          <p class="section-index">03 / ABOUT</p>
+          <p class="section-index">04 / ABOUT</p>
           <blockquote>
             I studied matter at its smallest scales. Then I started companies. Both taught me
             the same thing: <em>a good answer begins with a better question.</em>
@@ -360,7 +388,7 @@
 
       <section id="contact" class="contact">
         <div class="section-shell contact__inner" data-reveal>
-          <p class="section-index">04 / CONTACT</p>
+          <p class="section-index">05 / CONTACT</p>
           <h2>Let’s find the part that does not work yet.</h2>
           <p>
             If you are training or evaluating models, building the systems around them, or
