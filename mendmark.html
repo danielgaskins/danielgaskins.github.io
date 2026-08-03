@@ -8,15 +8,15 @@
       content="Mendmark mutation-tests agent eval suites by planting controlled tool-use failures and checking whether the team's existing evaluators catch them."
     />
     <meta name="theme-color" content="#0b0d0c" />
-    <meta property="og:title" content="Mendmark — Mutation Testing for Agent Evals" />
+    <meta property="og:title" content="Mendmark | Mutation Testing for Agent Evals" />
     <meta
       property="og:description"
-      content="Controlled trace faults, per-tool coverage, evaluator regression gates, and privacy-safe CI reports."
+      content="An open-source Python package that plants controlled trace faults and shows which agent failures an eval suite misses."
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://danielgaskins.com/mendmark.html" />
     <link rel="canonical" href="https://danielgaskins.com/mendmark.html" />
-    <title>Mendmark — Mutation Testing for Agent Evals — Daniel Gaskins</title>
+    <title>Mendmark | Mutation Testing for Agent Evals | Daniel Gaskins</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -52,7 +52,7 @@
 
     <main id="main" class="case-study">
       <section class="case-hero section-shell">
-        <p class="eyebrow"><span class="status-dot"></span> Development case study / 2026</p>
+        <p class="eyebrow"><span class="status-dot"></span> Open source / PyPI 0.4.2 / 2026</p>
         <h1>Your agent passed the test. Would the test notice if it broke?</h1>
         <p class="case-hero__lede">
           Mendmark plants controlled faults in passing agent traces, then runs the same evals
@@ -60,16 +60,16 @@
           a concrete test gap instead of a surprise in production.
         </p>
         <div class="case-hero__actions">
-          <a class="button button--primary" href="#method">See how it works</a>
+          <a class="button button--primary" href="https://pypi.org/project/mendmark-evals/" target="_blank" rel="noreferrer">Install from PyPI</a>
           <a class="button button--quiet" href="https://github.com/danielgaskins/mendmark" target="_blank" rel="noreferrer">View source on GitHub</a>
         </div>
       </section>
 
       <section class="case-signal" aria-label="Current project scope">
         <div class="section-shell case-signal__grid">
+          <div><strong>0.4.2</strong><span>current PyPI release</span></div>
           <div><strong>13</strong><span>faults in the example audit</span></div>
-          <div><strong>09</strong><span>mutation operators</span></div>
-          <div><strong>100%</strong><span>example kill rate</span></div>
+          <div><strong>09</strong><span>built-in mutation operators</span></div>
           <div><strong>00</strong><span>prompts stored in the report</span></div>
         </div>
       </section>
@@ -174,12 +174,13 @@
             <p class="section-index">04 / WHAT SHIPS TODAY</p>
           </div>
           <div class="case-section__body">
-            <h2>A local engine with a small data footprint.</h2>
+            <h2>A released local engine with a small data footprint.</h2>
             <div class="case-columns">
               <div>
                 <h3>Open-source engine</h3>
                 <ul>
                   <li>DeepEval suite adapter</li>
+                  <li>Framework-neutral JSON adapter</li>
                   <li>Nine built-in mutation operators</li>
                   <li>Per-tool mutation coverage</li>
                   <li>Tool contract and schema tracking</li>
@@ -189,11 +190,11 @@
               <div>
                 <h3>Report boundary</h3>
                 <ul>
-                  <li>Case and tool identifiers</li>
-                  <li>Mutation and metric names</li>
-                  <li>Tool schema digests</li>
-                  <li>Gate results and aggregate counts</li>
-                  <li>No prompts, arguments, or tool outputs</li>
+                  <li>JSON, JUnit, and SARIF output</li>
+                  <li>Custom mutation plugins</li>
+                  <li>Source, policy, and CI provenance</li>
+                  <li>Signed report verification with Cosign</li>
+                  <li>PyPI Trusted Publishing provenance</li>
                 </ul>
               </div>
             </div>
@@ -210,16 +211,17 @@
       </section>
 
       <section class="case-next section-shell">
-        <p class="section-index">05 / NEXT</p>
-        <h2>Make evaluator quality visible across every agent release.</h2>
+        <p class="section-index">05 / TRY IT</p>
+        <h2>Run a complete audit without an API key.</h2>
         <p>
-          The next adapters will accept traces from more eval frameworks and OpenTelemetry. A
-          small control plane can then show tool rollout history, critical survivors, accepted
-          exceptions, and pull-request results without collecting raw customer conversations.
+          The repository includes a deterministic refund-agent suite with 13 planted faults.
+          Clone the project, install the package, and run the example to see exactly which faults
+          the evals catch. Teams with an existing suite can use the DeepEval adapter or connect any
+          local evaluator through the versioned JSON protocol.
         </p>
         <div class="case-next__actions">
-          <a class="button button--primary" href="mailto:hello@danielgaskins.com">Ask me about the design</a>
-          <a class="button button--quiet" href="./#work">Back to selected work</a>
+          <a class="button button--primary" href="https://github.com/danielgaskins/mendmark#quick-start" target="_blank" rel="noreferrer">Run the quick start</a>
+          <a class="button button--quiet" href="https://github.com/danielgaskins/mendmark/issues/1" target="_blank" rel="noreferrer">Request a design-partner pilot</a>
         </div>
       </section>
     </main>
