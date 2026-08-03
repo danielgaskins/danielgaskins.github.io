@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Mendmark is Daniel Gaskins's reproducible evaluation benchmark for agents repairing machine-learning system failures."
+      content="Mendmark mutation-tests agent eval suites by planting controlled tool-use failures and checking whether the team's existing evaluators catch them."
     />
     <meta name="theme-color" content="#0b0d0c" />
-    <meta property="og:title" content="Mendmark — ML Agent Evaluation Case Study" />
+    <meta property="og:title" content="Mendmark — Mutation Testing for Agent Evals" />
     <meta
       property="og:description"
-      content="Five ML failure classes, hidden deterministic graders, reproducible manifests, and an honest publication gate."
+      content="Controlled trace faults, per-tool coverage, evaluator regression gates, and privacy-safe CI reports."
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://danielgaskins.com/mendmark.html" />
     <link rel="canonical" href="https://danielgaskins.com/mendmark.html" />
-    <title>Mendmark — ML Agent Evaluation — Daniel Gaskins</title>
+    <title>Mendmark — Mutation Testing for Agent Evals — Daniel Gaskins</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,52 +53,50 @@
     <main id="main" class="case-study">
       <section class="case-hero section-shell">
         <p class="eyebrow"><span class="status-dot"></span> Development case study / 2026</p>
-        <h1>Can an agent fix the pipeline without breaking the experiment?</h1>
+        <h1>Your agent passed the test. Would the test notice if it broke?</h1>
         <p class="case-hero__lede">
-          Mendmark is a reproducible evaluation harness for agents repairing machine-learning
-          system failures. It is built around the mistakes that make a model look better while
-          making the underlying evidence worse.
+          Mendmark plants controlled faults in passing agent traces, then runs the same evals
+          again. A missed tool call, wrong argument, repeated side effect, or hidden error becomes
+          a concrete test gap instead of a surprise in production.
         </p>
         <div class="case-hero__actions">
-          <a class="button button--primary" href="#method">See the evaluation design</a>
+          <a class="button button--primary" href="#method">See how it works</a>
           <a class="button button--quiet" href="https://github.com/danielgaskins/mendmark" target="_blank" rel="noreferrer">View source on GitHub</a>
         </div>
       </section>
 
       <section class="case-signal" aria-label="Current project scope">
         <div class="section-shell case-signal__grid">
-          <div><strong>05</strong><span>failure classes</span></div>
-          <div><strong>11</strong><span>framework tests</span></div>
-          <div><strong>02</strong><span>required outcomes per task</span></div>
-          <div><strong>00</strong><span>headline model claims—yet</span></div>
+          <div><strong>13</strong><span>faults in the example audit</span></div>
+          <div><strong>09</strong><span>mutation operators</span></div>
+          <div><strong>100%</strong><span>example kill rate</span></div>
+          <div><strong>00</strong><span>prompts stored in the report</span></div>
         </div>
       </section>
 
       <section id="method" class="case-section section-shell">
         <div class="case-section__label">
-          <p class="section-index">01 / THE CONTRACT</p>
+          <p class="section-index">01 / THE TEST OF THE TEST</p>
         </div>
         <div class="case-section__body">
-          <h2>A benchmark should fail before the model does.</h2>
+          <h2>Plant a fault. See if the eval catches it.</h2>
           <p class="case-section__lead">
-            Each task begins as a small repository with a plausible ML defect. An agent receives
-            the issue and public tests. The grader adds hidden checks only inside a temporary
-            grading copy, then records what happened without confusing infrastructure trouble
-            with model behavior.
+            A passing case is the starting point. Mendmark changes one part of its output or tool
+            trace, then reruns the team’s existing evaluators. The mutation is killed when an eval
+            changes from pass to fail. If every eval still passes, Mendmark names the blind spot.
           </p>
           <div class="case-flow" aria-label="Mendmark task lifecycle">
-            <div><span>01</span><strong>Prepare</strong><small>versioned public workspace</small></div>
+            <div><span>01</span><strong>Load</strong><small>passing cases + tool contracts</small></div>
             <i>→</i>
-            <div><span>02</span><strong>Repair</strong><small>agent edits + complete trace</small></div>
+            <div><span>02</span><strong>Mutate</strong><small>one controlled fault at a time</small></div>
             <i>→</i>
-            <div><span>03</span><strong>Grade</strong><small>hidden deterministic checks</small></div>
+            <div><span>03</span><strong>Rerun</strong><small>the same evaluator suite</small></div>
             <i>→</i>
-            <div><span>04</span><strong>Record</strong><small>digests, provenance, outcome</small></div>
+            <div><span>04</span><strong>Gate</strong><small>block survivors and regressions</small></div>
           </div>
           <p>
-            A checked-in task is valid only when the broken baseline fails for the intended
-            reason and the reference repair passes the combined public and hidden suite.
-            Integration tests enforce both sides of that contract for every task.
+            The resulting kill rate measures the eval suite, not the agent. A surviving critical
+            fault is a specific evaluator problem the team can reproduce and fix.
           </p>
         </div>
       </section>
@@ -106,35 +104,35 @@
       <section class="case-section case-section--dark">
         <div class="section-shell case-section__inner">
           <div class="case-section__label">
-            <p class="section-index">02 / CURRENT TASKS</p>
+            <p class="section-index">02 / CONTROLLED FAILURES</p>
           </div>
           <div class="case-section__body">
-            <h2>Five ways a clean score can lie.</h2>
+            <h2>What Mendmark breaks on purpose.</h2>
             <div class="case-task-list">
               <article>
-                <span>DATA LEAKAGE</span>
-                <h3>One customer, two partitions</h3>
-                <p>Repeated entities cross the evaluation boundary and make generalization look stronger than it is.</p>
+                <span>TOOL SELECTION</span>
+                <h3>A required call disappears</h3>
+                <p>Mendmark removes each tool call and adds an undeclared tool to see whether the trace still passes.</p>
               </article>
               <article>
-                <span>METRIC DESIGN</span>
-                <h3>The retry changes the ranking</h3>
-                <p>Micro-averaging lets frequently retried tasks outweigh every other task in the benchmark.</p>
+                <span>ARGUMENTS</span>
+                <h3>The right tool gets the wrong input</h3>
+                <p>One argument changes at a time, exposing evals that check the tool name but ignore its payload.</p>
               </article>
               <article>
-                <span>REPRODUCIBILITY</span>
-                <h3>A seed with side effects</h3>
-                <p>Initialization mutates the training data and contaminates randomness elsewhere in the process.</p>
+                <span>SIDE EFFECTS</span>
+                <h3>The payment happens twice</h3>
+                <p>Calls marked as side effecting are duplicated to test whether the suite notices unsafe retries.</p>
               </article>
               <article>
-                <span>TEMPORAL LEAKAGE</span>
-                <h3>A label from next month</h3>
-                <p>A historical split trains on outcomes that were not observable at the evaluation cutoff.</p>
+                <span>RECOVERY</span>
+                <h3>The tool fails. The agent says it worked.</h3>
+                <p>A successful result becomes an error while the final response still claims completion.</p>
               </article>
               <article>
-                <span>TRAIN / SERVE SKEW</span>
-                <h3>Inference quietly retrains preprocessing</h3>
-                <p>Online standardization uses the request batch instead of the statistics learned during training.</p>
+                <span>FINAL RESPONSE</span>
+                <h3>The answer vanishes or changes</h3>
+                <p>The response is removed or replaced to confirm that outcome checks are doing real work.</p>
               </article>
             </div>
           </div>
@@ -143,28 +141,29 @@
 
       <section class="case-section section-shell">
         <div class="case-section__label">
-          <p class="section-index">03 / THE AUDIT</p>
+          <p class="section-index">03 / TOOL ROLLOUTS</p>
         </div>
         <div class="case-section__body">
-          <h2>The first broken task was mine.</h2>
+          <h2>A new tool should change the release conversation.</h2>
           <p class="case-section__lead">
-            The entity-split prompt originally asked for a test set that was “reasonably close”
-            to the requested size. Its hidden grader enforced a numerical tolerance the agent
-            could not infer. That made the evaluation underspecified.
+            Mendmark hashes every declared tool contract. When a tool appears or its schema
+            changes, the report shows whether any case exercises it and whether those evals catch
+            faults in its calls. Basic schema checks also find missing required arguments and
+            wrong value types without recording the values themselves.
           </p>
           <div class="case-comparison">
             <div>
               <span>BEFORE</span>
-              <p>“Reasonably close” in the issue; an unstated tolerance in the grader.</p>
+              <p>A pull request adds a refund tool. The aggregate agent score stays green.</p>
             </div>
             <div>
               <span>AFTER</span>
-              <p>Closest attainable complete-entity partition, with the tie-break stated and tested directly.</p>
+              <p>The report marks the new side effect, shows its mutation coverage, and blocks any critical survivor.</p>
             </div>
           </div>
           <p>
-            I kept the correction in the evaluation card because this is the work: not merely
-            writing tests, but asking whether the tests have earned the right to decide.
+            A committed baseline remembers which faults the suite caught before. If a changed
+            metric lets one of those faults pass, CI reports the exact regression.
           </p>
         </div>
       </section>
@@ -172,38 +171,38 @@
       <section class="case-section case-section--paper-dark">
         <div class="section-shell case-section__inner">
           <div class="case-section__label">
-            <p class="section-index">04 / WHAT COUNTS</p>
+            <p class="section-index">04 / WHAT SHIPS TODAY</p>
           </div>
           <div class="case-section__body">
-            <h2>No leaderboard before the benchmark is ready.</h2>
+            <h2>A local engine with a small data footprint.</h2>
             <div class="case-columns">
               <div>
-                <h3>Measured now</h3>
+                <h3>Open-source engine</h3>
                 <ul>
-                  <li>Task and workspace content digests</li>
-                  <li>Public and hidden deterministic outcomes</li>
-                  <li>Human and assistant provenance</li>
-                  <li>Timeouts and infrastructure failures</li>
-                  <li>Baseline-fail / reference-pass validity</li>
+                  <li>DeepEval suite adapter</li>
+                  <li>Nine built-in mutation operators</li>
+                  <li>Per-tool mutation coverage</li>
+                  <li>Tool contract and schema tracking</li>
+                  <li>Regression-aware CI gates</li>
                 </ul>
               </div>
               <div>
-                <h3>Publication gate</h3>
+                <h3>Report boundary</h3>
                 <ul>
-                  <li>At least 20 independently audited tasks</li>
-                  <li>A protected holdout or procedural variants</li>
-                  <li>Repeated trials and uncertainty intervals</li>
-                  <li>Cost, latency, and invalid-run reporting</li>
-                  <li>Blinded human review of sampled trajectories</li>
+                  <li>Case and tool identifiers</li>
+                  <li>Mutation and metric names</li>
+                  <li>Tool schema digests</li>
+                  <li>Gate results and aggregate counts</li>
+                  <li>No prompts, arguments, or tool outputs</li>
                 </ul>
               </div>
             </div>
             <div class="case-note">
-              <span>AI COLLABORATION</span>
+              <span>LIMIT</span>
               <p>
-                I use coding agents while building Mendmark and record that assistance in run
-                manifests. I remain responsible for the research question, task validity,
-                accepted changes, independent reproduction, and every published claim.
+                A passing mutation audit does not prove an agent is safe. It shows that the
+                configured eval suite caught the faults Mendmark tested. Teams still need
+                product-specific cases and mutations for their highest-risk behavior.
               </p>
             </div>
           </div>
@@ -211,12 +210,12 @@
       </section>
 
       <section class="case-next section-shell">
-        <p class="section-index">05 / NEXT EXPERIMENT</p>
-        <h2>Run agents, study the misses, then decide what deserves training.</h2>
+        <p class="section-index">05 / NEXT</p>
+        <h2>Make evaluator quality visible across every agent release.</h2>
         <p>
-          The next release adds complete trajectory capture, repeated trials, cost and latency,
-          and a larger audited task set. Only after that evaluation is stable will failure traces
-          become candidates for a held-out post-training study.
+          The next adapters will accept traces from more eval frameworks and OpenTelemetry. A
+          small control plane can then show tool rollout history, critical survivors, accepted
+          exceptions, and pull-request results without collecting raw customer conversations.
         </p>
         <div class="case-next__actions">
           <a class="button button--primary" href="mailto:hello@danielgaskins.com">Ask me about the design</a>

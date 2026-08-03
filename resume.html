@@ -52,12 +52,12 @@
         <h2 id="project-heading">Selected Technical Projects</h2>
         <article>
           <div class="role-heading">
-            <h3>Mendmark — ML Agent Evaluation Benchmark</h3>
+            <h3>Mendmark — Mutation Testing for Agent Evals</h3>
             <p><a href="https://github.com/danielgaskins/mendmark">GitHub</a> · 2026</p>
           </div>
           <ul>
-            <li>Built a reproducible Python harness for evaluating agents that repair ML-system failures, with versioned tasks, hidden deterministic graders, content digests, provenance, and explicit infrastructure outcomes.</li>
-            <li>Created five versioned failure tasks spanning entity and temporal leakage, metric aggregation, train/serve skew, and reproducibility; integration tests require every broken baseline to fail and every reference repair to pass.</li>
+            <li>Built an open-source Python tool that plants controlled failures in passing agent traces, reruns a team’s DeepEval metrics, and fails CI when those evals miss wrong tool arguments, repeated side effects, hidden tool errors, or damaged responses.</li>
+            <li>Added per-tool mutation coverage, tool-schema and contract checks, privacy-safe reports, and regression gates that show when an evaluator stops catching a fault it caught before.</li>
           </ul>
         </article>
         <article>

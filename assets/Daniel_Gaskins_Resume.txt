@@ -15,9 +15,9 @@ Software & Systems: Python, C++, JavaScript, TypeScript, Scala, Java, agent-assi
 
 SELECTED TECHNICAL PROJECTS
 
-Mendmark — ML Agent Evaluation Benchmark | github.com/danielgaskins/mendmark | 2026
-- Built a reproducible Python harness for evaluating agents that repair ML-system failures, with versioned tasks, hidden deterministic graders, content digests, provenance, and explicit infrastructure outcomes.
-- Created five versioned failure tasks spanning entity and temporal leakage, metric aggregation, train/serve skew, and reproducibility; integration tests require every broken baseline to fail and every reference repair to pass.
+Mendmark — Mutation Testing for Agent Evals | github.com/danielgaskins/mendmark | 2026
+- Built an open-source Python tool that plants controlled failures in passing agent traces, reruns a team’s DeepEval metrics, and fails CI when those evals miss wrong tool arguments, repeated side effects, hidden tool errors, or damaged responses.
+- Added per-tool mutation coverage, tool-schema and contract checks, privacy-safe reports, and regression gates that show when an evaluator stops catching a fault it caught before.
 
 lgbm-to-code — Cross-Runtime ML Inference | github.com/danielgaskins/lgbm-to-code | pypi.org/project/lgbm-to-code
 - Built a code generator that turns trained, one-output LightGBM models into dependency-free Python, C++17, or JavaScript raw-score inference.
