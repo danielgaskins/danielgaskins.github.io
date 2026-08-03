@@ -15,7 +15,7 @@ Software & Systems: Python, C++, JavaScript, TypeScript, Scala, Java, agent-assi
 
 SELECTED TECHNICAL PROJECTS
 
-Mendmark — Mutation Testing for Agent Evals | github.com/danielgaskins/mendmark | 2026
+Mendmark | Mutation Testing for Agent Evals | github.com/danielgaskins/mendmark | 2026
 - Built an open-source Python tool that plants controlled failures in passing agent traces, reruns a team’s DeepEval metrics, and fails CI when those evals miss wrong tool arguments, repeated side effects, hidden tool errors, or damaged responses.
 - Added per-tool mutation coverage, tool-schema and contract checks, privacy-safe reports, and regression gates that show when an evaluator stops catching a fault it caught before.
 
