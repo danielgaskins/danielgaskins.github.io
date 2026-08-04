@@ -67,10 +67,10 @@
 
       <section class="case-signal" aria-label="Current project scope">
         <div class="section-shell case-signal__grid">
-          <div><strong>0.4.2</strong><span>current PyPI release</span></div>
-          <div><strong>13</strong><span>faults in the example audit</span></div>
-          <div><strong>09</strong><span>built-in mutation operators</span></div>
-          <div><strong>00</strong><span>prompts stored in the report</span></div>
+          <div><strong>24</strong><span>reviewable golden cases</span></div>
+          <div><strong>263</strong><span>pinned mutations</span></div>
+          <div><strong>10</strong><span>operating domains</span></div>
+          <div><strong>100%</strong><span>complete-profile kill rate</span></div>
         </div>
       </section>
 
@@ -101,10 +101,53 @@
         </div>
       </section>
 
+      <section class="case-section case-section--paper-dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">02 / PUBLIC GOLDEN SET</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Three evaluators. The same 263 broken runs.</h2>
+            <p class="case-section__lead">
+              The versioned golden set contains 24 passing cases, 13 tool contracts, and 39
+              tool calls across search, commerce, payments, CRM, communications, databases,
+              scheduling, weather, support, and multi-step workflows. Every case and expected
+              trace is public.
+            </p>
+            <div class="case-task-list">
+              <article>
+                <span>RESPONSE ONLY</span>
+                <h3>87 caught. 176 missed.</h3>
+                <p>The final answer exposed some failures, but 162 critical tool-behavior faults still passed.</p>
+              </article>
+              <article>
+                <span>TRACE ONLY</span>
+                <h3>215 caught. 48 missed.</h3>
+                <p>The ordered calls were correct, but removed or replaced final responses escaped.</p>
+              </article>
+              <article>
+                <span>TRACE + OUTCOME</span>
+                <h3>263 caught. 0 missed.</h3>
+                <p>Exact checks of the ordered tool trace and final outcome detected every planted fault in the set.</p>
+              </article>
+            </div>
+            <div class="case-note">
+              <span>SCOPE</span>
+              <p>
+                This result measures evaluator sensitivity to these controlled faults. It does
+                not establish overall agent accuracy or safety. The benchmark is deterministic,
+                runs offline without model calls, and is pinned so an unreviewed change to its
+                cases, mutations, or expected results fails CI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="case-section case-section--dark">
         <div class="section-shell case-section__inner">
           <div class="case-section__label">
-            <p class="section-index">02 / CONTROLLED FAILURES</p>
+            <p class="section-index">03 / CONTROLLED FAILURES</p>
           </div>
           <div class="case-section__body">
             <h2>What Mendmark breaks on purpose.</h2>
@@ -141,7 +184,7 @@
 
       <section class="case-section section-shell">
         <div class="case-section__label">
-          <p class="section-index">03 / TOOL ROLLOUTS</p>
+          <p class="section-index">04 / TOOL ROLLOUTS</p>
         </div>
         <div class="case-section__body">
           <h2>A new tool should change the release conversation.</h2>
@@ -171,7 +214,7 @@
       <section class="case-section case-section--paper-dark">
         <div class="section-shell case-section__inner">
           <div class="case-section__label">
-            <p class="section-index">04 / WHAT SHIPS TODAY</p>
+            <p class="section-index">05 / WHAT SHIPS TODAY</p>
           </div>
           <div class="case-section__body">
             <h2>A released local engine with a small data footprint.</h2>
@@ -211,13 +254,13 @@
       </section>
 
       <section class="case-next section-shell">
-        <p class="section-index">05 / TRY IT</p>
+        <p class="section-index">06 / TRY IT</p>
         <h2>Run a complete audit without an API key.</h2>
         <p>
-          The repository includes a deterministic refund-agent suite with 13 planted faults.
-          Clone the project, install the package, and run the example to see exactly which faults
-          the evals catch. Teams with an existing suite can use the DeepEval adapter or connect any
-          local evaluator through the versioned JSON protocol.
+          The repository includes both a small refund-agent demonstration and the public golden
+          set with 263 pinned mutations. Clone the project and reproduce the results without an
+          API key. Teams with an existing suite can use the DeepEval adapter or connect any local
+          evaluator through the versioned JSON protocol.
         </p>
         <div class="case-next__actions">
           <a class="button button--primary" href="https://github.com/danielgaskins/mendmark#quick-start" target="_blank" rel="noreferrer">Run the quick start</a>
