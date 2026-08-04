@@ -82,6 +82,12 @@
             SyncABill checks the file, rejects exact duplicates, reserves plan usage, and keeps
             the original document for review.
           </p>
+          <p>
+            The product uses a React/Vite frontend and TypeScript and Node.js services on Firebase
+            Cloud Functions. Firestore carries tenant, invoice, job, lock, and audit state. Cloud
+            Storage holds source documents, while Firebase Auth, App Check, and Secret Manager
+            protect client calls and provider credentials.
+          </p>
           <div class="case-flow" aria-label="SyncABill invoice lifecycle">
             <div><span>01</span><strong>Receive</strong><small>email, inbox, or upload</small></div>
             <i>→</i>
@@ -193,8 +199,8 @@
               <span>CURRENT STATE</span>
               <p>
                 SyncABill is an early production product. Accounting auto-sync is disabled.
-                The current production model is Gemini 2.5 Flash-Lite, and a newer model will
-                not replace it until a versioned invoice test set can show that the change is safer.
+                The current production model is Gemini 3.5 Flash-Lite. A versioned invoice test
+                set remains planned work for measuring model changes and catching regressions.
               </p>
             </div>
           </div>
