@@ -97,28 +97,66 @@
         <div class="note-layout section-shell">
           <aside class="note-rail" aria-label="Article summary">
             <span>THE QUESTION</span>
-            <strong>Which decisions deserve a person's attention before the software makes them real?</strong>
+            <strong>Which decisions deserve a person's attention?</strong>
           </aside>
 
           <div class="note-body">
+            <div class="note-summary" aria-label="Article summary">
+              <span>TL;DR</span>
+              <p>
+                Give people the cases where their judgment can still change the outcome. Let the
+                customer choose the review rules, explain why each action stopped, and track both
+                the mistakes that slipped through and the safe work that got delayed.
+              </p>
+            </div>
+
             <p class="note-deck">
-              While building SyncABill, I kept running into one question: which invoices should
-              the software stop?
+              While building SyncABill, I kept coming back to one question: which invoices should
+              the software stop for a person?
             </p>
 
             <p>
-              Stop every invoice and the customer gets another inbox to clear. Stop none and one
-              bad total can become a real bill in QuickBooks or Xero.
+              Stop every invoice and the customer gets another inbox to clear. Stop none and a bad
+              total can become a real bill in QuickBooks or Xero.
             </p>
 
-            <div class="note-callout">
-              <span>THE LIMIT</span>
+            <div class="note-callout note-callout--statement">
               <strong>Human review only helps while the human is still paying attention.</strong>
             </div>
 
+            <figure class="review-path" aria-labelledby="review-path-caption">
+              <div class="review-path__track">
+                <div class="review-path__step">
+                  <span>01</span>
+                  <strong>Read</strong>
+                  <small>Extract the invoice</small>
+                </div>
+                <i aria-hidden="true">→</i>
+                <div class="review-path__step">
+                  <span>02</span>
+                  <strong>Check</strong>
+                  <small>Math, duplicates, accounts</small>
+                </div>
+                <i aria-hidden="true">→</i>
+                <div class="review-path__step review-path__step--decision">
+                  <span>03</span>
+                  <strong>Decide</strong>
+                  <small>Apply the customer's rules</small>
+                </div>
+              </div>
+              <div class="review-path__outcomes">
+                <div><span>LOW RISK</span><strong>Ready for the next step</strong></div>
+                <div><span>REVIEW RULE MATCHED</span><strong>Stop and explain why</strong></div>
+              </div>
+              <figcaption id="review-path-caption">
+                The model reads the document. Deterministic checks and customer policy decide what
+                happens next.
+              </figcaption>
+            </figure>
+
             <h2>The customer should own the rule</h2>
 
-            <p>The same review rule will not work for every company.</p>
+            <p>Start with the obvious problem: the same rule will not work for every company.</p>
 
             <p>
               A $10,000 invoice may be ordinary for one business and alarming for another. One
@@ -132,13 +170,17 @@
             </p>
 
             <p>
-              Every unnecessary stop adds another item to somebody's queue. Let the queue grow long
-              enough and approval becomes a habit.
+              That choice belongs close to the work. The controller knows which vendors are normal,
+              which amounts matter, and which mistakes would be painful. The software should apply
+              that policy consistently.
             </p>
 
             <h2>A person needs a reason for the interruption</h2>
 
-            <p>“Please review this invoice” is not enough.</p>
+            <p>
+              Now imagine the invoice does stop. A message that says “Please review this invoice”
+              has pushed the hard work back onto the person.
+            </p>
 
             <p>
               The reviewer should know why the invoice stopped. They should see the original
@@ -147,20 +189,34 @@
               from scratch.
             </p>
 
-            <p>The reason should be plain:</p>
-
-            <ul>
-              <li>The amount crossed your limit.</li>
-              <li>The invoice math did not add up.</li>
-              <li>The selected account could not be found in the ledger.</li>
-              <li>This file appears to be a duplicate.</li>
-              <li>Your company requires approval before this action.</li>
-            </ul>
+            <figure class="review-card-demo" aria-labelledby="review-card-caption">
+              <div class="review-card-demo__head">
+                <span>REVIEW REQUIRED</span>
+                <strong>Invoice 1048</strong>
+              </div>
+              <div class="review-card-demo__grid">
+                <div>
+                  <span>WHY IT STOPPED</span>
+                  <strong>Total exceeds your $10,000 review rule</strong>
+                </div>
+                <div>
+                  <span>WHAT THE SYSTEM FOUND</span>
+                  <strong>$12,420.00 · Vendor matched · Math passed</strong>
+                </div>
+                <div>
+                  <span>WHAT YOU CAN DO</span>
+                  <strong>Approve · Correct · Reject</strong>
+                </div>
+              </div>
+              <figcaption id="review-card-caption">
+                A useful interruption carries the reason, the evidence, and the available action.
+              </figcaption>
+            </figure>
 
             <p>
-              Some of these checks exist in SyncABill today. Others belong to the stricter policy I
-              would want before enabling unattended accounting sync broadly. I would not describe a
-              planned control as though it had already survived production.
+              The exact message can be simple: the amount crossed your limit, the invoice math did
+              not add up, the selected account was missing, or the file appears to be a duplicate.
+              The reviewer should never have to guess why the system asked for help.
             </p>
 
             <h2>The model does not approve its own work</h2>
@@ -184,11 +240,31 @@
 
             <p>Each product needs a clear line between preparing an action and taking it.</p>
 
+            <figure class="authority-split" aria-labelledby="authority-split-caption">
+              <div>
+                <span>THE MODEL PROPOSES</span>
+                <strong>Vendor</strong>
+                <strong>Dates</strong>
+                <strong>Totals</strong>
+                <strong>Line items</strong>
+              </div>
+              <div>
+                <span>APPLICATION CODE CONTROLS</span>
+                <strong>Who has access</strong>
+                <strong>Whether checks passed</strong>
+                <strong>Whether review is required</strong>
+                <strong>Whether anything reaches the ledger</strong>
+              </div>
+              <figcaption id="authority-split-caption">
+                Useful model output stays separate from permission to act.
+              </figcaption>
+            </figure>
+
             <h2>A review button proves very little</h2>
 
             <p>
-              Teams often describe a system as safe because a person remains “in the loop.” That
-              phrase hides the questions that matter.
+              It is easy to say that a person remains “in the loop.” I find that phrase too vague to
+              be useful on its own. I want five concrete answers.
             </p>
 
             <ul>
@@ -203,6 +279,13 @@
               If the reviewer cannot understand the decision or stop it in time, their presence is
               mostly decorative. If they receive every routine case, fatigue will eventually weaken
               the control.
+            </p>
+
+            <p>
+              SyncABill currently keeps accounting sync manual in production. Before enabling
+              unattended sync broadly, I would want the automatic path to use the same locks,
+              duplicate checks, and provider safeguards as the manual path. The approval policy also
+              needs evidence from real corrections and misses.
             </p>
 
             <h2>Watch what escapes and what gets stuck</h2>
@@ -230,19 +313,22 @@
 
             <p>Human attention should go where judgment can still change the result.</p>
 
-            <h2>The real question</h2>
+            <h2>The lesson I kept</h2>
 
-            <p>“Is there a human in the loop?” is easy to answer.</p>
+            <p>
+              Adding an approval step is easy. Designing a good interruption is harder. The system
+              has to stop the right work, explain itself clearly, and leave the person enough time to
+              change the result.
+            </p>
 
             <div class="note-callout">
               <span>ASK THIS INSTEAD</span>
-              <strong>Which decisions deserve a person's attention before the software makes them real?</strong>
+              <strong>Which decisions deserve a person's attention?</strong>
             </div>
 
             <p>
-              That question forces a team to name the risk, give the reviewer useful evidence, and
-              admit that human attention is limited. It also produces a system that can improve
-              when the next failure arrives.
+              Ask that early. It forces the team to name the risk, respect the reviewer's time, and
+              decide exactly where the software's authority ends.
             </p>
 
             <div class="note-actions">
