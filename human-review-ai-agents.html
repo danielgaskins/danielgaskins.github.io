@@ -40,7 +40,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260805c" />
     <script src="./script.js" defer></script>
     <script type="application/ld+json">
       {
@@ -96,7 +96,7 @@
 
         <div class="note-layout section-shell">
           <aside class="note-rail" aria-label="Article summary">
-            <span>THE QUESTION</span>
+            <span>QUESTION:</span>
             <strong>Which decisions deserve a person's attention?</strong>
           </aside>
 
@@ -124,33 +124,16 @@
               <strong>Human review only helps while the human is still paying attention.</strong>
             </div>
 
-            <figure class="review-path" aria-labelledby="review-path-caption">
-              <div class="review-path__track">
-                <div class="review-path__step">
-                  <span>01</span>
-                  <strong>Read</strong>
-                  <small>Extract the invoice</small>
-                </div>
-                <i aria-hidden="true">→</i>
-                <div class="review-path__step">
-                  <span>02</span>
-                  <strong>Check</strong>
-                  <small>Math, duplicates, accounts</small>
-                </div>
-                <i aria-hidden="true">→</i>
-                <div class="review-path__step review-path__step--decision">
-                  <span>03</span>
-                  <strong>Decide</strong>
-                  <small>Apply the customer's rules</small>
-                </div>
-              </div>
-              <div class="review-path__outcomes">
-                <div><span>LOW RISK</span><strong>Ready for the next step</strong></div>
-                <div><span>REVIEW RULE MATCHED</span><strong>Stop and explain why</strong></div>
-              </div>
-              <figcaption id="review-path-caption">
-                The model reads the document. Deterministic checks and customer policy decide what
-                happens next.
+            <figure class="note-image" aria-labelledby="review-queue-caption">
+              <img
+                src="./assets/img/human-review-queue-v1.webp"
+                width="1400"
+                height="788"
+                loading="lazy"
+                alt="An attentive reviewer reading one invoice while a long queue of similar invoices waits behind her"
+              />
+              <figcaption id="review-queue-caption">
+                Every unnecessary stop spends a little of the reviewer's attention.
               </figcaption>
             </figure>
 
@@ -189,29 +172,20 @@
               from scratch.
             </p>
 
-            <figure class="review-card-demo" aria-labelledby="review-card-caption">
-              <div class="review-card-demo__head">
-                <span>REVIEW REQUIRED</span>
-                <strong>Invoice 1048</strong>
-              </div>
-              <div class="review-card-demo__grid">
-                <div>
-                  <span>WHY IT STOPPED</span>
-                  <strong>Total exceeds your $10,000 review rule</strong>
-                </div>
-                <div>
-                  <span>WHAT THE SYSTEM FOUND</span>
-                  <strong>$12,420.00 · Vendor matched · Math passed</strong>
-                </div>
-                <div>
-                  <span>WHAT YOU CAN DO</span>
-                  <strong>Approve · Correct · Reject</strong>
-                </div>
-              </div>
-              <figcaption id="review-card-caption">
-                A useful interruption carries the reason, the evidence, and the available action.
-              </figcaption>
-            </figure>
+            <ol class="review-details">
+              <li>
+                <strong>Say why it stopped.</strong>
+                The total crossed your $10,000 review rule.
+              </li>
+              <li>
+                <strong>Show what already passed.</strong>
+                The vendor matched and the invoice math checked out.
+              </li>
+              <li>
+                <strong>Make the next action clear.</strong>
+                Approve it, correct it, or reject it.
+              </li>
+            </ol>
 
             <p>
               The exact message can be simple: the amount crossed your limit, the invoice math did
@@ -240,23 +214,16 @@
 
             <p>Each product needs a clear line between preparing an action and taking it.</p>
 
-            <figure class="authority-split" aria-labelledby="authority-split-caption">
-              <div>
-                <span>THE MODEL PROPOSES</span>
-                <strong>Vendor</strong>
-                <strong>Dates</strong>
-                <strong>Totals</strong>
-                <strong>Line items</strong>
-              </div>
-              <div>
-                <span>APPLICATION CODE CONTROLS</span>
-                <strong>Who has access</strong>
-                <strong>Whether checks passed</strong>
-                <strong>Whether review is required</strong>
-                <strong>Whether anything reaches the ledger</strong>
-              </div>
-              <figcaption id="authority-split-caption">
-                Useful model output stays separate from permission to act.
+            <figure class="note-image" aria-labelledby="authority-boundary-caption">
+              <img
+                src="./assets/img/human-review-boundary-v1.webp"
+                width="1400"
+                height="798"
+                loading="lazy"
+                alt="Invoice data moving through a guarded checkpoint before one verified document reaches an accounting file"
+              />
+              <figcaption id="authority-boundary-caption">
+                Useful model output still has to pass checks and policy before it can affect the ledger.
               </figcaption>
             </figure>
 
