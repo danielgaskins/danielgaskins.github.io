@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A practical way to decide which AI actions need review, what the reviewer needs to see, and how to keep approval queues from becoming rubber stamps."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta property="og:title" content="Human review stops working when everything needs review" />
+    <meta
+      property="og:description"
+      content="Every review consumes a person's attention. The software has to know which actions deserve it."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://danielgaskins.com/human-review-ai-agents.html" />
+    <meta property="og:site_name" content="Daniel Gaskins" />
+    <meta property="article:author" content="Daniel Gaskins" />
+    <meta property="article:published_time" content="2026-08-05" />
+    <meta property="og:image" content="https://danielgaskins.com/assets/img/human-review-og.jpg" />
+    <meta property="og:image:secure_url" content="https://danielgaskins.com/assets/img/human-review-og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A review queue growing from a useful decision into repeated approval buttons" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Human review stops working when everything needs review" />
+    <meta
+      name="twitter:description"
+      content="Every review consumes a person's attention. The software has to know which actions deserve it."
+    />
+    <meta name="twitter:image" content="https://danielgaskins.com/assets/img/human-review-og.jpg" />
+    <meta name="twitter:image:alt" content="A review queue growing from a useful decision into repeated approval buttons" />
+    <link rel="canonical" href="https://danielgaskins.com/human-review-ai-agents.html" />
+    <title>Human review stops working when everything needs review | Daniel Gaskins</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Human review stops working when everything needs review",
+        "description": "A practical way to decide which AI actions need review, what the reviewer needs to see, and how to keep approval queues from becoming rubber stamps.",
+        "image": "https://danielgaskins.com/assets/img/human-review-og.jpg",
+        "author": {"@type": "Person", "name": "Daniel Gaskins", "url": "https://danielgaskins.com/"},
+        "datePublished": "2026-08-05",
+        "mainEntityOfPage": "https://danielgaskins.com/human-review-ai-agents.html"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="./" aria-label="Daniel Gaskins, home">
+        <span>DG</span>
+        <span class="wordmark__name">Daniel Gaskins</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="./#work">Work</a>
+        <a href="./#notes">Notes</a>
+        <a href="./#about">About</a>
+        <a href="./resume.html">Résumé</a>
+        <a class="nav-cta" href="mailto:hello@danielgaskins.com">Talk with me</a>
+      </nav>
+    </header>
+
+    <main id="main" class="note-page">
+      <article>
+        <header class="note-hero section-shell">
+          <p class="eyebrow"><span class="status-dot"></span> Field note / Human review</p>
+          <h1>Human review stops working when everything needs review.</h1>
+          <p class="note-hero__lede">
+            Every review consumes a person's attention. The software has to know which actions
+            deserve it.
+          </p>
+          <div class="note-byline">
+            <span>Daniel Gaskins</span>
+            <time datetime="2026-08-05">August 5, 2026</time>
+            <span>5 minute read</span>
+          </div>
+        </header>
+
+        <div class="note-layout section-shell">
+          <aside class="note-rail" aria-label="Article summary">
+            <span>THE QUESTION</span>
+            <strong>Which decisions deserve a person's attention before the software makes them real?</strong>
+          </aside>
+
+          <div class="note-body">
+            <p class="note-deck">
+              While building SyncABill, I kept running into one question: which invoices should
+              the software stop?
+            </p>
+
+            <p>
+              Stop every invoice and the customer gets another inbox to clear. Stop none and one
+              bad total can become a real bill in QuickBooks or Xero.
+            </p>
+
+            <div class="note-callout">
+              <span>THE LIMIT</span>
+              <strong>Human review only helps while the human is still paying attention.</strong>
+            </div>
+
+            <h2>The customer should own the rule</h2>
+
+            <p>The same review rule will not work for every company.</p>
+
+            <p>
+              A $10,000 invoice may be ordinary for one business and alarming for another. One
+              controller may want to inspect every invoice from a new vendor. Another may care most
+              about a total that does not match the line items.
+            </p>
+
+            <p>
+              SyncABill lets the account controller choose the rules that require review. An amount
+              threshold is one example. The product does not impose a universal $10,000 limit.
+            </p>
+
+            <p>
+              Every unnecessary stop adds another item to somebody's queue. Let the queue grow long
+              enough and approval becomes a habit.
+            </p>
+
+            <h2>A person needs a reason for the interruption</h2>
+
+            <p>“Please review this invoice” is not enough.</p>
+
+            <p>
+              The reviewer should know why the invoice stopped. They should see the original
+              document, the extracted fields, and the check that failed. They need enough
+              information to approve it, correct it, or reject it without starting the investigation
+              from scratch.
+            </p>
+
+            <p>The reason should be plain:</p>
+
+            <ul>
+              <li>The amount crossed your limit.</li>
+              <li>The invoice math did not add up.</li>
+              <li>The selected account could not be found in the ledger.</li>
+              <li>This file appears to be a duplicate.</li>
+              <li>Your company requires approval before this action.</li>
+            </ul>
+
+            <p>
+              Some of these checks exist in SyncABill today. Others belong to the stricter policy I
+              would want before enabling unattended accounting sync broadly. I would not describe a
+              planned control as though it had already survived production.
+            </p>
+
+            <h2>The model does not approve its own work</h2>
+
+            <p>
+              The document model proposes the vendor, dates, totals, line items, and account.
+              Application code checks those values, applies the controller's rules, and controls the
+              accounting write.
+            </p>
+
+            <p>
+              The model can produce useful data. It never receives permission to move money or
+              change a ledger.
+            </p>
+
+            <p>
+              The same rule applies outside accounting. An agent may draft an email without sending
+              it. It may prepare a refund without issuing it. It may suggest a permission change
+              without granting access.
+            </p>
+
+            <p>Each product needs a clear line between preparing an action and taking it.</p>
+
+            <h2>A review button proves very little</h2>
+
+            <p>
+              Teams often describe a system as safe because a person remains “in the loop.” That
+              phrase hides the questions that matter.
+            </p>
+
+            <ul>
+              <li>Which actions stop?</li>
+              <li>Why did they stop?</li>
+              <li>What can the reviewer change?</li>
+              <li>Can the action still be prevented?</li>
+              <li>What happens after rejection?</li>
+            </ul>
+
+            <p>
+              If the reviewer cannot understand the decision or stop it in time, their presence is
+              mostly decorative. If they receive every routine case, fatigue will eventually weaken
+              the control.
+            </p>
+
+            <h2>Watch what escapes and what gets stuck</h2>
+
+            <p>
+              A dangerous action can slip through when it should have stopped. A safe action can
+              also waste a person's time in review.
+            </p>
+
+            <p>
+              Those mistakes have different costs. A duplicate bill can be much worse than an
+              unnecessary review. The policy should reflect that difference, then change as the
+              team sees real failures.
+            </p>
+
+            <p>Useful measures include:</p>
+
+            <ul>
+              <li>Incorrect actions that escaped review.</li>
+              <li>Safe actions that were stopped.</li>
+              <li>Fields people changed before approval.</li>
+              <li>Time spent waiting for review.</li>
+              <li>Actions reversed after approval.</li>
+            </ul>
+
+            <p>Human attention should go where judgment can still change the result.</p>
+
+            <h2>The real question</h2>
+
+            <p>“Is there a human in the loop?” is easy to answer.</p>
+
+            <div class="note-callout">
+              <span>ASK THIS INSTEAD</span>
+              <strong>Which decisions deserve a person's attention before the software makes them real?</strong>
+            </div>
+
+            <p>
+              That question forces a team to name the risk, give the reviewer useful evidence, and
+              admit that human attention is limited. It also produces a system that can improve
+              when the next failure arrives.
+            </p>
+
+            <div class="note-actions">
+              <a class="button button--primary" href="./syncabill.html">See how SyncABill works</a>
+              <a class="button button--quiet" href="./agent-eval-mutation-testing.html">Read the agent eval note</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span data-year></span> Daniel Gaskins</p>
+      <p>Physics · Models · Products</p>
+      <a href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Human review stops working when everything needs review</title>
+  <desc id="desc">Editorial card showing a review queue growing from a useful decision into repeated approval buttons</desc>
+  <rect width="1200" height="630" fill="#0b0d0c"/>
+  <path d="M58 72h1084" stroke="#343833"/>
+  <circle cx="70" cy="114" r="6" fill="#c7ff4a"/>
+  <text x="90" y="120" fill="#e7e8df" font-family="monospace" font-size="15" letter-spacing="2">FIELD NOTE / HUMAN REVIEW</text>
+
+  <text x="60" y="222" fill="#f2f0e9" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="500" letter-spacing="-3">
+    <tspan x="60" dy="0">Human review stops working</tspan>
+    <tspan x="60" dy="72">when everything needs review.</tspan>
+  </text>
+
+  <text x="62" y="434" fill="#9ca198" font-family="Arial, Helvetica, sans-serif" font-size="24">
+    <tspan x="62" dy="0">Every review consumes a person's attention.</tspan>
+    <tspan x="62" dy="34">The software has to know which actions deserve it.</tspan>
+  </text>
+
+  <g transform="translate(900 167)">
+    <rect x="0" y="0" width="272" height="74" fill="#171a17" stroke="#5a5f57"/>
+    <text x="20" y="29" fill="#c7ff4a" font-family="monospace" font-size="12">REVIEW REQUIRED</text>
+    <text x="20" y="53" fill="#e7e8df" font-family="Arial, Helvetica, sans-serif" font-size="15">Invoice total failed check</text>
+
+    <rect x="18" y="88" width="254" height="68" fill="#141714" stroke="#41463f" opacity=".82"/>
+    <text x="38" y="115" fill="#8b9088" font-family="monospace" font-size="11">REVIEW REQUIRED</text>
+    <rect x="182" y="124" width="70" height="20" fill="#c7ff4a"/>
+    <text x="195" y="139" fill="#0b0d0c" font-family="monospace" font-size="9">APPROVE</text>
+
+    <rect x="36" y="170" width="236" height="62" fill="#121512" stroke="#343833" opacity=".64"/>
+    <text x="56" y="197" fill="#71766f" font-family="monospace" font-size="10">REVIEW REQUIRED</text>
+    <rect x="190" y="203" width="62" height="17" fill="#8cbf24" opacity=".72"/>
+
+    <rect x="54" y="246" width="218" height="56" fill="#101310" stroke="#292d29" opacity=".42"/>
+    <text x="74" y="279" fill="#555a54" font-family="monospace" font-size="9">REVIEW REQUIRED</text>
+  </g>
+
+  <path d="M60 556h1080" stroke="#343833"/>
+  <rect x="60" y="577" width="31" height="31" fill="#c7ff4a"/>
+  <text x="67" y="598" fill="#0b0d0c" font-family="monospace" font-size="12" font-weight="700">DG</text>
+  <text x="106" y="599" fill="#b8bcb4" font-family="Arial, Helvetica, sans-serif" font-size="15">Daniel Gaskins</text>
+</svg>
