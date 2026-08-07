@@ -18,6 +18,8 @@ Then open `http://localhost:8000`.
 - `mendmark.html` — ML agent-evaluation project case study
 - `syncabill.html` — applied AI invoice-workflow case study
 - `resume.html` / `resume.css` — browser and print versions of the résumé
+- `meet.html` / `meet.css` / `meet.js` — lightweight calendar booking interface
+- `meet-backend/` — Google Apps Script calendar, invitation, and cancellation service
 - `styles.css` — responsive visual system
 - `script.js` — navigation, header, and reveal interactions
 - `favicon.svg` — vector favicon

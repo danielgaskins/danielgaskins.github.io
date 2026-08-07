@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Book a 30-minute conversation with Daniel Gaskins." />
+    <meta name="theme-color" content="#f2f0e9" />
+    <meta property="og:title" content="Meet Daniel Gaskins" />
+    <meta property="og:description" content="Choose a time for a 30-minute video call." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://danielgaskins.com/meet.html" />
+    <link rel="canonical" href="https://danielgaskins.com/meet.html" />
+    <title>Meet Daniel Gaskins</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./meet.css" />
+    <script src="./meet-config.js"></script>
+    <script src="./meet.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#scheduler">Skip to scheduling</a>
+
+    <header class="meet-header">
+      <a class="wordmark" href="./" aria-label="Daniel Gaskins, home">
+        <span>DG</span><span>Daniel Gaskins</span>
+      </a>
+      <a class="back-link" href="./">Back to the site <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="meet-shell">
+      <section class="meeting-intro" aria-labelledby="page-title">
+        <p class="kicker"><span></span> Open conversation</p>
+        <h1 id="page-title">Let’s put<br />30 minutes<br /><em>on the clock.</em></h1>
+        <p class="intro-copy">Pick a time that works. I’ll send a calendar invitation with a Google Meet link.</p>
+
+        <dl class="meeting-facts">
+          <div><dt>Length</dt><dd>30 minutes</dd></div>
+          <div><dt>Where</dt><dd>Google Meet</dd></div>
+          <div><dt>Cost</dt><dd>None</dd></div>
+        </dl>
+
+        <p class="privacy-note">Your details are used only to arrange this conversation. No mailing list and no tracking pixels.</p>
+      </section>
+
+      <section id="scheduler" class="scheduler" aria-labelledby="scheduler-title">
+        <div class="scheduler__topline">
+          <div>
+            <p class="step-label" data-step-label>Step 1 of 3</p>
+            <h2 id="scheduler-title" data-step-title>Choose a day</h2>
+          </div>
+          <div class="step-dots" aria-hidden="true"><i class="is-active"></i><i></i><i></i></div>
+        </div>
+
+        <div class="notice notice--error" data-error role="alert" hidden>
+          <strong>That did not work.</strong>
+          <span data-error-message>Please try again.</span>
+          <button type="button" data-retry>Try again</button>
+        </div>
+
+        <div class="scheduler__loading" data-loading aria-live="polite">
+          <div class="loading-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p>Checking Daniel’s calendar…</p>
+        </div>
+
+        <div class="scheduler__panel" data-day-panel hidden>
+          <div class="timezone-row">
+            <label for="timezone">Times shown in</label>
+            <select id="timezone" data-timezone></select>
+          </div>
+          <div class="day-list" data-days role="list" aria-label="Available days"></div>
+          <p class="empty-state" data-empty hidden>No open times are available right now. You can still <a href="mailto:hello@danielgaskins.com?subject=Finding%20a%20time%20to%20talk">email Daniel</a> to find another time.</p>
+        </div>
+
+        <div class="scheduler__panel" data-time-panel hidden>
+          <button class="panel-back" type="button" data-back-day>← Change day</button>
+          <p class="selection-heading" data-selected-day></p>
+          <div class="time-grid" data-times role="group" aria-label="Available times"></div>
+        </div>
+
+        <form class="scheduler__panel booking-form" data-form hidden method="post" novalidate target="booking-response">
+          <button class="panel-back" type="button" data-back-time>← Change time</button>
+          <div class="booking-summary" data-booking-summary></div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required />
+              <span class="field-error" data-field-error="name"></span>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required />
+              <span class="field-error" data-field-error="email"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="company">Company <span>optional</span></label>
+            <input id="company" name="company" type="text" autocomplete="organization" maxlength="120" />
+          </div>
+          <div class="field">
+            <label for="topic">What would you like to talk about?</label>
+            <textarea id="topic" name="topic" rows="4" maxlength="600" required></textarea>
+            <div class="field-meta"><span class="field-error" data-field-error="topic"></span><span><b data-count>0</b>/600</span></div>
+          </div>
+
+          <div class="trap" aria-hidden="true">
+            <label for="website">Website</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <input type="hidden" name="action" value="book" />
+          <input type="hidden" name="start" data-start />
+          <input type="hidden" name="timezone" data-form-timezone />
+          <input type="hidden" name="nonce" data-nonce />
+          <input type="hidden" name="requestId" data-request-id />
+          <input type="hidden" name="parentOrigin" data-parent-origin />
+
+          <button class="submit-button" type="submit" data-submit>
+            <span data-submit-label>Book the conversation</span><span aria-hidden="true">↗</span>
+          </button>
+          <p class="form-footnote">You will receive a calendar invitation. You can cancel from the confirmation link in that invitation.</p>
+        </form>
+
+        <div class="scheduler__panel confirmation" data-confirmation hidden aria-live="polite">
+          <span class="confirmation__mark" aria-hidden="true">✓</span>
+          <p class="step-label">You are booked</p>
+          <h2>See you then.</h2>
+          <p data-confirmation-copy></p>
+          <div class="confirmation__actions">
+            <a class="primary-link" data-google-link target="_blank" rel="noreferrer" hidden>Open in Google Calendar</a>
+            <button class="text-button" type="button" data-download-ics>Download .ics for Apple or Outlook</button>
+          </div>
+          <p class="confirmation__email">A calendar invitation is on its way to <strong data-confirmation-email></strong>.</p>
+        </div>
+
+        <div class="scheduler__panel cancellation" data-cancellation hidden>
+          <p class="step-label">Cancel a meeting</p>
+          <h2>Plans changed?</h2>
+          <p>Cancel this meeting and both calendars will be updated.</p>
+          <form data-cancel-form method="post" target="booking-response">
+            <input type="hidden" name="action" value="cancel" />
+            <input type="hidden" name="token" data-cancel-token />
+            <input type="hidden" name="nonce" data-cancel-nonce />
+            <input type="hidden" name="parentOrigin" data-cancel-origin />
+            <button class="submit-button submit-button--danger" type="submit" data-cancel-submit>Cancel the meeting</button>
+          </form>
+        </div>
+
+        <iframe class="response-frame" name="booking-response" data-response-frame title="Calendar service response" aria-hidden="true" tabindex="-1"></iframe>
+      </section>
+    </main>
+
+    <footer class="meet-footer"><span>© <span data-year></span> Daniel Gaskins</span><a href="mailto:hello@danielgaskins.com">hello@danielgaskins.com</a></footer>
+  </body>
+</html>
