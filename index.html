@@ -8,14 +8,26 @@
       content="Daniel Gaskins is an applied AI and machine learning engineer focused on agent automation, evaluation, computer vision, and reliable ML systems."
     />
     <meta name="theme-color" content="#0b0d0c" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta property="og:title" content="Daniel Gaskins — Applied AI &amp; Machine Learning Engineer" />
     <meta
       property="og:description"
       content="I build and evaluate useful AI systems for messy, real-world problems."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://danielgaskins.com" />
+    <meta property="og:url" content="https://danielgaskins.com/" />
+    <meta property="og:site_name" content="Daniel Gaskins" />
+    <meta property="og:image" content="https://danielgaskins.com/assets/img/daniel-gaskins-portrait.webp" />
+    <meta property="og:image:width" content="1122" />
+    <meta property="og:image:height" content="1402" />
+    <meta property="og:image:alt" content="Portrait of Daniel Gaskins, applied AI and machine learning engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Daniel Gaskins — Applied AI &amp; Machine Learning Engineer" />
+    <meta name="twitter:description" content="I build and evaluate useful AI systems for messy, real-world problems." />
+    <meta name="twitter:image" content="https://danielgaskins.com/assets/img/daniel-gaskins-portrait.webp" />
+    <meta name="twitter:image:alt" content="Portrait of Daniel Gaskins, applied AI and machine learning engineer" />
     <link rel="canonical" href="https://danielgaskins.com/" />
+    <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins — Field Notes" href="https://danielgaskins.com/feed.xml" />
     <title>Daniel Gaskins — Applied AI &amp; Machine Learning Engineer</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,29 +41,54 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Daniel Gaskins",
-        "url": "https://danielgaskins.com/",
-        "email": "mailto:hello@danielgaskins.com",
-        "sameAs": [
-          "https://github.com/danielgaskins",
-          "https://www.linkedin.com/in/daniel-gaskins-ml/"
-        ],
-        "jobTitle": "Applied AI and Machine Learning Engineer",
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "University of California, San Diego"
-        },
-        "knowsAbout": [
-          "Machine learning",
-          "Model training",
-          "Model evaluation",
-          "Research engineering",
-          "AI agents",
-          "Document AI",
-          "Financial workflow automation",
-          "Computer vision",
-          "Reliable machine learning systems"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://danielgaskins.com/#website",
+            "url": "https://danielgaskins.com/",
+            "name": "Daniel Gaskins",
+            "description": "Applied AI and machine learning engineering portfolio and field notes.",
+            "publisher": {"@id": "https://danielgaskins.com/#daniel-gaskins"}
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://danielgaskins.com/#profile",
+            "url": "https://danielgaskins.com/",
+            "name": "Daniel Gaskins — Applied AI and Machine Learning Engineer",
+            "dateModified": "2026-08-21",
+            "isPartOf": {"@id": "https://danielgaskins.com/#website"},
+            "mainEntity": {"@id": "https://danielgaskins.com/#daniel-gaskins"}
+          },
+          {
+            "@type": "Person",
+            "@id": "https://danielgaskins.com/#daniel-gaskins",
+            "name": "Daniel Gaskins",
+            "url": "https://danielgaskins.com/",
+            "image": "https://danielgaskins.com/assets/img/daniel-gaskins-portrait.webp",
+            "email": "mailto:hello@danielgaskins.com",
+            "description": "Founder and applied AI engineer focused on agent evaluation, document AI, computer vision, and reliable machine learning systems.",
+            "sameAs": [
+              "https://github.com/danielgaskins",
+              "https://www.linkedin.com/in/daniel-gaskins-ml/",
+              "https://pypi.org/user/danielgaskins/"
+            ],
+            "jobTitle": "Applied AI and Machine Learning Engineer",
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of California, San Diego"
+            },
+            "knowsAbout": [
+              "Machine learning",
+              "Model training",
+              "Model evaluation",
+              "Research engineering",
+              "AI agents",
+              "Document AI",
+              "Financial workflow automation",
+              "Computer vision",
+              "Reliable machine learning systems"
+            ]
+          }
         ]
       }
     </script>
@@ -420,7 +457,8 @@
               <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg>
             </a>
             <a class="button button--quiet" href="./assets/Daniel_Gaskins_Resume.pdf" download>Download résumé</a>
-            <a class="button button--quiet" href="https://www.linkedin.com/in/daniel-gaskins-ml/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="button button--quiet" href="https://github.com/danielgaskins" target="_blank" rel="me noreferrer">GitHub</a>
+            <a class="button button--quiet" href="https://www.linkedin.com/in/daniel-gaskins-ml/" target="_blank" rel="me noreferrer">LinkedIn</a>
             <a class="button button--quiet" href="./meet.html">Put 30 minutes on the calendar</a>
           </div>
         </div>

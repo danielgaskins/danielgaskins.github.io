@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Daniel Gaskins — Field Notes</title>
+    <link>https://danielgaskins.com/blog.html</link>
+    <description>Practical notes on agent evaluation, human review, and reliable AI systems.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 21 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://danielgaskins.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Human review stops working when everything needs review</title>
+      <link>https://danielgaskins.com/human-review-ai-agents.html</link>
+      <guid isPermaLink="true">https://danielgaskins.com/human-review-ai-agents.html</guid>
+      <pubDate>Wed, 05 Aug 2026 12:00:00 GMT</pubDate>
+      <description>A practical way to decide which AI actions need review, what the reviewer needs to see, and how to keep approval queues from becoming rubber stamps.</description>
+    </item>
+    <item>
+      <title>Your agent eval passed. Would it catch a broken tool call?</title>
+      <link>https://danielgaskins.com/agent-eval-mutation-testing.html</link>
+      <guid isPermaLink="true">https://danielgaskins.com/agent-eval-mutation-testing.html</guid>
+      <pubDate>Mon, 03 Aug 2026 12:00:00 GMT</pubDate>
+      <description>A practical explanation of mutation testing for agent evals, with examples of broken tool calls that a passing score can miss.</description>
+    </item>
+  </channel>
+</rss>
