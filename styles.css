@@ -213,7 +213,9 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
 .about__portrait-frame::after { content: ""; position: absolute; z-index: -1; inset: 12px -12px -12px 12px; background: var(--acid); }
 .about__portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: 1px solid var(--ink); }
 .about__portrait figcaption { margin-top: 25px; color: var(--muted); font: 400 9px var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+.about__heading { margin: 0 0 22px; font-size: clamp(28px, 2.5vw, 42px); line-height: 1.08; letter-spacing: -.035em; font-weight: 500; }
 .about__details > p { margin: 0 0 24px; color: var(--muted); font-size: 16px; line-height: 1.8; }
+.about__details > p a { color: var(--ink); text-underline-offset: 3px; }
 .facts { margin: 58px 0 0; }
 .facts > div { display: grid; grid-template-columns: 100px 1fr; gap: 22px; padding: 20px 0; border-top: 1px solid var(--line); }
 .facts dt { font: 400 9px var(--mono); color: var(--muted); text-transform: uppercase; }
@@ -282,6 +284,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
 .note-hero h1 { max-width: 1180px; margin: 0; font-size: clamp(58px, 7vw, 112px); line-height: .94; letter-spacing: -.065em; font-weight: 500; }
 .note-hero__lede { max-width: 800px; margin: 38px 0 0; color: var(--muted); font-size: clamp(19px, 1.7vw, 26px); line-height: 1.55; }
 .note-byline { display: flex; flex-wrap: wrap; gap: 18px 32px; margin-top: 44px; color: var(--muted); font: 400 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+.note-byline a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .note-layout { padding-block: 110px 145px; display: grid; grid-template-columns: 250px minmax(0, 820px); gap: clamp(60px, 9vw, 150px); }
 .note-rail { align-self: start; position: sticky; top: 100px; padding-top: 12px; border-top: 1px solid var(--line); }
 .note-rail span { color: var(--green); font: 500 9px var(--mono); letter-spacing: .08em; }

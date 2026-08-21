@@ -63,8 +63,14 @@
             "@type": "Person",
             "@id": "https://danielgaskins.com/#daniel-gaskins",
             "name": "Daniel Gaskins",
+            "givenName": "Daniel",
+            "familyName": "Gaskins",
             "url": "https://danielgaskins.com/",
-            "image": "https://danielgaskins.com/assets/img/daniel-gaskins-portrait.webp",
+            "image": [
+              "https://danielgaskins.com/assets/img/daniel-gaskins-profile-1x1.jpg",
+              "https://danielgaskins.com/assets/img/daniel-gaskins-profile-4x3.jpg",
+              "https://danielgaskins.com/assets/img/daniel-gaskins-profile-16x9.jpg"
+            ],
             "email": "mailto:hello@danielgaskins.com",
             "description": "Founder and applied AI engineer focused on agent evaluation, document AI, computer vision, and reliable machine learning systems.",
             "sameAs": [
@@ -73,6 +79,11 @@
               "https://pypi.org/user/danielgaskins/"
             ],
             "jobTitle": "Applied AI and Machine Learning Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "SyncABill",
+              "url": "https://syncabill.com/"
+            },
             "alumniOf": {
               "@type": "CollegeOrUniversity",
               "name": "University of California, San Diego"
@@ -122,11 +133,11 @@
         <div class="hero__copy" data-reveal>
           <p class="eyebrow"><span class="status-dot"></span> Applied AI / machine learning engineering</p>
           <h1>
-            I like models that
-            <span class="hero__emphasis">survive the real world.</span>
+            Daniel Gaskins builds
+            <span class="hero__emphasis">AI that survives the real world.</span>
           </h1>
           <p class="hero__lede">
-            I’m Daniel, a founder and applied ML engineer. I turn ambiguous questions into
+            I’m a founder and applied ML engineer. I turn ambiguous questions into
             testable experiments, inspect where models fail, and build useful systems around
             what survives.
           </p>
@@ -426,14 +437,21 @@
             </div>
             <figcaption>Daniel Gaskins / Founder + ML engineer</figcaption>
           </figure>
+          <h2 class="about__heading">About Daniel Gaskins</h2>
           <p>
-            I’m Daniel. I studied condensed matter physics at UC San Diego for roughly three
-            years, then left to build companies and software products.
+            Daniel Gaskins is a founder and applied AI and machine learning engineer who builds
+            reliable systems around models, tools, and real business processes. He created
+            <a href="./mendmark.html">Mendmark</a>, a mutation-testing system for agent
+            evaluations; built <a href="./lightgbm-model-to-code.html">lgbm-to-code</a> for
+            dependency-free cross-runtime model inference; and founded
+            <a href="./syncabill.html">SyncABill</a>, an AI-assisted invoice workflow.
           </p>
           <p>
-            I have spent the years since moving between equations, code, product decisions,
-            and users. I’m happiest with a hard problem, a fast feedback loop, and teammates
-            who care more about getting it right than looking right.
+            Daniel studied condensed matter physics at the University of California, San Diego
+            before moving into founder-led software and machine-learning work. His experience
+            spans agent evaluation, document AI, computer vision, production workflows, and
+            model deployment. He works from failure cases outward: define what must remain true,
+            build the smallest useful system, and test whether it holds up outside the demo.
           </p>
           <dl class="facts">
             <div><dt>Education</dt><dd>Condensed Matter Physics<br />University of California, San Diego</dd></div>

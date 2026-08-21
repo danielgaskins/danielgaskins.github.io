@@ -54,6 +54,24 @@ test("structured data blocks contain valid JSON", () => {
   assert.ok(count >= 6, "expected structured data on the main content pages");
 });
 
+test("the homepage and published articles reinforce the Daniel Gaskins entity", () => {
+  const homepage = htmlByPage.get("index.html");
+  assert.match(homepage, /<h1>[\s\S]*Daniel Gaskins builds/);
+  assert.match(homepage, /<h2 class="about__heading">About Daniel Gaskins<\/h2>/);
+
+  for (const page of [
+    "agent-eval-mutation-testing.html",
+    "human-review-ai-agents.html",
+    "lightgbm-model-to-code.html",
+  ]) {
+    assert.match(
+      htmlByPage.get(page),
+      /<a href="\.\/" rel="author">Daniel Gaskins<\/a>/,
+      `${page} must link its visible byline to the canonical author page`,
+    );
+  }
+});
+
 test("local HTML links resolve to files or page fragments", () => {
   for (const [page, html] of htmlByPage) {
     for (const match of html.matchAll(/href="([^"]+)"/g)) {
