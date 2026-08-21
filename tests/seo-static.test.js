@@ -7,6 +7,7 @@ const pages = [
   "index.html",
   "blog.html",
   "mendmark.html",
+  "lightgbm-model-to-code.html",
   "syncabill.html",
   "agent-eval-mutation-testing.html",
   "human-review-ai-agents.html",

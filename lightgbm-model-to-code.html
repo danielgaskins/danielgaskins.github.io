@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="How lgbm-to-code converts trained LightGBM models into dependency-free Python, C++17, and JavaScript while testing raw-score parity."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta property="og:title" content="LightGBM to Python, C++17 &amp; JavaScript" />
+    <meta
+      property="og:description"
+      content="Generate dependency-free inference code, then execute every target against LightGBM raw scores."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://danielgaskins.com/lightgbm-model-to-code.html" />
+    <meta property="og:site_name" content="Daniel Gaskins" />
+    <meta property="article:author" content="Daniel Gaskins" />
+    <meta property="article:published_time" content="2026-08-21" />
+    <meta property="og:image" content="https://danielgaskins.com/assets/img/lgbm-to-code-og-v1.png" />
+    <meta property="og:image:width" content="1730" />
+    <meta property="og:image:height" content="909" />
+    <meta property="og:image:alt" content="A decision tree becoming three parallel inference paths" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LightGBM to Python, C++17 &amp; JavaScript" />
+    <meta name="twitter:description" content="Dependency-free model inference with executed cross-runtime parity tests." />
+    <meta name="twitter:image" content="https://danielgaskins.com/assets/img/lgbm-to-code-og-v1.png" />
+    <meta name="twitter:image:alt" content="A decision tree becoming three parallel inference paths" />
+    <link rel="canonical" href="https://danielgaskins.com/lightgbm-model-to-code.html" />
+    <title>LightGBM to Python, C++ &amp; JavaScript | Daniel Gaskins</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "TechArticle",
+            "@id": "https://danielgaskins.com/lightgbm-model-to-code.html#article",
+            "headline": "LightGBM to Python, C++17 and JavaScript",
+            "description": "How lgbm-to-code generates dependency-free inference source and tests raw-score parity across three runtimes.",
+            "image": "https://danielgaskins.com/assets/img/lgbm-to-code-og-v1.png",
+            "datePublished": "2026-08-21",
+            "author": {"@id": "https://danielgaskins.com/#daniel-gaskins", "@type": "Person", "name": "Daniel Gaskins"},
+            "mainEntityOfPage": "https://danielgaskins.com/lightgbm-model-to-code.html",
+            "about": {"@id": "https://danielgaskins.com/lightgbm-model-to-code.html#software"}
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://danielgaskins.com/lightgbm-model-to-code.html#software",
+            "name": "lgbm-to-code",
+            "description": "Generate dependency-free Python, C++17, and JavaScript raw-score inference from trained one-output LightGBM models.",
+            "codeRepository": "https://github.com/danielgaskins/lgbm-to-code",
+            "downloadUrl": "https://pypi.org/project/lgbm-to-code/",
+            "programmingLanguage": ["Python", "C++", "JavaScript"],
+            "license": "https://opensource.org/license/mit",
+            "author": {"@id": "https://danielgaskins.com/#daniel-gaskins", "@type": "Person", "name": "Daniel Gaskins"}
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="./" aria-label="Daniel Gaskins, home">
+        <span>DG</span>
+        <span class="wordmark__name">Daniel Gaskins</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="./#work">Work</a>
+        <a href="./#capabilities">How I work</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./#about">About</a>
+        <a href="./resume.html">Résumé</a>
+        <a class="nav-cta" href="./meet.html">Talk with me</a>
+      </nav>
+    </header>
+
+    <main id="main" class="case-study">
+      <section class="case-hero section-shell">
+        <p class="eyebrow"><span class="status-dot"></span> Open source / cross-runtime inference</p>
+        <h1>A trained model should not need its training stack to make one prediction.</h1>
+        <p class="case-hero__lede">
+          lgbm-to-code turns a supported LightGBM ensemble into readable Python, C++17, or
+          JavaScript. The important part is not emitting source. It is checking that the emitted
+          source follows the same tree paths and returns the same raw score.
+        </p>
+        <div class="case-hero__actions">
+          <a class="button button--primary" href="https://github.com/danielgaskins/lgbm-to-code" target="_blank" rel="noreferrer">Inspect the source</a>
+          <a class="button button--quiet" href="#verification">See the parity test</a>
+        </div>
+      </section>
+
+      <section class="case-signal" aria-label="Current lgbm-to-code verification scope">
+        <div class="section-shell case-signal__grid">
+          <div><strong>03</strong><span>generated target languages</span></div>
+          <div><strong>1e−12</strong><span>relative and absolute tolerance</span></div>
+          <div><strong>09</strong><span>current repository tests</span></div>
+          <div><strong>00</strong><span>generated runtime dependencies</span></div>
+        </div>
+      </section>
+
+      <section class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">01 / THE BOUNDARY</p>
+        </div>
+        <div class="case-section__body">
+          <h2>Keep training in LightGBM. Move only the learned decisions.</h2>
+          <p class="case-section__lead">
+            Training still belongs in Python with LightGBM. At deployment, the package reads the
+            fitted model’s dumped trees and writes ordinary conditionals for the target runtime.
+          </p>
+          <div class="case-flow" aria-label="Model-to-code workflow">
+            <div><span>01</span><strong>Train</strong><small>fit in LightGBM</small></div>
+            <i>→</i>
+            <div><span>02</span><strong>Dump</strong><small>read tree structure</small></div>
+            <i>→</i>
+            <div><span>03</span><strong>Emit</strong><small>plain source code</small></div>
+            <i>→</i>
+            <div><span>04</span><strong>Execute</strong><small>compare raw scores</small></div>
+          </div>
+          <p>
+            The output is intentionally plain. A generated function accepts an ordered feature
+            vector and adds the leaf value reached in each tree. There is no serialized model
+            loader and no inference package to install in the target environment.
+          </p>
+        </div>
+      </section>
+
+      <section id="verification" class="case-section case-section--paper-dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">02 / PARITY</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Generated code is tested by running it.</h2>
+            <p class="case-section__lead">
+              The current suite trains a 17-tree LightGBM regression model on 120 rows, preserves
+              40 rows for comparison, and includes missing values. It generates all three targets,
+              then executes or compiles each one.
+            </p>
+            <div class="case-task-list">
+              <article>
+                <span>PYTHON</span>
+                <h3>Execute the generated function</h3>
+                <p>Load the emitted source into an isolated namespace and score every held-out row.</p>
+              </article>
+              <article>
+                <span>C++17</span>
+                <h3>Compile before comparing</h3>
+                <p>Build the emitted source with g++ and parse its double-precision output.</p>
+              </article>
+              <article>
+                <span>JAVASCRIPT</span>
+                <h3>Run the ES module in Node</h3>
+                <p>Restore missing values as NaN and execute every row through the generated module.</p>
+              </article>
+            </div>
+            <div class="case-note">
+              <span>THE ASSERTION</span>
+              <p>
+                Each result is compared with LightGBM’s <code>predict(..., raw_score=True)</code>
+                using both relative and absolute tolerances of 1e−12. This verifies the tested
+                model and rows; it is not a claim that every possible LightGBM model is supported.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-section--dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">03 / OUTPUT CONTRACT</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Return the raw score. Do not guess the objective transform.</h2>
+            <p class="case-section__lead">
+              Tree traversal and output semantics are separate responsibilities. The generated
+              function returns the ensemble’s raw score so the caller chooses the correct transform.
+            </p>
+            <div class="case-columns">
+              <div>
+                <h3>Regression</h3>
+                <ul>
+                  <li>Raw score is ordinarily the prediction</li>
+                  <li>Every tree contributes one leaf value</li>
+                  <li>Full double-precision literals are retained</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Binary classification</h3>
+                <ul>
+                  <li>Raw score is the logit</li>
+                  <li>The generated function does not claim probability</li>
+                  <li>The caller applies the appropriate objective transform</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">04 / MISSING VALUES</p>
+        </div>
+        <div class="case-section__body">
+          <h2>The default branch is part of the model.</h2>
+          <p class="case-section__lead">
+            A threshold alone does not describe a LightGBM split. The generated condition must
+            also preserve how that node treats NaN or zero and which child receives missing input.
+          </p>
+          <div class="case-task-list">
+            <article>
+              <span>NAN</span>
+              <h3>Use the runtime’s NaN check</h3>
+              <p>Python, C++17, and JavaScript each receive an explicit missing-value expression.</p>
+            </article>
+            <article>
+              <span>ZERO</span>
+              <h3>Treat zero and NaN as missing</h3>
+              <p>Nodes marked zero-as-missing route both values through the recorded default branch.</p>
+            </article>
+            <article>
+              <span>DIRECTION</span>
+              <h3>Preserve default-left exactly</h3>
+              <p>The emitted comparison changes with the node’s missing-value direction.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-section--paper-dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">05 / SCOPE</p>
+          </div>
+          <div class="case-section__body">
+            <h2>A narrow promise is easier to test honestly.</h2>
+            <div class="case-columns">
+              <div>
+                <h3>Accepted today</h3>
+                <ul>
+                  <li>One-output LightGBM Booster objects</li>
+                  <li>Fitted sklearn-style estimators</li>
+                  <li>Numerical less-than-or-equal splits</li>
+                  <li>None, NaN, and Zero missing routing</li>
+                  <li>Validated generated function names</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Rejected explicitly</h3>
+                <ul>
+                  <li>Multiclass ensembles</li>
+                  <li>Categorical splits</li>
+                  <li>Malformed or unfitted models</li>
+                  <li>Unknown missing-value modes</li>
+                  <li>Unsupported target languages</li>
+                </ul>
+              </div>
+            </div>
+            <div class="case-note">
+              <span>CALLER RESPONSIBILITY</span>
+              <p>
+                Generated code favors auditability and portability, not minimum code size or
+                maximum throughput. The caller still owns feature ordering, schema validation,
+                objective transforms, and deployment-specific performance testing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next section-shell">
+        <p class="section-index">06 / INSPECT IT</p>
+        <h2>Read the conditionals and rerun the parity suite.</h2>
+        <p>
+          The current repository contains the cross-runtime verification work described here.
+          PyPI hosts the earlier packaged release, so review the changelog and repository state
+          when choosing which behavior to depend on.
+        </p>
+        <div class="case-next__actions">
+          <a class="button button--primary" href="https://github.com/danielgaskins/lgbm-to-code" target="_blank" rel="noreferrer">View lgbm-to-code on GitHub</a>
+          <a class="button button--quiet" href="https://pypi.org/project/lgbm-to-code/" target="_blank" rel="noreferrer">View the PyPI release</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span data-year></span> Daniel Gaskins</p>
+      <p>Physics · Models · Products</p>
+      <a href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
