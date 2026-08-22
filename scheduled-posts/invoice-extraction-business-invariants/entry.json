@@ -1,0 +1,11 @@
+{
+  "slug": "invoice-extraction-business-invariants",
+  "publishDate": "2026-10-15",
+  "title": "The model can read the invoice and the bill can still be wrong",
+  "description": "A practical failure taxonomy for invoice automation: separate document extraction quality from arithmetic, duplicate, identity, and accounting controls.",
+  "category": "Document AI",
+  "readTime": "6 minute read",
+  "image": "assets/img/syncabill-product-demo-poster.jpg",
+  "imageWidth": 1200,
+  "imageHeight": 675
+}

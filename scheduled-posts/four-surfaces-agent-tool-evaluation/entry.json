@@ -1,0 +1,11 @@
+{
+  "slug": "four-surfaces-agent-tool-evaluation",
+  "publishDate": "2026-09-17",
+  "title": "Tool-call correctness has four surfaces",
+  "description": "A practical framework for evaluating agent tool choice, arguments, execution outcomes, and final responses without collapsing them into one score.",
+  "category": "Agent evaluation",
+  "readTime": "6 minute read",
+  "image": "assets/img/mendmark-og-v1.jpg",
+  "imageWidth": 1200,
+  "imageHeight": 630
+}

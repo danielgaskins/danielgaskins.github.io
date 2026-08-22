@@ -1,0 +1,11 @@
+{
+  "slug": "lightgbm-missing-value-routing",
+  "publishDate": "2026-10-01",
+  "title": "LightGBM missing values are a deployment contract",
+  "description": "Why generated LightGBM inference code must preserve each node’s missing-value direction—and how to test parity across Python, C++, and JavaScript.",
+  "category": "ML systems",
+  "readTime": "6 minute read",
+  "image": "assets/img/lgbm-to-code-og-v1.png",
+  "imageWidth": 1200,
+  "imageHeight": 630
+}
