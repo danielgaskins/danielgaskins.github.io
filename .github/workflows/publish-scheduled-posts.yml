@@ -22,13 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the public site
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: main
           fetch-depth: 0
 
       - name: Check out finished drafts
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: scheduled-content
           path: .scheduled-content
