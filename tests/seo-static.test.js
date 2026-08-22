@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const pages = [
+const corePages = [
   "index.html",
   "blog.html",
   "mendmark.html",
@@ -14,6 +14,10 @@ const pages = [
   "resume.html",
   "meet.html",
 ];
+const scheduledPages = JSON.parse(fs.readFileSync("content/published-scheduled.json", "utf8")).map(
+  (entry) => `${entry.slug}.html`,
+);
+const pages = [...corePages, ...scheduledPages];
 
 const htmlByPage = new Map(pages.map((page) => [page, fs.readFileSync(page, "utf8")]));
 
@@ -100,5 +104,5 @@ test("RSS feed is discoverable and contains the published field notes", () => {
     assert.match(htmlByPage.get(page), /rel="alternate" type="application\/rss\+xml"/);
   }
   assert.match(feed, /<rss version="2\.0"/);
-  assert.equal((feed.match(/<item>/g) || []).length, 2);
+  assert.equal((feed.match(/<item>/g) || []).length, 2 + scheduledPages.length);
 });

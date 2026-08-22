@@ -7,6 +7,8 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 21 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://danielgaskins.com/feed.xml" rel="self" type="application/rss+xml" />
+    <!-- SCHEDULED_FEED_ITEMS_START -->
+    <!-- SCHEDULED_FEED_ITEMS_END -->
     <item>
       <title>Human review stops working when everything needs review</title>
       <link>https://danielgaskins.com/human-review-ai-agents.html</link>

@@ -1,0 +1,59 @@
+name: Publish scheduled field notes
+
+on:
+  schedule:
+    - cron: "15 16 * * *"
+  workflow_dispatch:
+    inputs:
+      publish_date:
+        description: Optional YYYY-MM-DD date for a controlled backfill
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-scheduled-field-notes
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the public site
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Check out finished drafts
+        uses: actions/checkout@v4
+        with:
+          ref: scheduled-content
+          path: .scheduled-content
+
+      - name: Publish entries whose date has arrived
+        env:
+          REQUESTED_DATE: ${{ inputs.publish_date }}
+        run: |
+          if [ -n "$REQUESTED_DATE" ]; then
+            node scripts/publish-scheduled-posts.mjs --source .scheduled-content/scheduled-posts --date "$REQUESTED_DATE"
+          else
+            node scripts/publish-scheduled-posts.mjs --source .scheduled-content/scheduled-posts
+          fi
+
+      - name: Verify the generated site
+        run: node --test tests/*.test.js
+
+      - name: Commit a due release
+        run: |
+          git add blog.html feed.xml sitemap.xml content/published-scheduled.json ./*.html
+          if git diff --cached --quiet; then
+            echo "No field notes are due."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publish scheduled field note"
+          git push origin main
