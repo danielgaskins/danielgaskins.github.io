@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "slug": "response-only-evals-missed-176-faults",
+    "publishDate": "2026-09-03",
+    "title": "A response-only eval missed 176 of 263 broken agent runs",
+    "description": "A reproducible comparison of response-only, trace-only, and trace-plus-outcome evaluators against the same 263 controlled agent failures.",
+    "category": "Agent evaluation",
+    "readTime": "6 minute read",
+    "image": "assets/img/agent-eval-og-v1.jpg",
+    "imageWidth": 1200,
+    "imageHeight": 630
+  }
+]

@@ -5,9 +5,16 @@
     <link>https://danielgaskins.com/blog.html</link>
     <description>Practical notes on agent evaluation, human review, and reliable AI systems.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://danielgaskins.com/feed.xml" rel="self" type="application/rss+xml" />
     <!-- SCHEDULED_FEED_ITEMS_START -->
+    <item>
+      <title>A response-only eval missed 176 of 263 broken agent runs</title>
+      <link>https://danielgaskins.com/response-only-evals-missed-176-faults.html</link>
+      <guid isPermaLink="true">https://danielgaskins.com/response-only-evals-missed-176-faults.html</guid>
+      <pubDate>Thu, 03 Sep 2026 12:00:00 GMT</pubDate>
+      <description>A reproducible comparison of response-only, trace-only, and trace-plus-outcome evaluators against the same 263 controlled agent failures.</description>
+    </item>
     <!-- SCHEDULED_FEED_ITEMS_END -->
     <item>
       <title>Human review stops working when everything needs review</title>
