@@ -47,6 +47,11 @@
   </url>
   <!-- SCHEDULED_SITEMAP_URLS_START -->
   <url>
+    <loc>https://danielgaskins.com/four-surfaces-agent-tool-evaluation.html</loc>
+    <lastmod>2026-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://danielgaskins.com/response-only-evals-missed-176-faults.html</loc>
     <lastmod>2026-09-03</lastmod>
     <priority>0.8</priority>

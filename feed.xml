@@ -5,9 +5,16 @@
     <link>https://danielgaskins.com/blog.html</link>
     <description>Practical notes on agent evaluation, human review, and reliable AI systems.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://danielgaskins.com/feed.xml" rel="self" type="application/rss+xml" />
     <!-- SCHEDULED_FEED_ITEMS_START -->
+    <item>
+      <title>Tool-call correctness has four surfaces</title>
+      <link>https://danielgaskins.com/four-surfaces-agent-tool-evaluation.html</link>
+      <guid isPermaLink="true">https://danielgaskins.com/four-surfaces-agent-tool-evaluation.html</guid>
+      <pubDate>Thu, 17 Sep 2026 12:00:00 GMT</pubDate>
+      <description>A practical framework for evaluating agent tool choice, arguments, execution outcomes, and final responses without collapsing them into one score.</description>
+    </item>
     <item>
       <title>A response-only eval missed 176 of 263 broken agent runs</title>
       <link>https://danielgaskins.com/response-only-evals-missed-176-faults.html</link>
