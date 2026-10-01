@@ -5,9 +5,16 @@
     <link>https://danielgaskins.com/blog.html</link>
     <description>Practical notes on agent evaluation, human review, and reliable AI systems.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://danielgaskins.com/feed.xml" rel="self" type="application/rss+xml" />
     <!-- SCHEDULED_FEED_ITEMS_START -->
+    <item>
+      <title>LightGBM missing values are a deployment contract</title>
+      <link>https://danielgaskins.com/lightgbm-missing-value-routing.html</link>
+      <guid isPermaLink="true">https://danielgaskins.com/lightgbm-missing-value-routing.html</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Why generated LightGBM inference code must preserve each node’s missing-value direction—and how to test parity across Python, C++, and JavaScript.</description>
+    </item>
     <item>
       <title>Tool-call correctness has four surfaces</title>
       <link>https://danielgaskins.com/four-surfaces-agent-tool-evaluation.html</link>
