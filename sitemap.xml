@@ -47,6 +47,11 @@
   </url>
   <!-- SCHEDULED_SITEMAP_URLS_START -->
   <url>
+    <loc>https://danielgaskins.com/invoice-extraction-business-invariants.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://danielgaskins.com/lightgbm-missing-value-routing.html</loc>
     <lastmod>2026-10-01</lastmod>
     <priority>0.8</priority>

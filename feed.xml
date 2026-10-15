@@ -5,9 +5,16 @@
     <link>https://danielgaskins.com/blog.html</link>
     <description>Practical notes on agent evaluation, human review, and reliable AI systems.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://danielgaskins.com/feed.xml" rel="self" type="application/rss+xml" />
     <!-- SCHEDULED_FEED_ITEMS_START -->
+    <item>
+      <title>The model can read the invoice and the bill can still be wrong</title>
+      <link>https://danielgaskins.com/invoice-extraction-business-invariants.html</link>
+      <guid isPermaLink="true">https://danielgaskins.com/invoice-extraction-business-invariants.html</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <description>A practical failure taxonomy for invoice automation: separate document extraction quality from arithmetic, duplicate, identity, and accounting controls.</description>
+    </item>
     <item>
       <title>LightGBM missing values are a deployment contract</title>
       <link>https://danielgaskins.com/lightgbm-missing-value-routing.html</link>
