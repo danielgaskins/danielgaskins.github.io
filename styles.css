@@ -275,6 +275,9 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
 .case-columns li { padding: 15px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 14px; }
 .case-note { margin-top: 65px; padding: 30px; display: grid; grid-template-columns: 180px 1fr; gap: 32px; color: #e7e8df; background: var(--ink); }
 .case-note p { max-width: 750px; margin: 0; color: #afb3aa; font-size: 15px; line-height: 1.75; }
+.case-figure { margin: 58px 0 0; }
+.case-figure img { display: block; width: 100%; height: auto; padding: 14px; border: 1px solid var(--line); background: #fff; }
+.case-figure figcaption { margin-top: 16px; color: var(--muted); font: 400 10px/1.65 var(--mono); }
 .case-next { padding-block: 150px; }
 .case-next > p:not(.section-index) { max-width: 760px; margin: 35px 0 0; color: var(--muted); font-size: 17px; line-height: 1.75; }
 

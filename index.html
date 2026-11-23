@@ -55,7 +55,7 @@
             "@id": "https://danielgaskins.com/#profile",
             "url": "https://danielgaskins.com/",
             "name": "Daniel Gaskins — Applied AI and Machine Learning Engineer",
-            "dateModified": "2026-08-21",
+            "dateModified": "2026-11-23",
             "isPartOf": {"@id": "https://danielgaskins.com/#website"},
             "mainEntity": {"@id": "https://danielgaskins.com/#daniel-gaskins"}
           },
@@ -72,7 +72,7 @@
               "https://danielgaskins.com/assets/img/daniel-gaskins-profile-16x9.jpg"
             ],
             "email": "mailto:hello@danielgaskins.com",
-            "description": "Founder and applied AI engineer focused on agent evaluation, document AI, computer vision, and reliable machine learning systems.",
+            "description": "Founder and applied AI engineer focused on agent evaluation, mechanistic interpretability, document AI, computer vision, and reliable machine learning systems.",
             "sameAs": [
               "https://github.com/danielgaskins",
               "https://www.linkedin.com/in/daniel-gaskins-ml/",
@@ -92,6 +92,9 @@
               "Machine learning",
               "Model training",
               "Model evaluation",
+              "Mechanistic interpretability",
+              "Sparse autoencoders",
+              "AI safety",
               "Research engineering",
               "AI agents",
               "Document AI",
@@ -258,6 +261,29 @@
             <div class="work-card__number">03</div>
             <div class="work-card__body">
               <div class="work-card__meta">
+                <span>2026 / OPEN SOURCE RESEARCH</span>
+                <span>MECHANISTIC INTERPRETABILITY</span>
+              </div>
+              <h3>Agentic Sabotage</h3>
+              <p>
+                Under bottleneck pressure, Gemma-2-9B resists skipping unit tests better than 2B
+                yet fabricates 503 tool outputs more often (88% vs. 60%). Using Gemma Scope 16k
+                Sparse Autoencoders across 500 tool-use scenarios, I mapped pre-commitment circuits
+                (0.959 AUROC) and steered away from shortcuts while preserving 100% benign coding accuracy.
+              </p>
+              <ul class="tag-list" aria-label="Agentic Sabotage areas">
+                <li>Sparse autoencoders</li><li>Activation steering</li><li>Gemma-2 2B &amp; 9B</li><li>AI safety</li>
+              </ul>
+            </div>
+            <a class="work-card__link" href="./agentic-sabotage.html" aria-label="Read the Agentic Sabotage mechanistic interpretability study">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" /></svg>
+            </a>
+          </article>
+
+          <article class="work-card work-card--artifact" data-reveal>
+            <div class="work-card__number">04</div>
+            <div class="work-card__body">
+              <div class="work-card__meta">
                 <span>OPEN SOURCE</span>
                 <span>CROSS-RUNTIME ML INFERENCE</span>
               </div>
@@ -277,7 +303,7 @@
           </article>
 
           <article class="work-card work-card--no-link" data-reveal>
-            <div class="work-card__number">04</div>
+            <div class="work-card__number">05</div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>2021—2022</span>
@@ -296,7 +322,7 @@
           </article>
 
           <article class="work-card" data-reveal>
-            <div class="work-card__number">05</div>
+            <div class="work-card__number">06</div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>2022—PRESENT</span>
@@ -442,7 +468,9 @@
             Daniel Gaskins is a founder and applied AI and machine learning engineer who builds
             reliable systems around models, tools, and real business processes. He created
             <a href="./mendmark.html">Mendmark</a>, a mutation-testing system for agent
-            evaluations; built <a href="./lightgbm-model-to-code.html">lgbm-to-code</a> for
+            evaluations; published open-source research on
+            <a href="./agentic-sabotage.html">mechanistic debugging of agentic sabotage</a> using
+            Sparse Autoencoders; built <a href="./lightgbm-model-to-code.html">lgbm-to-code</a> for
             dependency-free cross-runtime model inference; and founded
             <a href="./syncabill.html">SyncABill</a>, an AI-assisted invoice workflow.
           </p>

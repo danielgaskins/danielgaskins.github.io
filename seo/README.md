@@ -25,10 +25,11 @@ The goal is not maximum traffic. It is qualified discovery by engineering teams,
 | --- | --- | --- |
 | `/` | Daniel Gaskins; applied AI engineer | machine learning engineer, AI agent evaluation engineer, document AI |
 | `/mendmark.html` | mutation testing for agent evals | test an agent evaluation suite, tool-call evaluation, AI agent reliability |
+| `/agentic-sabotage.html` | mechanistic interpretability of agentic sabotage | sparse autoencoders for tool-use agents, activation steering, tool-call hallucinations |
 | `/agent-eval-mutation-testing.html` | agent eval mutation testing | broken tool calls, trace evaluation, evaluator sensitivity |
 | `/human-review-ai-agents.html` | human review for AI agents | human-in-the-loop AI, approval queues, AI action authority |
 | `/syncabill.html` | AI invoice automation case study | document AI, invoice validation, QuickBooks and Xero controls |
-| future LightGBM article | convert LightGBM model to code | dependency-free LightGBM inference, LightGBM to C++/JavaScript/Python |
+| `/lightgbm-model-to-code.html` | convert LightGBM model to code | dependency-free LightGBM inference, LightGBM to C++/JavaScript/Python |
 
 Keep one primary intent per page. Use the supporting phrases where they genuinely clarify the text; do not repeat exact phrases mechanically.
 
