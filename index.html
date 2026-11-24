@@ -7,7 +7,7 @@
       name="description"
       content="Daniel Gaskins is an applied AI and machine learning engineer focused on agent automation, evaluation, computer vision, and reliable ML systems."
     />
-    <meta name="theme-color" content="#0b0d0c" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta property="og:title" content="Daniel Gaskins — Applied AI &amp; Machine Learning Engineer" />
     <meta
@@ -30,12 +30,33 @@
     <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins — Field Notes" href="https://danielgaskins.com/feed.xml" />
     <title>Daniel Gaskins — Applied AI &amp; Machine Learning Engineer</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/img/monolith-frame0-alpha.webp"
+      imagesrcset="./assets/img/monolith-frame0-alpha-mobile.webp 768w, ./assets/img/monolith-frame0-alpha.webp 1280w"
+      imagesizes="(max-width: 900px) 100vw, 74vw"
+      fetchpriority="high"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
     <script type="application/ld+json">
@@ -116,7 +137,7 @@
         <span class="wordmark__name">Daniel Gaskins</span>
       </a>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
         <span></span><span></span>
         <span class="sr-only">Toggle navigation</span>
       </button>
@@ -129,67 +150,177 @@
         <a href="./resume.html">Résumé</a>
         <a class="nav-cta" href="./meet.html">Talk with me</a>
       </nav>
+      <div class="site-header__progress" data-page-progress aria-hidden="true"></div>
     </header>
 
     <main id="main">
-      <section id="top" class="hero section-shell">
-        <div class="hero__copy" data-reveal>
-          <p class="eyebrow"><span class="status-dot"></span> Applied AI / machine learning engineering</p>
-          <h1>
-            Daniel Gaskins builds
-            <span class="hero__emphasis">AI that survives the real world.</span>
-          </h1>
-          <p class="hero__lede">
-            I’m a founder and applied ML engineer. I turn ambiguous questions into
-            testable experiments, inspect where models fail, and build useful systems around
-            what survives.
-          </p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#work">
-              See what I’ve built
-              <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg>
-            </a>
-            <a class="button button--quiet" href="./resume.html">Read my résumé</a>
+      <section id="top" class="hero-runway" data-hero-runway>
+        <div class="hero-stage">
+          <!-- Layer 1 (Background): Monumental Architectural Blueprint & Display Wordmark BEHIND the 3D Monolith -->
+          <div class="hero-blueprint" aria-hidden="true">
+            <div class="hero-blueprint__ring"></div>
+            <div class="hero-blueprint__axis hero-blueprint__axis--h"></div>
+            <div class="hero-blueprint__axis hero-blueprint__axis--v"></div>
+            <div class="hero-blueprint__word" data-parallax-word>VERIFIED</div>
           </div>
-        </div>
 
-        <div class="hero__visual" aria-label="An interactive machine-learning pipeline with field notes for each stage" data-reveal>
-          <div class="lab-card">
-            <div class="lab-card__head">
-              <span>MODEL FIELD NOTES / 01</span>
-              <span class="lab-card__live"><i></i> LIVE</span>
+          <!-- Layer 2 (Midground Sculpture): Instant 28-49KB Pre-Keyed Alpha WebP LCP + Deferred AV1/MP4 Stream -->
+          <div
+            class="hero-sculpture"
+            aria-hidden="true"
+            data-monolith-stage
+            data-av1-desktop="./assets/media/monolith-1280.av1.webm"
+            data-av1-mobile="./assets/media/monolith-768.av1.webm"
+            data-h264-desktop="./assets/media/monolith-1280.h264.mp4"
+            data-h264-mobile="./assets/media/monolith-768.h264.mp4"
+          >
+            <picture class="hero-sculpture__poster">
+              <source media="(max-width: 900px)" srcset="./assets/img/monolith-frame0-alpha-mobile.webp" type="image/webp" />
+              <img
+                class="hero-sculpture__lcp"
+                src="./assets/img/monolith-frame0-alpha.webp"
+                width="1280"
+                height="720"
+                alt=""
+                fetchpriority="high"
+                decoding="sync"
+              />
+            </picture>
+            <video
+              class="hero-sculpture__video"
+              data-scrub-video
+              muted
+              playsinline
+              preload="none"
+              tabindex="-1"
+            ></video>
+            <canvas class="hero-sculpture__canvas" data-monolith-canvas></canvas>
+          </div>
+
+          <!-- Layer 3 (Foreground): Editorial Copy + Scroll-Linked Anatomical Cutaway Callouts -->
+          <div class="hero-foreground section-shell">
+            <div class="hero__copy" data-reveal>
+              <p class="eyebrow"><span class="status-dot"></span> Applied AI / machine learning engineering</p>
+              <h1>
+                Daniel Gaskins builds
+                <span class="hero__emphasis">AI that survives the real world.</span>
+              </h1>
+              <p class="hero__lede">
+                I’m a founder and applied ML engineer. I turn ambiguous questions into
+                testable experiments, inspect where models fail, and build useful systems around
+                what survives.
+              </p>
+              <div class="hero__actions">
+                <a class="button button--primary" href="#work">
+                  See what I’ve built
+                  <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg>
+                </a>
+                <a class="button button--quiet" href="./resume.html">Read my résumé</a>
+              </div>
             </div>
-            <div class="pipeline" data-pipeline>
-              <div class="pipeline__rail"></div>
-              <div class="pipeline__pulse"></div>
-              <button class="pipeline__node pipeline__node--data is-active" type="button" data-stage="DATA" data-insight="If the data is wrong, nothing downstream can save it." aria-pressed="true">
-                <span>01</span>
-                <strong>DATA</strong>
-                <small>curate + prepare</small>
-              </button>
-              <button class="pipeline__node pipeline__node--train" type="button" data-stage="TRAIN" data-insight="A run without a hypothesis is just a GPU bill." aria-pressed="false">
-                <span>02</span>
-                <strong>TRAIN</strong>
-                <small>iterate + learn</small>
-              </button>
-              <button class="pipeline__node pipeline__node--eval" type="button" data-stage="EVAL" data-insight="A metric matters only if it catches a real failure." aria-pressed="false">
-                <span>03</span>
-                <strong>EVAL</strong>
-                <small>measure + inspect</small>
-              </button>
-              <button class="pipeline__node pipeline__node--ship" type="button" data-stage="SHIP" data-insight="The first production run is the next experiment." aria-pressed="false">
-                <span>04</span>
-                <strong>SHIP</strong>
-                <small>serve + observe</small>
-              </button>
-            </div>
-            <div class="lab-card__insight" aria-live="polite">
-              <span data-lab-stage>FIELD NOTE / DATA</span>
-              <strong data-lab-insight>If the data is wrong, nothing downstream can save it.</strong>
+
+            <div class="hero-anatomy" aria-hidden="true">
+              <div class="hero-callout hero-callout--top is-visible" data-callout="0">
+                <span class="hero-callout__pin"></span>
+                <div>
+                  <small>01 / SEALED INPUT SHELL</small>
+                  <strong>Curate raw inputs before inference</strong>
+                </div>
+              </div>
+              <div class="hero-callout hero-callout--upper-right" data-callout="1">
+                <span class="hero-callout__pin"></span>
+                <div>
+                  <small>02 / COLLIMATING OPTICS</small>
+                  <strong>Isolate internal model hypotheses</strong>
+                </div>
+              </div>
+              <div class="hero-callout hero-callout--core" data-callout="2">
+                <span class="hero-callout__pin"></span>
+                <div>
+                  <small>03 / EMERALD PRISM CORE</small>
+                  <strong>Probe &amp; mutation-test failure modes</strong>
+                </div>
+              </div>
+              <div class="hero-callout hero-callout--bottom-right" data-callout="3">
+                <span class="hero-callout__pin"></span>
+                <div>
+                  <small>04 / DETERMINISTIC BUS</small>
+                  <strong>Gate what reaches production state</strong>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="visual-note visual-note--top">PICK A STAGE</div>
-          <div class="visual-note visual-note--bottom">PHYSICS / ML / SOFTWARE</div>
+
+          <!-- Bottom Architectural Spec Rail -->
+          <div class="hero-dock" aria-label="Scroll-driven system inspection stages">
+            <div class="hero-dock__progress" aria-hidden="true">
+              <div class="hero-dock__progress-fill" data-scrub-fill></div>
+            </div>
+            <div class="section-shell hero-dock__inner">
+              <div class="hero-dock__stages" data-pipeline role="group" aria-label="Pipeline stages">
+                <button
+                  class="pipeline__node is-active"
+                  type="button"
+                  data-stage="DATA"
+                  data-target-progress="0.0"
+                  data-kicker="01 / CLOSED MONOLITH"
+                  data-insight="If the data is wrong, nothing downstream can save it."
+                  aria-pressed="true"
+                >
+                  <span>01</span>
+                  <strong>DATA</strong>
+                  <small>curate + prepare</small>
+                </button>
+                <button
+                  class="pipeline__node"
+                  type="button"
+                  data-stage="TRAIN"
+                  data-target-progress="0.34"
+                  data-kicker="02 / SHELL SEPARATION"
+                  data-insight="A run without a hypothesis is just a GPU bill."
+                  aria-pressed="false"
+                >
+                  <span>02</span>
+                  <strong>TRAIN</strong>
+                  <small>iterate + learn</small>
+                </button>
+                <button
+                  class="pipeline__node"
+                  type="button"
+                  data-stage="EVAL"
+                  data-target-progress="0.68"
+                  data-kicker="03 / CORE INSPECTION"
+                  data-insight="A metric matters only if it catches a real failure."
+                  aria-pressed="false"
+                >
+                  <span>03</span>
+                  <strong>EVAL</strong>
+                  <small>measure + inspect</small>
+                </button>
+                <button
+                  class="pipeline__node"
+                  type="button"
+                  data-stage="SHIP"
+                  data-target-progress="1.0"
+                  data-kicker="04 / FULL CUTAWAY"
+                  data-insight="The first production run is the next experiment."
+                  aria-pressed="false"
+                >
+                  <span>04</span>
+                  <strong>SHIP</strong>
+                  <small>serve + observe</small>
+                </button>
+              </div>
+
+              <div class="hero-dock__note" aria-live="polite">
+                <div class="hero-dock__note-meta">
+                  <span data-lab-stage>FIELD NOTE / DATA</span>
+                  <span class="hero-dock__scroll-hint" data-scroll-hint>SCROLL TO OPEN THE SYSTEM · 00%</span>
+                </div>
+                <strong data-lab-insight>If the data is wrong, nothing downstream can save it.</strong>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -214,7 +345,13 @@
 
         <div class="work-list">
           <article class="work-card work-card--artifact" data-reveal>
-            <div class="work-card__number">01</div>
+            <div class="work-card__rail">
+              <div class="work-card__number">01</div>
+              <div class="work-card__proof">
+                <strong>00</strong>
+                <span>model-authorized ledger writes</span>
+              </div>
+            </div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>2025—PRESENT</span>
@@ -236,7 +373,13 @@
           </article>
 
           <article class="work-card work-card--artifact" data-reveal>
-            <div class="work-card__number">02</div>
+            <div class="work-card__rail">
+              <div class="work-card__number">02</div>
+              <div class="work-card__proof">
+                <strong>263</strong>
+                <span>pinned trace mutations</span>
+              </div>
+            </div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>2026 / ACTIVE</span>
@@ -258,7 +401,13 @@
           </article>
 
           <article class="work-card work-card--artifact" data-reveal>
-            <div class="work-card__number">03</div>
+            <div class="work-card__rail">
+              <div class="work-card__number">03</div>
+              <div class="work-card__proof">
+                <strong>0.959</strong>
+                <span>9B SAE pre-tool AUROC</span>
+              </div>
+            </div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>2026 / OPEN SOURCE RESEARCH</span>
@@ -281,7 +430,13 @@
           </article>
 
           <article class="work-card work-card--artifact" data-reveal>
-            <div class="work-card__number">04</div>
+            <div class="work-card__rail">
+              <div class="work-card__number">04</div>
+              <div class="work-card__proof">
+                <strong>1e−12</strong>
+                <span>cross-runtime parity</span>
+              </div>
+            </div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>OPEN SOURCE</span>
@@ -303,7 +458,13 @@
           </article>
 
           <article class="work-card work-card--no-link" data-reveal>
-            <div class="work-card__number">05</div>
+            <div class="work-card__rail">
+              <div class="work-card__number">05</div>
+              <div class="work-card__proof">
+                <strong>CV + OCR</strong>
+                <span>structured title extraction</span>
+              </div>
+            </div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>2021—2022</span>
@@ -322,7 +483,13 @@
           </article>
 
           <article class="work-card" data-reveal>
-            <div class="work-card__number">06</div>
+            <div class="work-card__rail">
+              <div class="work-card__number">06</div>
+              <div class="work-card__proof">
+                <strong>CLIP + API</strong>
+                <span>live retail operations</span>
+              </div>
+            </div>
             <div class="work-card__body">
               <div class="work-card__meta">
                 <span>2022—PRESENT</span>
@@ -360,22 +527,22 @@
 
           <div class="capability-grid">
             <article data-reveal>
-              <span>01</span>
+              <span>01 / HYPOTHESIS</span>
               <h3>Train the model</h3>
               <p>Start with a question. Build the dataset, run the experiment, and keep honest notes.</p>
             </article>
             <article data-reveal>
-              <span>02</span>
+              <span>02 / ADVERSARY</span>
               <h3>Try to break it</h3>
               <p>Write the test that could prove the idea wrong. Read the misses, not just the mean.</p>
             </article>
             <article data-reveal>
-              <span>03</span>
+              <span>03 / ARCHITECTURE</span>
               <h3>Build the system</h3>
               <p>Give the model dependable data, inference, monitoring, and deployment paths.</p>
             </article>
             <article data-reveal>
-              <span>04</span>
+              <span>04 / TELEMETRY</span>
               <h3>Watch it work</h3>
               <p>Put it in front of a real user and stay close enough to see what breaks.</p>
             </article>
@@ -386,7 +553,7 @@
             <div class="stack__items">
               <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span><span>LightGBM</span>
               <span>TypeScript</span><span>React</span><span>C++</span><span>Scala</span><span>Java</span>
-              <span>Model evaluation</span><span>Agent automation</span><span>Agent evaluation</span><span>Experiment design</span><span>CI/CD</span>
+              <span>Mechanistic interpretability</span><span>Sparse autoencoders</span><span>Model evaluation</span><span>Agent automation</span><span>Agent evaluation</span><span>Experiment design</span><span>CI/CD</span>
               <span>NLP</span><span>Computer Vision</span>
             </div>
           </div>
@@ -408,15 +575,17 @@
             <span>AUGUST 5, 2026</span>
             <span>HUMAN REVIEW</span>
           </div>
-          <h3>Human review stops working when everything needs review.</h3>
-          <p>
-            Every review consumes a person's attention. A practical way to decide which AI actions
-            should stop, what the reviewer needs to see, and what the system must never decide alone.
-          </p>
-          <a href="./human-review-ai-agents.html">
-            Read the field note
-            <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg>
-          </a>
+          <div class="note-card__content">
+            <h3>Human review stops working when everything needs review.</h3>
+            <p>
+              Every review consumes a person's attention. A practical way to decide which AI actions
+              should stop, what the reviewer needs to see, and what the system must never decide alone.
+            </p>
+            <a href="./human-review-ai-agents.html">
+              Read the field note
+              <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg>
+            </a>
+          </div>
         </article>
 
         <article class="note-card" data-reveal>
@@ -424,15 +593,17 @@
             <span>AUGUST 3, 2026</span>
             <span>AGENT EVALUATION</span>
           </div>
-          <h3>Your agent eval passed. Would it catch a broken tool call?</h3>
-          <p>
-            Plant one known failure, rerun the same evals, and see whether the score changes. A
-            practical introduction to mutation testing for agent tool use.
-          </p>
-          <a href="./agent-eval-mutation-testing.html">
-            Read the field note
-            <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg>
-          </a>
+          <div class="note-card__content">
+            <h3>Your agent eval passed. Would it catch a broken tool call?</h3>
+            <p>
+              Plant one known failure, rerun the same evals, and see whether the score changes. A
+              practical introduction to mutation testing for agent tool use.
+            </p>
+            <a href="./agent-eval-mutation-testing.html">
+              Read the field note
+              <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg>
+            </a>
+          </div>
         </article>
 
         <div class="notes__all" data-reveal>
