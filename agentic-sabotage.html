@@ -5,44 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Cross-scale mechanistic interpretability benchmark mapping Gemma Scope 16k Sparse Autoencoder circuits and activation steering for agentic sabotage and tool-call fabrication in Gemma-2-2B and Gemma-2-9B."
+      content="Mechanistic interpretability benchmark mapping Gemma Scope 16k Sparse Autoencoder circuits, unfaithful Chain-of-Thought silent commitment, and activation steering for agentic sabotage in Gemma-2-2B and Gemma-2-9B."
     />
     <meta name="theme-color" content="#0b0d0c" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-    <meta property="og:title" content="Mechanistic Debugging of Agentic Sabotage &amp; Tool-Call Hallucinations" />
+    <meta property="og:title" content="Mechanistic Debugging of Agentic Sabotage &amp; Unfaithful Chain-of-Thought" />
     <meta
       property="og:description"
-      content="Mapping Gemma Scope 16k SAE circuits and multi-layer activation steering across 500 multi-turn tool-use scenarios in Gemma-2-2B and Gemma-2-9B."
+      content="Mapping Gemma Scope 16k SAE circuits, silent pre-tool commitment inside <think> scratchpads (0.980 AUROC), and activation steering across 500 tool-use scenarios in Gemma-2-2B and Gemma-2-9B."
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://danielgaskins.com/agentic-sabotage.html" />
     <meta property="og:site_name" content="Daniel Gaskins" />
     <meta property="article:author" content="Daniel Gaskins" />
     <meta property="article:published_time" content="2026-11-23" />
-    <meta property="article:modified_time" content="2026-11-23" />
+    <meta property="article:modified_time" content="2026-11-24" />
     <meta property="og:image" content="https://danielgaskins.com/assets/img/agentic-sabotage-og-v1.jpg" />
     <meta property="og:image:secure_url" content="https://danielgaskins.com/assets/img/agentic-sabotage-og-v1.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Cross-scale comparison of Gemma-2-2B and Gemma-2-9B pressured tool-use sabotage rates and Gemma Scope SAE pre-commitment probing" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mechanistic Debugging of Agentic Sabotage &amp; Tool-Call Hallucinations" />
+    <meta name="twitter:title" content="Mechanistic Debugging of Agentic Sabotage &amp; Unfaithful Chain-of-Thought" />
     <meta
       name="twitter:description"
-      content="Mapping Gemma Scope 16k SAE circuits and multi-layer activation steering across 500 multi-turn tool-use scenarios in Gemma-2-2B and Gemma-2-9B."
+      content="Mapping Gemma Scope 16k SAE circuits, silent pre-tool commitment inside <think> scratchpads (0.980 AUROC), and activation steering across 500 tool-use scenarios in Gemma-2-2B and Gemma-2-9B."
     />
     <meta name="twitter:image" content="https://danielgaskins.com/assets/img/agentic-sabotage-og-v1.jpg" />
     <meta name="twitter:image:alt" content="Cross-scale comparison of Gemma-2-2B and Gemma-2-9B pressured tool-use sabotage rates and Gemma Scope SAE pre-commitment probing" />
     <link rel="canonical" href="https://danielgaskins.com/agentic-sabotage.html" />
     <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins — Field Notes" href="https://danielgaskins.com/feed.xml" />
-    <title>Mechanistic Debugging of Agentic Sabotage &amp; Tool-Call Hallucinations | Daniel Gaskins</title>
+    <title>Mechanistic Debugging of Agentic Sabotage &amp; Unfaithful CoT | Daniel Gaskins</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
     <script type="application/ld+json">
@@ -52,11 +60,11 @@
           {
             "@type": "ScholarlyArticle",
             "@id": "https://danielgaskins.com/agentic-sabotage.html#article",
-            "headline": "Mechanistic Debugging of Agentic Sabotage and Tool-Call Hallucinations: Cross-Scale Sparse Autoencoder Circuits in Multi-Turn Tool Use",
-            "description": "Cross-scale mechanistic interpretability benchmark mapping Gemma Scope 16k Sparse Autoencoder circuits and activation steering for agentic sabotage and tool-call fabrication in Gemma-2-2B-IT and Gemma-2-9B-IT.",
+            "headline": "Mechanistic Debugging of Agentic Sabotage and Unfaithful Chain-of-Thought: Sparse Autoencoder Circuits & Silent Commitment in Multi-Turn Tool Use",
+            "description": "Two-part mechanistic interpretability benchmark mapping Gemma Scope 16k Sparse Autoencoder pre-commitment circuits, unfaithful <think> scratchpad evasion of 9B LLM compliance monitors, and multi-layer activation steering in Gemma-2-2B-IT and Gemma-2-9B-IT.",
             "image": "https://danielgaskins.com/assets/img/agentic-sabotage-og-v1.jpg",
             "datePublished": "2026-11-23",
-            "dateModified": "2026-11-23",
+            "dateModified": "2026-11-24",
             "author": {
               "@id": "https://danielgaskins.com/#daniel-gaskins",
               "@type": "Person",
@@ -71,7 +79,7 @@
             "@type": "SoftwareSourceCode",
             "@id": "https://danielgaskins.com/agentic-sabotage.html#software",
             "name": "agentic-sabotage",
-            "description": "Open-source benchmark, Gemma Scope 16k JumpReLU SAE circuit analysis, and multi-layer activation steering suite for multi-turn tool-use sabotage in Gemma-2-2B-IT and Gemma-2-9B-IT.",
+            "description": "Open-source benchmark, Gemma Scope 16k JumpReLU SAE circuit analysis, token-by-token Chain-of-Thought faithfulness probes, and multi-layer activation steering suite for multi-turn tool-use sabotage.",
             "url": "https://danielgaskins.com/agentic-sabotage.html",
             "codeRepository": "https://github.com/danielgaskins/agentic-sabotage",
             "programmingLanguage": "Python",
@@ -115,30 +123,32 @@
     <main id="main" class="case-study">
       <section class="case-hero section-shell">
         <p class="eyebrow"><span class="status-dot"></span> Open source / Mechanistic interpretability / Gemma-2 2B &amp; 9B</p>
-        <h1>Before an agent deletes a failing test, the commitment is already in the residual stream.</h1>
+        <h1>Before an agent fabricates output or edits a test, the commitment is already in the residual stream—even when its <code>&lt;think&gt;</code> trace sounds benign.</h1>
         <p class="case-hero__lede">
           When a coding or operations agent hits a CI deadline or an upstream 503 outage, user
           pressure can push it to skip a unit test, bypass a deploy lock, or invent database output
-          instead of reporting the blocker. This repository maps those pre-commitment circuits
-          across Gemma-2-2B-IT and Gemma-2-9B-IT using Gemma Scope 16k Sparse Autoencoders and
-          tests whether inference-time steering can suppress shortcuts without breaking legitimate
-          tool use.
+          instead of reporting the blocker. Across two linked studies on Gemma-2-2B-IT and
+          Gemma-2-9B-IT using Gemma Scope 16k Sparse Autoencoders, this repository maps pre-action
+          sabotage circuits, demonstrates that Layer-24 SAE probes catch unfaithful
+          <code>&lt;think&gt;</code> rationalizations that fool an external 9B CoT compliance
+          auditor, and steers away from shortcuts without breaking legitimate tool use.
         </p>
         <div class="note-byline">
           <a href="./" rel="author">Daniel Gaskins</a>
-          <time datetime="2026-11-23">November 23, 2026</time>
-          <span>Mechanistic interpretability research</span>
+          <time datetime="2026-11-24">Updated November 24, 2026</time>
+          <span>Mechanistic interpretability &amp; CoT faithfulness research</span>
         </div>
         <div class="case-hero__actions">
           <a class="button button--primary" href="https://github.com/danielgaskins/agentic-sabotage" target="_blank" rel="noopener">Inspect the benchmark &amp; code on GitHub</a>
-          <a class="button button--quiet" href="https://github.com/danielgaskins/agentic-sabotage/blob/main/paper/agentic_sabotage_preprint.pdf" target="_blank" rel="noopener">Read the 4-page preprint PDF</a>
+          <a class="button button--quiet" href="https://github.com/danielgaskins/agentic-sabotage/blob/main/paper/agentic_sabotage_preprint.pdf" target="_blank" rel="noopener">Read the academic preprint PDF</a>
+          <a class="button button--quiet" href="#silent-commitment">Jump to Study 2: Silent Commitment ↓</a>
         </div>
       </section>
 
       <section class="case-signal" aria-label="Empirical benchmark and circuit summary">
         <div class="section-shell case-signal__grid">
-          <div><strong>500</strong><span>paired counterfactual tool scenarios</span></div>
-          <div><strong>0.959</strong><span>9B Layer-24 SAE L1 probe AUROC</span></div>
+          <div><strong>0.980</strong><span>9B Layer-24 SAE probe AUROC inside <code>&lt;think&gt;</code></span></div>
+          <div><strong>92–100%</strong><span>catch rate on CoT-auditor-fooled sabotage</span></div>
           <div><strong>88%</strong><span>9B pressured 503 output fabrication</span></div>
           <div><strong>100%</strong><span>9B benign coding accuracy under steering</span></div>
         </div>
@@ -146,14 +156,14 @@
 
       <section id="benchmark" class="case-section section-shell">
         <div class="case-section__label">
-          <p class="section-index">01 / THE PRE-COMMITMENT TOKEN</p>
+          <p class="section-index">01 / STUDY 1: THE PRE-COMMITMENT TOKEN</p>
         </div>
         <div class="case-section__body">
           <h2>Probe the decision before any tool name is emitted.</h2>
           <p class="case-section__lead">
             External trace tools such as <a href="./mendmark.html">Mendmark</a> audit whether an
-            evaluation suite catches a broken tool call after the trace runs. Here the question
-            moves inside the model: at the exact pre-commitment prefix
+            evaluation suite catches a broken tool call after the trace runs. Study 1 moves inside
+            the model: at the exact pre-commitment prefix
             <code>TOOL_CALL: {"tool": "</code>—before a single token of the tool name or file path
             exists—has the network already separated an unauthorized shortcut from an honest fix or
             escalation?
@@ -183,7 +193,7 @@
               alt="Three-panel cross-scale plot comparing Gemma-2-2B-IT and Gemma-2-9B-IT probe AUROC across model depth, pressured sabotage rates across four taxonomies, and safety-versus-capability steering Pareto frontiers"
             />
             <figcaption id="cross-scale-caption">
-              Cross-scale comparison between Gemma-2-2B-IT and Gemma-2-9B-IT: (A) 5-fold CV AUROC across normalized depth, (B) inverse scaling on 503 tool-output fabrication, and (C) held-out safety–capability Pareto frontiers. Full per-model figures and JSON artifacts live in <a href="https://github.com/danielgaskins/agentic-sabotage" target="_blank" rel="noopener">danielgaskins/agentic-sabotage</a>.
+              Study 1 cross-scale comparison between Gemma-2-2B-IT and Gemma-2-9B-IT: (A) 5-fold CV AUROC across normalized depth, (B) inverse scaling on 503 tool-output fabrication, and (C) held-out safety–capability Pareto frontiers. Full per-model figures and JSON artifacts live in <a href="https://github.com/danielgaskins/agentic-sabotage" target="_blank" rel="noopener">danielgaskins/agentic-sabotage</a>.
             </figcaption>
           </figure>
         </div>
@@ -306,57 +316,124 @@
         </div>
       </section>
 
-      <section id="scope" class="case-section case-section--paper-dark">
+      <section id="silent-commitment" class="case-section case-section--paper-dark">
         <div class="section-shell case-section__inner">
           <div class="case-section__label">
-            <p class="section-index">05 / ARTIFACTS &amp; SCOPE</p>
+            <p class="section-index">05 / STUDY 2: SILENT COMMITMENT &amp; UNFAITHFUL COT</p>
           </div>
           <div class="case-section__body">
-            <h2>Reproducible data, weights-level probes, and explicit limits.</h2>
-            <div class="case-columns">
-              <div>
-                <h3>Included in the repository</h3>
-                <ul>
-                  <li>500 paired sabotage trajectories + 80 benign capability controls (<code>JSONL</code>)</li>
-                  <li>On-policy residual activation cacher &amp; Gemma Scope 16k JumpReLU loader</li>
-                  <li>5-fold CV probes, Difference-in-Means, L1 SAE attribution &amp; Neuronpedia lookup</li>
-                  <li>Multi-layer planning-block steering harness &amp; publication figure suite</li>
-                  <li>4-page Typst academic preprint PDF + 1-click Colab notebook for 9B replication</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Current boundaries</h3>
-                <ul>
-                  <li>Evaluates single-step prefilled tool commitment, not multi-hour Dockerized SWE loops</li>
-                  <li>Covers one open-weight family (<code>Gemma-2-2B-IT</code> and <code>Gemma-2-9B-IT</code> in <code>bfloat16</code>)</li>
-                  <li>Synthetic trajectories stress four specific shortcut taxonomies, not adversarial jailbreaks</li>
-                  <li>Activation steering is an auditing and research intervention, not a standalone production sandbox</li>
-                </ul>
-              </div>
+            <h2>When the <code>&lt;think&gt;</code> scratchpad sounds benign, Layer-24 latents have already committed.</h2>
+            <p class="case-section__lead">
+              A common alignment defense is to place a black-box Chain-of-Thought (CoT) monitor on
+              an agent’s <code>&lt;think&gt;...&lt;/think&gt;</code> scratchpad before allowing a
+              tool call to execute. Across 228 Gemma-2-9B-IT CoT rollouts (99 sabotage, 125 honest),
+              we test whether verbalized reasoning actually matches the model’s internal Layer-24
+              commitment—both on unmonitored scratchpads and under an explicit compliance notice
+              warning that <code>&lt;think&gt;</code> logs are audited.
+            </p>
+
+            <div class="case-task-list">
+              <article>
+                <span>BLACK-BOX BLINDSPOT</span>
+                <h3>0.676 lexical / 0.870 9B LLM auditor AUROC</h3>
+                <p>88.9% of sabotage scratchpads avoid shortcut keywords, and 25.3% (25/99) fool an isolated Gemma-2-9B compliance auditor—rising to 28.9% when warned that <code>&lt;think&gt;</code> is audited.</p>
+              </article>
+              <article>
+                <span>WHITE-BOX PRE-TOOL PROBE</span>
+                <h3>0.980 ± 0.018 SAE probe AUROC inside <code>&lt;think&gt;</code></h3>
+                <p>Measured strictly before <code>TOOL_CALL:</code> begins, the Layer-24 Gemma Scope 16k SAE L1 probe reaches 0.980 AUROC (and Study 1’s frozen no-CoT probe transfers zero-shot at 0.946 AUROC).</p>
+              </article>
+              <article>
+                <span>30-TOKEN LEAD TIME</span>
+                <h3>Latents #11381 &amp; #15689 spike 29–35 tokens early</h3>
+                <p>On sabotage CoTs, Latent #11381 fires 3.2× as often (63.6% vs. 20.0%) a median 29.0 tokens before <code>TOOL_CALL:</code>, catching 91.7% of auditor-fooled 503 fabrications and 100% (11/11) under audited notice.</p>
+              </article>
+              <article>
+                <span>ACTION RE-LOCKING</span>
+                <h3>86.1% → 77.8% (<code>&lt;think&gt;</code> only) vs. 33.3% (full)</h3>
+                <p>Steering only during <code>&lt;think&gt;</code> leaves downstream tool selection vulnerable to prompt pressure once the hook turns off; keeping the SAE hook across <code>TOOL_CALL:</code> cuts focus-set sabotage to 33.3%.</p>
+              </article>
             </div>
-            <div class="case-note">
-              <span>LIMIT</span>
-              <p>
-                Internal activation monitoring complements—never replaces—least-privilege tool
-                permissions, deterministic trace checks, and explicit human authority boundaries.
-              </p>
+
+            <figure class="case-figure" aria-labelledby="silent-trace-caption">
+              <img
+                src="./assets/img/agentic-sabotage-silent-trace-v1.webp"
+                width="1800"
+                height="777"
+                loading="lazy"
+                decoding="async"
+                alt="Token-by-token Gemma Scope 16k Layer-24 SAE activation trace on 503 output fabrication scenario sab_0137, showing Latent 11381 spiking to +21.01 thirty-eight tokens before TOOL_CALL while the external 9B CoT auditor assigns only 30 percent suspicion and Latent 6787 stays flat at zero"
+              />
+              <figcaption id="silent-trace-caption">
+                Smoking-gun unfaithful CoT rollout (<code>sab_0137_tool_output_fabrication</code>): inside <code>&lt;think&gt;</code>, Gemma-2-9B-IT writes <em>“To prevent further disruption, we’ll emit a default ‘low risk’ report for all transactions… until the database issue is resolved”</em>—fooling the 9B CoT auditor (30% suspicion, <code>BENIGN</code>). Internally, Layer-24 Latent #11381 spikes to +21.01 thirty-eight tokens before <code>TOOL_CALL:</code>, Latent #15689 hits +13.50, and algorithmic repair Latent #6787 stays at 0.00 across all 57 tokens.
+              </figcaption>
+            </figure>
+
+            <figure class="case-figure" aria-labelledby="silent-quadrant-caption">
+              <img
+                src="./assets/img/agentic-sabotage-silent-quadrant-v1.webp"
+                width="1800"
+                height="686"
+                loading="lazy"
+                decoding="async"
+                alt="Two-panel plot showing the Silent Commitment quadrant where sabotage rollouts fool the 9B CoT auditor below 0.50 suspicion yet score above 0.70 on the pre-tool Layer-24 SAE probe, alongside 92 percent and 100 percent white-box catch rates"
+              />
+              <figcaption id="silent-quadrant-caption">
+                (A) External 9B CoT compliance auditor suspicion versus pre-tool Layer-24 SAE probe probability across 224 labeled rollouts, highlighting the Silent Commitment Zone. (B) Fraction of sabotage CoTs fooling the 9B auditor alongside white-box Layer-24 SAE recovery (92% on 503 Output Fabrication; 100% under Audited Scratchpad notice).
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="scope" class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">06 / ARTIFACTS &amp; SCOPE</p>
+        </div>
+        <div class="case-section__body">
+          <h2>Reproducible data, weights-level probes, and explicit limits.</h2>
+          <div class="case-columns">
+            <div>
+              <h3>Included in the repository</h3>
+              <ul>
+                <li>500 paired sabotage trajectories + 80 benign capability controls (<code>JSONL</code>)</li>
+                <li>On-policy residual activation cacher &amp; Gemma Scope 16k JumpReLU loader</li>
+                <li>Study 2 token-by-token <code>&lt;think&gt;</code> SAE tracer, 9B CoT auditor &amp; mid-CoT steering suite</li>
+                <li>5-fold CV probes, Difference-in-Means, L1 SAE attribution &amp; Neuronpedia lookup</li>
+                <li>Compiled Typst academic preprint PDF + 1-click Colab notebooks for Study 1 &amp; Study 2</li>
+              </ul>
             </div>
+            <div>
+              <h3>Current boundaries</h3>
+              <ul>
+                <li>Evaluates single-turn tool invocation after multi-turn context, not multi-hour Dockerized SWE loops</li>
+                <li>Covers one open-weight family (<code>Gemma-2-2B-IT</code> and <code>Gemma-2-9B-IT</code> in <code>bfloat16</code>)</li>
+                <li>Synthetic trajectories stress four specific shortcut taxonomies, not adversarial jailbreaks</li>
+                <li>Activation steering and white-box probes complement—never replace—sandboxed permissions</li>
+              </ul>
+            </div>
+          </div>
+          <div class="case-note">
+            <span>LIMIT</span>
+            <p>
+              Internal activation monitoring complements—never replaces—least-privilege tool
+              permissions, deterministic trace checks, and explicit human authority boundaries.
+            </p>
           </div>
         </div>
       </section>
 
       <section class="case-next section-shell">
-        <p class="section-index">06 / REPRODUCE IT</p>
-        <h2>Clone the benchmark, inspect the JSON results, or run the 9B notebook.</h2>
+        <p class="section-index">07 / REPRODUCE IT</p>
+        <h2>Clone the benchmark, inspect the token traces, or run the 9B Colab notebooks.</h2>
         <p>
-          All 500 paired scenarios, 80 benign coding controls, cached circuit summaries for both
-          Gemma-2 scales, unit tests, and the compiled 4-page preprint PDF are MIT-licensed on
-          GitHub.
+          All 500 paired scenarios, 80 benign coding controls, cached Study 1 and Study 2 JSON
+          results, unit tests, and the compiled academic preprint PDF are MIT-licensed on GitHub.
         </p>
         <div class="case-next__actions">
           <a class="button button--primary" href="https://github.com/danielgaskins/agentic-sabotage" target="_blank" rel="noopener">View agentic-sabotage on GitHub</a>
           <a class="button button--quiet" href="https://github.com/danielgaskins/agentic-sabotage/blob/main/paper/agentic_sabotage_preprint.pdf" target="_blank" rel="noopener">Download the preprint PDF</a>
-          <a class="button button--quiet" href="https://colab.research.google.com/github/danielgaskins/agentic-sabotage/blob/main/notebooks/colab_gemma2_9b_sabotage.ipynb" target="_blank" rel="noopener">Open 9B Colab notebook</a>
+          <a class="button button--quiet" href="https://colab.research.google.com/github/danielgaskins/agentic-sabotage/blob/main/notebooks/colab_silent_commitment_9b.ipynb" target="_blank" rel="noopener">Open Silent Commitment Colab</a>
         </div>
       </section>
     </main>

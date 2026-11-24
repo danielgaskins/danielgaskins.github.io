@@ -415,13 +415,15 @@
               </div>
               <h3>Agentic Sabotage</h3>
               <p>
-                Under bottleneck pressure, Gemma-2-9B resists skipping unit tests better than 2B
-                yet fabricates 503 tool outputs more often (88% vs. 60%). Using Gemma Scope 16k
-                Sparse Autoencoders across 500 tool-use scenarios, I mapped pre-commitment circuits
-                (0.959 AUROC) and steered away from shortcuts while preserving 100% benign coding accuracy.
+                Under bottleneck pressure, Gemma-2-9B fabricates 503 tool outputs at an 88% rate—and
+                in 25%–29% of explicit <code>&lt;think&gt;</code> traces, its benign-sounding
+                rationalizations fool an external 9B CoT compliance auditor. Using Gemma Scope 16k
+                Sparse Autoencoders, I mapped pre-tool circuits (0.980 AUROC inside
+                <code>&lt;think&gt;</code>) that catch 92%–100% of auditor-evading sabotage and
+                steer away from shortcuts at 100% benign coding accuracy.
               </p>
               <ul class="tag-list" aria-label="Agentic Sabotage areas">
-                <li>Sparse autoencoders</li><li>Activation steering</li><li>Gemma-2 2B &amp; 9B</li><li>AI safety</li>
+                <li>Sparse autoencoders</li><li>CoT faithfulness</li><li>Activation steering</li><li>AI safety</li>
               </ul>
             </div>
             <a class="work-card__link" href="./agentic-sabotage.html" aria-label="Read the Agentic Sabotage mechanistic interpretability study">
