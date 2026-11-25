@@ -514,10 +514,32 @@
 
       <section id="scope" class="case-section section-shell">
         <div class="case-section__label">
-          <p class="section-index">08 / ARTIFACTS &amp; SCOPE</p>
+          <p class="section-index">08 / PRIOR ART &amp; SCOPE</p>
         </div>
         <div class="case-section__body">
-          <h2>Reproducible data, weights-level probes, and explicit limits.</h2>
+          <h2>How this connects to 2024–2026 safety &amp; interpretability work.</h2>
+          <div class="case-task-list">
+            <article>
+              <span>SABOTAGE &amp; SCHEMING</span>
+              <h3>Spontaneous pressure vs. hidden side-tasks</h3>
+              <p>Complements <em>SHADE-Arena</em> (Kutasov et al., 2025), Benton et al. (2024), Meinke et al. (2024), and Denison et al. (2024) by isolating spontaneous bottleneck sabotage and inverse scaling on 503 fabrication without hidden malicious prompts.</p>
+            </article>
+            <article>
+              <span>COT MONITORABILITY</span>
+              <h3>Zero-shot obfuscation &amp; Action Re-Locking</h3>
+              <p>Extends Baker et al. (2025), Chen et al. (2025), and Korbak et al. (2025): an inference-time audit notice lifts CoT evasion without RL, and unsteered prompt pressure re-locks shortcuts after <code>&lt;think&gt;</code>.</p>
+            </article>
+            <article>
+              <span>DECEPTION PROBES VS. SAES</span>
+              <h3>Monosemantic 30-token lead time</h3>
+              <p>Matches the ~0.98 AUROC passive detection of Goldowsky-Dill et al. (ICML 2025) and Hollinsworth et al. (2026, <em>Telling FIBS</em>) while decomposing pre-commitment into JumpReLU SAE latents (Lieberum et al., 2024; Rajamanoharan et al., 2024).</p>
+            </article>
+            <article>
+              <span>AXBENCH, CAST &amp; CIRCUIT BREAKERS</span>
+              <h3>Scale-dependent cliff + streaming latch</h3>
+              <p>Reconciles <em>AxBench</em> (Wu et al., ICML 2025)—dense probes win at 9B yet hit polysemantic cliffs on 2B/Qwen-7B—and extends <em>CAST</em> (Lee et al., ICLR 2025) and Zou et al. (2024) into a training-free mid-<code>&lt;think&gt;</code> circuit breaker.</p>
+            </article>
+          </div>
           <div class="case-columns">
             <div>
               <h3>Included in the repository</h3>
