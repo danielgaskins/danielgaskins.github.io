@@ -34,6 +34,14 @@
     <meta name="twitter:image" content="https://danielgaskins.com/assets/img/agentic-sabotage-og-v1.jpg" />
     <meta name="twitter:image:alt" content="Cross-scale comparison of Gemma-2-2B and Gemma-2-9B pressured tool-use sabotage rates and Gemma Scope SAE pre-commitment probing" />
     <link rel="canonical" href="https://danielgaskins.com/agentic-sabotage.html" />
+    <meta name="citation_title" content="Mechanistic Debugging of Agentic Sabotage and Unfaithful Chain-of-Thought: Sparse Autoencoder Circuits, Silent Commitment &amp; Probe-Gated Circuit Breakers" />
+    <meta name="citation_author" content="Gaskins, Daniel" />
+    <meta name="citation_publication_date" content="2026/11/24" />
+    <meta name="citation_online_date" content="2026/11/24" />
+    <meta name="citation_language" content="en" />
+    <meta name="citation_pdf_url" content="https://danielgaskins.com/papers/agentic_sabotage_preprint.pdf" />
+    <meta name="citation_abstract_html_url" content="https://danielgaskins.com/agentic-sabotage.html" />
+    <meta name="citation_keywords" content="mechanistic interpretability; sparse autoencoders; chain-of-thought faithfulness; agentic sabotage; activation steering; circuit breakers" />
     <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins — Field Notes" href="https://danielgaskins.com/feed.xml" />
     <title>Mechanistic Debugging of Agentic Sabotage &amp; Unfaithful CoT | Daniel Gaskins</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
@@ -72,13 +80,18 @@
               "url": "https://danielgaskins.com/"
             },
             "mainEntityOfPage": "https://danielgaskins.com/agentic-sabotage.html",
-            "sameAs": "https://github.com/danielgaskins/agentic-sabotage/blob/main/paper/agentic_sabotage_preprint.pdf",
+            "sameAs": [
+              "https://danielgaskins.com/papers/agentic_sabotage_preprint.pdf",
+              "https://doi.org/10.5281/zenodo.24520830"
+            ],
             "about": {"@id": "https://danielgaskins.com/agentic-sabotage.html#software"}
           },
           {
             "@type": "SoftwareSourceCode",
             "@id": "https://danielgaskins.com/agentic-sabotage.html#software",
             "name": "agentic-sabotage",
+            "version": "1.0.0",
+            "identifier": "https://doi.org/10.5281/zenodo.24520830",
             "description": "Open-source benchmark, Gemma Scope 16k JumpReLU SAE circuit analysis, token-by-token Chain-of-Thought faithfulness probes, and multi-layer activation steering suite for multi-turn tool-use sabotage.",
             "url": "https://danielgaskins.com/agentic-sabotage.html",
             "codeRepository": "https://github.com/danielgaskins/agentic-sabotage",
@@ -140,7 +153,8 @@
         </div>
         <div class="case-hero__actions">
           <a class="button button--primary" href="https://github.com/danielgaskins/agentic-sabotage" target="_blank" rel="noopener">Inspect the benchmark &amp; code on GitHub</a>
-          <a class="button button--quiet" href="https://github.com/danielgaskins/agentic-sabotage/blob/main/paper/agentic_sabotage_preprint.pdf" target="_blank" rel="noopener">Read the academic preprint PDF</a>
+          <a class="button button--quiet" href="./papers/agentic_sabotage_preprint.pdf" target="_blank" rel="noopener">Read the academic preprint PDF</a>
+          <a class="button button--quiet" href="https://doi.org/10.5281/zenodo.24520830" target="_blank" rel="noopener">Zenodo DOI: 10.5281/zenodo.24520830</a>
           <a class="button button--quiet" href="#circuit-breaker">Jump to Closed-Loop Circuit Breaker ↓</a>
         </div>
       </section>
@@ -583,7 +597,8 @@
           </p>
         <div class="case-next__actions">
           <a class="button button--primary" href="https://github.com/danielgaskins/agentic-sabotage" target="_blank" rel="noopener">View agentic-sabotage on GitHub</a>
-          <a class="button button--quiet" href="https://github.com/danielgaskins/agentic-sabotage/blob/main/paper/agentic_sabotage_preprint.pdf" target="_blank" rel="noopener">Download the preprint PDF</a>
+          <a class="button button--quiet" href="./papers/agentic_sabotage_preprint.pdf" target="_blank" rel="noopener">Download the preprint PDF</a>
+          <a class="button button--quiet" href="https://doi.org/10.5281/zenodo.24520830" target="_blank" rel="noopener">Zenodo Archive (v1.0.0)</a>
           <a class="button button--quiet" href="https://colab.research.google.com/github/danielgaskins/agentic-sabotage/blob/main/notebooks/colab_silent_commitment_9b.ipynb" target="_blank" rel="noopener">Open Silent Commitment Colab</a>
         </div>
       </section>
