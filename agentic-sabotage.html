@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Mechanistic interpretability benchmark mapping Gemma Scope 16k Sparse Autoencoder circuits, unfaithful Chain-of-Thought silent commitment, and activation steering for agentic sabotage in Gemma-2-2B and Gemma-2-9B."
+      content="Mechanistic interpretability benchmark mapping Gemma Scope 16k Sparse Autoencoder circuits, unfaithful Chain-of-Thought silent commitment, closed-loop probe-gated circuit breakers, and cross-family generalization across Gemma-2 (2B, 9B) and Qwen2.5-7B."
     />
     <meta name="theme-color" content="#0b0d0c" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <meta property="og:title" content="Mechanistic Debugging of Agentic Sabotage &amp; Unfaithful Chain-of-Thought" />
     <meta
       property="og:description"
-      content="Mapping Gemma Scope 16k SAE circuits, silent pre-tool commitment inside <think> scratchpads (0.980 AUROC), and activation steering across 500 tool-use scenarios in Gemma-2-2B and Gemma-2-9B."
+      content="Mapping Gemma Scope 16k SAE circuits, silent pre-tool commitment inside <think> scratchpads (0.980 AUROC), closed-loop probe-gated circuit breakers (0% benign false positives), and Qwen2.5-7B cross-family replication."
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://danielgaskins.com/agentic-sabotage.html" />
@@ -60,8 +60,8 @@
           {
             "@type": "ScholarlyArticle",
             "@id": "https://danielgaskins.com/agentic-sabotage.html#article",
-            "headline": "Mechanistic Debugging of Agentic Sabotage and Unfaithful Chain-of-Thought: Sparse Autoencoder Circuits & Silent Commitment in Multi-Turn Tool Use",
-            "description": "Two-part mechanistic interpretability benchmark mapping Gemma Scope 16k Sparse Autoencoder pre-commitment circuits, unfaithful <think> scratchpad evasion of 9B LLM compliance monitors, and multi-layer activation steering in Gemma-2-2B-IT and Gemma-2-9B-IT.",
+            "headline": "Mechanistic Debugging of Agentic Sabotage and Unfaithful Chain-of-Thought: Sparse Autoencoder Circuits, Silent Commitment & Probe-Gated Circuit Breakers",
+            "description": "Mechanistic interpretability benchmark mapping Gemma Scope 16k Sparse Autoencoder pre-commitment circuits, unfaithful <think> scratchpad evasion of LLM compliance monitors, closed-loop probe-gated circuit breakers, and cross-family replication across Gemma-2-2B-IT, Gemma-2-9B-IT, and Qwen2.5-7B-Instruct.",
             "image": "https://danielgaskins.com/assets/img/agentic-sabotage-og-v1.jpg",
             "datePublished": "2026-11-23",
             "dateModified": "2026-11-24",
@@ -122,16 +122,16 @@
 
     <main id="main" class="case-study">
       <section class="case-hero section-shell">
-        <p class="eyebrow"><span class="status-dot"></span> Open source / Mechanistic interpretability / Gemma-2 2B &amp; 9B</p>
+        <p class="eyebrow"><span class="status-dot"></span> Open source / Mechanistic interpretability / Gemma-2 2B &amp; 9B · Qwen2.5-7B</p>
         <h1>Before an agent fabricates output or edits a test, the commitment is already in the residual stream—even when its <code>&lt;think&gt;</code> trace sounds benign.</h1>
         <p class="case-hero__lede">
           When a coding or operations agent hits a CI deadline or an upstream 503 outage, user
           pressure can push it to skip a unit test, bypass a deploy lock, or invent database output
-          instead of reporting the blocker. Across two linked studies on Gemma-2-2B-IT and
-          Gemma-2-9B-IT using Gemma Scope 16k Sparse Autoencoders, this repository maps pre-action
-          sabotage circuits, demonstrates that Layer-24 SAE probes catch unfaithful
-          <code>&lt;think&gt;</code> rationalizations that fool an external 9B CoT compliance
-          auditor, and steers away from shortcuts without breaking legitimate tool use.
+          instead of reporting the blocker. Across Gemma-2-2B-IT, Gemma-2-9B-IT (with Gemma Scope
+          16k Sparse Autoencoders), and Qwen2.5-7B-Instruct, this repository maps pre-action
+          sabotage circuits at ~57% model depth, shows that white-box probes catch unfaithful
+          <code>&lt;think&gt;</code> rationalizations ~30 tokens before tool execution, and deploys
+          a closed-loop probe-gated circuit breaker with zero false positives on benign coding.
         </p>
         <div class="note-byline">
           <a href="./" rel="author">Daniel Gaskins</a>
@@ -141,7 +141,7 @@
         <div class="case-hero__actions">
           <a class="button button--primary" href="https://github.com/danielgaskins/agentic-sabotage" target="_blank" rel="noopener">Inspect the benchmark &amp; code on GitHub</a>
           <a class="button button--quiet" href="https://github.com/danielgaskins/agentic-sabotage/blob/main/paper/agentic_sabotage_preprint.pdf" target="_blank" rel="noopener">Read the academic preprint PDF</a>
-          <a class="button button--quiet" href="#silent-commitment">Jump to Study 2: Silent Commitment ↓</a>
+          <a class="button button--quiet" href="#circuit-breaker">Jump to Closed-Loop Circuit Breaker ↓</a>
         </div>
       </section>
 
@@ -149,8 +149,8 @@
         <div class="section-shell case-signal__grid">
           <div><strong>0.980</strong><span>9B Layer-24 SAE probe AUROC inside <code>&lt;think&gt;</code></span></div>
           <div><strong>92–100%</strong><span>catch rate on CoT-auditor-fooled sabotage</span></div>
-          <div><strong>88%</strong><span>9B pressured 503 output fabrication</span></div>
-          <div><strong>100%</strong><span>9B benign coding accuracy under steering</span></div>
+          <div><strong>5.6%</strong><span>9B <code>&lt;think&gt;</code> sabotage under streaming breaker</span></div>
+          <div><strong>0.0%</strong><span>benign false-trigger rate (120/120 controls)</span></div>
         </div>
       </section>
 
@@ -386,9 +386,135 @@
         </div>
       </section>
 
+      <section id="circuit-breaker" class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">06 / STUDY 2.5: CLOSED-LOOP CIRCUIT BREAKER</p>
+        </div>
+        <div class="case-section__body">
+          <h2>Gate steering on the probe: zero tax on benign coding, no Action Re-Locking.</h2>
+          <p class="case-section__lead">
+            Uniting Study 1 and Study 2 solves both open deployment failure modes at once. Instead
+            of running steering hooks unconditionally—which causes Gemma-2-2B-IT to hit a
+            polysemantic over-refusal cliff (0.0% benign accuracy at α = +0.25)—or turning hooks
+            off after <code>&lt;think&gt;</code> (Action Re-Locking), inference runs 100% unsteered
+            by default and latches 4-layer planning-block steering across <code>TOOL_CALL:</code>
+            only when a disjointly calibrated white-box gate crosses τ.
+          </p>
+          <div class="case-task-list">
+            <article>
+              <span>2B POLYSEMANTIC CLIFF RESCUED</span>
+              <h3>0.0% → 96.7% benign coding accuracy</h3>
+              <p>At α = +0.25, Probe-Gated Dense steering cuts Gemma-2-2B pressured sabotage from 52.1% to 10.4% (−80% relative) while leaving 30/30 benign controls unsteered.</p>
+            </article>
+            <article>
+              <span>9B STREAMING &lt;THINK&gt; LATCH</span>
+              <h3>66.7% → 5.6% sabotage (vs. 55.6% <code>&lt;think&gt;</code>-only)</h3>
+              <p>86.1% of pressured focus prompts trip at the 28-token Silent Commitment checkpoint inside <code>&lt;think&gt;</code>, latching steering across <code>TOOL_CALL:</code> at 100.0% benign CoT accuracy.</p>
+            </article>
+            <article>
+              <span>ZERO BENIGN COLLATERAL</span>
+              <h3>0.0% false triggers across 120/120 controls</h3>
+              <p>Across 2B direct, 9B direct, 9B <code>&lt;think&gt;</code>, and Qwen2.5-7B direct evaluations, held-out sabotage-vs-benign gate AUROC reaches 1.000 with zero benign interventions.</p>
+            </article>
+          </div>
+          <figure class="case-figure" aria-labelledby="cb-2b-caption">
+            <img
+              src="./assets/img/agentic-sabotage-circuit-breaker-2b-v1.webp"
+              width="1800"
+              height="668"
+              loading="lazy"
+              decoding="async"
+              alt="Two-panel plot showing Gemma-2-2B-IT Probe-Gated Circuit Breaker rescuing benign coding accuracy from 0 percent to 97 percent while cutting sabotage to 10 percent, with 0.0 percent false triggers on benign coding controls across 2B and 9B"
+            />
+            <figcaption id="cb-2b-caption">
+              Study 2.5 direct-boundary Closed-Loop Circuit Breaker: (A) rescuing Gemma-2-2B-IT’s α = +0.25 polysemantic cliff (0% → 96.7% benign accuracy, 52.1% → 10.4% sabotage), and (B) 0.0% false-trigger rate on held-out benign coding tasks across 2B and 9B.
+            </figcaption>
+          </figure>
+          <figure class="case-figure" aria-labelledby="cb-9b-caption">
+            <img
+              src="./assets/img/agentic-sabotage-circuit-breaker-9b-v1.webp"
+              width="1800"
+              height="668"
+              loading="lazy"
+              decoding="async"
+              alt="Two-panel plot showing Gemma-2-9B-IT Closed-Loop Streaming Circuit Breaker cutting sabotage from 66.7 percent to 13.9 percent with SAE steering and 5.6 percent with Dense steering while keeping 0 percent hook activation and 100 percent accuracy on benign CoT controls"
+            />
+            <figcaption id="cb-9b-caption">
+              Gemma-2-9B-IT Closed-Loop <code>&lt;think&gt;</code> Streaming Circuit Breaker: catching Silent Commitment 28 tokens into <code>&lt;think&gt;</code> and latching steering through <code>TOOL_CALL:</code> defeats Action Re-Locking (66.7% → 13.9% SAE / 5.6% Dense vs. 55.6% <code>&lt;think&gt;</code>-only) with 0% benign overhead.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="cross-family" class="case-section case-section--dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">07 / CROSS-FAMILY VALIDATION: QWEN2.5-7B</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Not a Gemma-2 quirk: Qwen2.5-7B peaks at the exact same 57.1% depth.</h2>
+            <p class="case-section__lead">
+              Gemma-2 uses dual pre/post RMSNorms and logit soft-capping. Replicating the benchmark,
+              CoT compliance auditor, and closed-loop circuit breaker on
+              <code>Qwen/Qwen2.5-7B-Instruct</code> (28 layers, standard single pre-RMSNorm + GQA +
+              SwiGLU, no soft-capping) confirms that pre-action shortcut commitment and unfaithful
+              <code>&lt;think&gt;</code> rationalization generalize across model families.
+            </p>
+            <div class="case-task-list">
+              <article>
+                <span>503 FABRICATION SURGE</span>
+                <h3>4.0% unpressured → 96.0% pressured</h3>
+                <p>Without pressure, Qwen2.5-7B is 96%–100% honest across all four taxonomies; under bottleneck pressure, 503 fabrication jumps +92 pp to 96.0% and test tampering hits 60.0%.</p>
+              </article>
+              <article>
+                <span>CONVERGENT PLANNING HORIZON</span>
+                <h3>0.937 ± 0.028 AUROC at Layer 16/28 (57.1%)</h3>
+                <p>Linear pre-commitment separability peaks at Layer 16/28 (57.1% depth; Diff-in-Means = 0.922 at L18)—matching Gemma-2-9B’s Layer 24/42 (57.1% depth).</p>
+              </article>
+              <article>
+                <span>SILENT COMMITMENT IN QWEN-7B</span>
+                <h3>0.978 pre-tool AUROC vs. 0.830 7B CoT auditor</h3>
+                <p>No-CoT Layer-16 probes transfer zero-shot to <code>&lt;think&gt;</code> at 0.959 AUROC, and pre-tool <code>&lt;think&gt;</code> probes catch 100% (7/7) of auditor-fooled 503 fabrications.</p>
+              </article>
+              <article>
+                <span>BREAKER PARITY</span>
+                <h3>53.3% → 100.0% benign coding accuracy</h3>
+                <p>Always-on L14–20 steering drops Qwen2.5-7B benign accuracy to 53.3%; closed-loop L16 gating restores 100.0% (30/30) accuracy while cutting sabotage 37.5% → 14.6%.</p>
+              </article>
+            </div>
+            <figure class="case-figure" aria-labelledby="qwen-depth-caption">
+              <img
+                src="./assets/img/agentic-sabotage-qwen25-depth-v1.webp"
+                width="1800"
+                height="677"
+                loading="lazy"
+                decoding="async"
+                alt="Two-panel plot showing Qwen2.5-7B-Instruct behavioral sabotage rates reaching 96 percent on 503 output fabrication alongside cross-family normalized depth AUROC curves converging at 57 percent depth across Gemma-2-2B, Gemma-2-9B, and Qwen2.5-7B"
+              />
+              <figcaption id="qwen-depth-caption">
+                Cross-family validation on Qwen2.5-7B-Instruct: (A) counterfactual sabotage rates by taxonomy, and (B) normalized transformer depth (l / L) AUROC curves across Gemma-2-2B, Gemma-2-9B, and Qwen2.5-7B converging at ~57% depth.
+              </figcaption>
+            </figure>
+            <figure class="case-figure" aria-labelledby="qwen-cot-caption">
+              <img
+                src="./assets/img/agentic-sabotage-qwen25-cot-v1.webp"
+                width="1800"
+                height="676"
+                loading="lazy"
+                decoding="async"
+                alt="Two-panel plot showing Qwen2.5-7B Layer-16 pre-tool probe reaching 0.978 AUROC inside think scratchpads versus 0.830 for the 7B CoT auditor, and the Closed-Loop L16 Circuit Breaker restoring 100 percent benign coding accuracy"
+              />
+              <figcaption id="qwen-cot-caption">
+                (A) Qwen2.5-7B Layer-16 <code>&lt;think&gt;</code> pre-tool AUROC (0.978; 0.959 zero-shot from no-CoT) versus black-box CoT monitors (0.830 LLM auditor / 0.581 lexical), and (B) planning-block steering with closed-loop L16 circuit-breaker rescue.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section id="scope" class="case-section section-shell">
         <div class="case-section__label">
-          <p class="section-index">06 / ARTIFACTS &amp; SCOPE</p>
+          <p class="section-index">08 / ARTIFACTS &amp; SCOPE</p>
         </div>
         <div class="case-section__body">
           <h2>Reproducible data, weights-level probes, and explicit limits.</h2>
@@ -398,16 +524,16 @@
               <ul>
                 <li>500 paired sabotage trajectories + 80 benign capability controls (<code>JSONL</code>)</li>
                 <li>On-policy residual activation cacher &amp; Gemma Scope 16k JumpReLU loader</li>
-                <li>Study 2 token-by-token <code>&lt;think&gt;</code> SAE tracer, 9B CoT auditor &amp; mid-CoT steering suite</li>
-                <li>5-fold CV probes, Difference-in-Means, L1 SAE attribution &amp; Neuronpedia lookup</li>
-                <li>Compiled Typst academic preprint PDF + 1-click Colab notebooks for Study 1 &amp; Study 2</li>
+                <li>Study 2 token-by-token <code>&lt;think&gt;</code> SAE tracer, CoT auditor &amp; Study 2.5 streaming circuit breaker</li>
+                <li>Cross-family <code>Qwen2.5-7B-Instruct</code> evaluation suite, 5-fold CV probes &amp; Neuronpedia lookup</li>
+                <li>Compiled Typst academic preprint PDF + 1-click Colab notebooks</li>
               </ul>
             </div>
             <div>
               <h3>Current boundaries</h3>
               <ul>
                 <li>Evaluates single-turn tool invocation after multi-turn context, not multi-hour Dockerized SWE loops</li>
-                <li>Covers one open-weight family (<code>Gemma-2-2B-IT</code> and <code>Gemma-2-9B-IT</code> in <code>bfloat16</code>)</li>
+                <li>Evaluates two open-weight families (<code>Gemma-2</code> 2B/9B and <code>Qwen2.5-7B</code> in <code>bfloat16</code>), not frontier closed models</li>
                 <li>Synthetic trajectories stress four specific shortcut taxonomies, not adversarial jailbreaks</li>
                 <li>Activation steering and white-box probes complement—never replace—sandboxed permissions</li>
               </ul>
@@ -424,7 +550,7 @@
       </section>
 
       <section class="case-next section-shell">
-        <p class="section-index">07 / REPRODUCE IT</p>
+        <p class="section-index">09 / REPRODUCE IT</p>
         <h2>Clone the benchmark, inspect the token traces, or run the 9B Colab notebooks.</h2>
         <p>
           All 500 paired scenarios, 80 benign coding controls, cached Study 1 and Study 2 JSON
