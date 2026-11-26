@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mechanistic interpretability and temporal control benchmark on Lightricks/LTX-Video-0.9.5 mapping 16k JumpReLU Sparse Autoencoder circuits at 57.1% depth (0.908 AUROC vs. 0.364 dense), 11 ms silent-drift early warning, and zero-tax closed-loop circuit breakers."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta property="og:title" content="Sparse Temporal Latching: Preventing Identity &amp; Physics Drift in Video DiTs" />
+    <meta
+      property="og:description"
+      content="Overcoming 3D spatiotemporal superposition (+54.4 AUROC pts over dense probes), catching silent drift 109.4x faster than VAE+DINOv2 decoding, and rescuing long-horizon LTX-Video rollouts without STG motion freezing."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://danielgaskins.com/sparse-temporal-latching.html" />
+    <meta property="og:site_name" content="Daniel Gaskins" />
+    <meta property="article:author" content="Daniel Gaskins" />
+    <meta property="article:published_time" content="2026-11-26" />
+    <meta property="article:modified_time" content="2026-11-26" />
+    <meta property="og:image" content="https://danielgaskins.com/assets/img/sparse-temporal-latching-og-v1.jpg" />
+    <meta property="og:image:secure_url" content="https://danielgaskins.com/assets/img/sparse-temporal-latching-og-v1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Live X-Ray Layer-16 16k SAE silent-drift monitor and Step-12 early-abort seed rescue on LTX-Video-0.9.5" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sparse Temporal Latching: Preventing Identity &amp; Physics Drift in Video DiTs" />
+    <meta
+      name="twitter:description"
+      content="Reversing AxBench in 3D Video DiTs: 16k JumpReLU SAEs at 57.1% depth reach 0.908 AUROC (+54.4 pts over dense), catch silent drift in 11.1 ms, and avoid STG motion freezing."
+    />
+    <meta name="twitter:image" content="https://danielgaskins.com/assets/img/sparse-temporal-latching-og-v1.jpg" />
+    <meta name="twitter:image:alt" content="Live X-Ray Layer-16 16k SAE silent-drift monitor and Step-12 early-abort seed rescue on LTX-Video-0.9.5" />
+    <link rel="canonical" href="https://danielgaskins.com/sparse-temporal-latching.html" />
+    <meta name="citation_title" content="Sparse Temporal Latching: Preventing Long-Horizon Identity and Physics Drift in Video Diffusion Transformers via Subject-Routed SAE Circuit Breakers" />
+    <meta name="citation_author" content="Gaskins, Daniel" />
+    <meta name="citation_publication_date" content="2026/11/26" />
+    <meta name="citation_online_date" content="2026/11/26" />
+    <meta name="citation_doi" content="10.5281/zenodo.24569368" />
+    <meta name="citation_language" content="en" />
+    <meta name="citation_pdf_url" content="https://danielgaskins.com/papers/sparse_temporal_latching_preprint.pdf" />
+    <meta name="citation_abstract_html_url" content="https://danielgaskins.com/sparse-temporal-latching.html" />
+    <meta name="citation_keywords" content="video diffusion transformers; sparse autoencoders; mechanistic interpretability; LTX-Video; activation steering; circuit breakers; temporal consistency" />
+    <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins — Field Notes" href="https://danielgaskins.com/feed.xml" />
+    <title>Sparse Temporal Latching in 3D Video DiTs | Daniel Gaskins</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://danielgaskins.com/sparse-temporal-latching.html#article",
+            "headline": "Sparse Temporal Latching: Preventing Long-Horizon Identity and Physics Drift in Video Diffusion Transformers via Subject-Routed SAE Circuit Breakers",
+            "description": "Mechanistic interpretability and closed-loop control study on Lightricks/LTX-Video-0.9.5 showing that 57.1%-depth 16k JumpReLU Sparse Autoencoders overcome 3D spatiotemporal superposition (+54.4 AUROC points over dense probes), detect silent drift 109.4x faster than Tweedie VAE+DINOv2 decoding, and prevent STG motion freezing and dense polysemantic collapse.",
+            "image": "https://danielgaskins.com/assets/img/sparse-temporal-latching-og-v1.jpg",
+            "datePublished": "2026-11-26",
+            "dateModified": "2026-11-26",
+            "author": {
+              "@id": "https://danielgaskins.com/#daniel-gaskins",
+              "@type": "Person",
+              "name": "Daniel Gaskins",
+              "url": "https://danielgaskins.com/"
+            },
+            "mainEntityOfPage": "https://danielgaskins.com/sparse-temporal-latching.html",
+            "sameAs": [
+              "https://danielgaskins.com/papers/sparse_temporal_latching_preprint.pdf",
+              "https://doi.org/10.5281/zenodo.24569368",
+              "https://github.com/danielgaskins/sparse-temporal-latching"
+            ],
+            "about": {"@id": "https://danielgaskins.com/sparse-temporal-latching.html#software"}
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://danielgaskins.com/sparse-temporal-latching.html#software",
+            "name": "sparse-temporal-latching",
+            "version": "1.0.0",
+            "identifier": "https://doi.org/10.5281/zenodo.24569368",
+            "description": "Open-source 3D Video DiT mechanistic interpretability suite: per-sigma TimestepStandardizer, 16,384-latent JumpReLU SAE, zero-overhead T5 cross-attention noun routing, Tweedie silent-drift probes, and closed-loop temporal circuit breakers on LTX-Video-0.9.5.",
+            "url": "https://danielgaskins.com/sparse-temporal-latching.html",
+            "codeRepository": "https://github.com/danielgaskins/sparse-temporal-latching",
+            "programmingLanguage": "Python",
+            "runtimePlatform": "Python 3.11+",
+            "license": "https://opensource.org/license/mit",
+            "author": {
+              "@id": "https://danielgaskins.com/#daniel-gaskins",
+              "@type": "Person",
+              "name": "Daniel Gaskins",
+              "url": "https://danielgaskins.com/"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="./" aria-label="Daniel Gaskins, home">
+        <span>DG</span>
+        <span class="wordmark__name">Daniel Gaskins</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="./#work">Work</a>
+        <a href="./#capabilities">How I work</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./#about">About</a>
+        <a href="./resume.html">Résumé</a>
+        <a class="nav-cta" href="./meet.html">Talk with me</a>
+      </nav>
+    </header>
+
+    <main id="main" class="case-study">
+      <section class="case-hero section-shell">
+        <p class="eyebrow"><span class="status-dot"></span> Open source / 3D Video DiTs / Lightricks LTX-Video-0.9.5 · 16k JumpReLU SAE</p>
+        <h1>Dense vectors fail inside 3D video world models—but a 57.1%-depth JumpReLU SAE catches silent drift 22.5 steps before pixels collapse.</h1>
+        <p class="case-hero__lede">
+          Extending open-weights Video Diffusion Transformers beyond a single window via sliding-window
+          frame conditioning (<code>Extend</code>) causes compounding identity mutation, rigid-geometry
+          warping, and temporal warble. Extending the control architecture from
+          <a href="./agentic-sabotage.html">Agentic Sabotage</a> to 4D flow-matching spacetime
+          (<code>Lightricks/LTX-Video-0.9.5</code>, 28 layers, 1.31M tokens), this work shows why
+          <em>AxBench</em> reverses in 3D video: dense probes collapse at mid-network depth (0.364 AUROC),
+          whereas an instance-indexed 16k JumpReLU SAE reaches 0.908 AUROC (+54.4 pts), flags silent drift
+          in 11.1 ms (109.4× faster than Tweedie <code>VAE + DINOv2</code> decoding), and gates zero-tax
+          interventions without Spatio-Temporal Skip Guidance’s motion-freezing cliff.
+        </p>
+        <div class="note-byline">
+          <a href="./" rel="author">Daniel Gaskins</a>
+          <time datetime="2026-11-26">Published November 26, 2026</time>
+          <span>World-model interpretability &amp; closed-loop temporal control</span>
+        </div>
+        <div class="case-hero__actions">
+          <a class="button button--primary" href="https://github.com/danielgaskins/sparse-temporal-latching" target="_blank" rel="noopener">Inspect the code &amp; benchmark on GitHub</a>
+          <a class="button button--quiet" href="./papers/sparse_temporal_latching_preprint.pdf" target="_blank" rel="noopener">Read the 6-page academic preprint PDF</a>
+          <a class="button button--quiet" href="https://doi.org/10.5281/zenodo.24569368" target="_blank" rel="noopener">Zenodo DOI: 10.5281/zenodo.24569368</a>
+          <a class="button button--quiet" href="./agentic-sabotage.html">Paper 1: Agentic Sabotage (LLMs) →</a>
+        </div>
+      </section>
+
+      <section class="case-signal" aria-label="Empirical benchmark and circuit summary">
+        <div class="section-shell case-signal__grid">
+          <div><strong>0.908</strong><span>Layer-16 SAE AUROC (+54.4 pts over dense)</span></div>
+          <div><strong>109.4×</strong><span>faster than Tweedie <code>VAE + DINOv2</code> (11.1 ms)</span></div>
+          <div><strong>85.7%</strong><span>catch rate on <code>DINOv2 ≥ 0.90</code> silent drift</span></div>
+          <div><strong>+11.6 pts</strong><span>Step-12 early-abort <code>DINOv2</code> rescue (0% FPR)</span></div>
+        </div>
+      </section>
+
+      <section id="showcase" class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">01 / LIVE VIDEO SHOWCASE</p>
+        </div>
+        <div class="case-section__body">
+          <h2>Watch the 11 ms SAE gate fire before visible collapse—and see why always-on STG &amp; dense steering fail.</h2>
+          <p class="case-section__lead">
+            Every comparison below runs across 4 autoregressive chunks (169 frames / 7.04 seconds at 24 fps)
+            from an identical shared <code>Chunk 0</code> anchor (<code>0.0s–2.0s</code>). Rather than
+            relying on post-hoc pixel decoding, our gate inspects Layer-16 sparse latents directly inside
+            the DiT residual stream at Step 8/30 (<code>σ = 0.75</code>).
+          </p>
+
+          <figure class="case-figure" aria-labelledby="vid-xray-caption">
+            <video
+              controls
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              poster="./assets/img/stl-xray-poster-v1.webp"
+              width="986"
+              height="628"
+              style="width: 100%; height: auto; border-radius: 8px; display: block; background: #0d1117;"
+            >
+              <source src="./assets/media/stl-xray-early-abort-v1.mp4" type="video/mp4" />
+            </video>
+            <figcaption id="vid-xray-caption">
+              <strong>X-Ray Silent-Drift Monitor + Step-12 Zero-Decode Early-Abort Rescue (<code>drift_033</code>):</strong> At <code>t = 2.4s</code> (Chunk 1), external pixel similarity (<code>DINOv2 = 0.941</code>, top-right chart) still looks nominal, yet the in-stream Layer-16 16k SAE gate (bottom-right chart) spikes red (<code>D = 0.47 &gt; 0.30</code>) 22.5 denoising steps early. Aborting drifting noise seeds at Step 12/30 (zero 3D-VAE decodes on rejected seeds; selecting Seeds #2 and #5) rescues Chunk-3 consistency by <strong>+11.6 DINOv2 points</strong> (<code>0.626 → 0.742</code>) at full <code>1.56 px/frame</code> water-spray motion.
+            </figcaption>
+          </figure>
+
+          <figure class="case-figure" aria-labelledby="vid-mountaineer-caption">
+            <video
+              controls
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              poster="./assets/img/stl-mountaineer-poster-v1.webp"
+              width="1116"
+              height="906"
+              style="width: 100%; height: auto; border-radius: 8px; display: block; background: #0d1117;"
+            >
+              <source src="./assets/media/stl-4way-mountaineer-motion-v1.mp4" type="video/mp4" />
+            </video>
+            <figcaption id="vid-mountaineer-caption">
+              <strong>Complete 4-Way Motion-Freeze &amp; Polysemantic Test (<code>drift_008</code>):</strong> <em>1. Original Unsteered</em> (<code>1.62 px/f</code>) and <em>4. Step-12 SAE Latch</em> (<code>1.74 px/f</code>, <code>0.690 DINOv2</code>) both ascend the steep snow ridge at full speed (with the SAE gate staying 0%-tax off during faithful Chunks 1–2 and resampling only Chunk 3). By contrast, <em>2. Always-On High STG 3.2</em> freezes the climber in place (<code>0.04 px/f</code>, <strong>−97.6% optical flow</strong>), and <em>3. Always-On Dense</em> melts the figure into dark rubble (<code>0.497 DINOv2</code>).
+            </figcaption>
+          </figure>
+
+          <figure class="case-figure" aria-labelledby="vid-espresso-caption">
+            <video
+              controls
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              poster="./assets/img/stl-espresso-poster-v1.webp"
+              width="1116"
+              height="906"
+              style="width: 100%; height: auto; border-radius: 8px; display: block; background: #0d1117;"
+            >
+              <source src="./assets/media/stl-4way-espresso-geometry-v1.mp4" type="video/mp4" />
+            </video>
+            <figcaption id="vid-espresso-caption">
+              <strong>Complete 4-Way Rigid Geometry Test (<code>drift_016</code>):</strong> On an orbiting brushed-aluminum espresso machine, <em>2. High STG 3.2</em> multiplies and warps the two circular pressure gauges into six diamond shapes (<code>0.417 DINOv2</code>) while <em>3. Always-On Dense</em> dissolves the chassis into yellow fog (<code>0.585 DINOv2</code>). Even when latched across all three continuation chunks, <em>4. Closed-Loop 16k SAE</em> preserves crisp twin-gauge geometry (<code>0.805 DINOv2</code>).
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="study1" class="case-section case-section--paper-dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">02 / STUDY 1: SPATIOTEMPORAL SUPERPOSITION</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Why <em>AxBench</em> reverses in 3D video: camera motion drowns out dense vectors.</h2>
+            <p class="case-section__lead">
+              In 1D language models (<a href="./agentic-sabotage.html">Paper 1</a>), probing at a fixed
+              syntactic boundary (<code>TOOL_CALL:</code>) lets dense vectors match SAEs at 9B scale. In
+              a 3D Video DiT, every token <code>(t, h, w)</code> superimposes camera translation, lighting,
+              pose, and object identity—while AdaLN-Single shifts activation norms by over an order of
+              magnitude across flow-matching noise levels <code>σ ∈ [0, 1]</code>.
+            </p>
+            <div class="case-flow" aria-label="Spatiotemporal SAE pipeline">
+              <div><span>01</span><strong>Standardize</strong><small>6-bin per-σ AdaLN normalizer</small></div>
+              <i>→</i>
+              <div><span>02</span><strong>Decompose</strong><small>16k JumpReLU SAE on 1.31M tokens</small></div>
+              <i>→</i>
+              <div><span>03</span><strong>Route</strong><small>T5 cross-attention noun mask</small></div>
+              <i>→</i>
+              <div><span>04</span><strong>Index</strong><small>Top-64 Chunk-0 sparse support</small></div>
+            </div>
+            <div class="case-task-list">
+              <article>
+                <span>DENSE PROBE COLLAPSE</span>
+                <h3>0.364 AUROC at Layer 16 (57.1% depth)</h3>
+                <p>Across a 7-layer standardized depth sweep (<code>{4, 8, 12, 16, 20, 24, 27}</code>), dense residual probes stay near chance across mid-network planning blocks and peak at only 0.633 at Layer 27.</p>
+              </article>
+              <article>
+                <span>16K JUMPRELU DISENTANGLEMENT</span>
+                <h3>0.9083 ± 0.0764 AUROC (+54.4 pts)</h3>
+                <p>Trained in 6 epochs on a single L4 GPU (<code>R² = 0.7084</code>, mean <code>L0 = 111.1</code>, 99.94% live dictionary), encoding 3D tokens <em>prior</em> to spatial pooling unlocks +54.4 AUROC points at Layer 16.</p>
+              </article>
+              <article>
+                <span>ORTHOGONAL DRIFT ANATOMY</span>
+                <h3>Top-64 Identity vs. 48 Warble Latents</h3>
+                <p>Separates entity-selective persistent latents (<code>#1899</code> persistence = 0.704) from a universal 48-latent high-frequency morphing/warble subspace (<code>#4444</code> Cohen’s d = +0.839).</p>
+              </article>
+            </div>
+            <figure class="case-figure" aria-labelledby="study1-caption">
+              <img
+                src="./assets/img/stl-study1-depth-sae-v1.webp"
+                width="1800"
+                height="679"
+                loading="lazy"
+                decoding="async"
+                alt="Two-panel plot showing 7-layer dense residual drift AUROC collapsing to 0.364 at Layer 16 while the Layer-16 16k JumpReLU SAE reaches 0.908 AUROC, alongside top persistent identity latents versus high-frequency warble latents"
+              />
+              <figcaption id="study1-caption">
+                Study 1 Spatiotemporal SAE Anatomy on <code>LTX-Video-0.9.5</code>: (A) 5-fold stratified CV AUROC across 7 standardized DiT blocks, and (B) entity-selective persistent identity latents versus universal warble/morphing latents.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="study2" class="case-section case-section--dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">03 / STUDY 2: SILENT DRIFT &amp; 109× SPEEDUP</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Internal latents decay a full chunk before external pixel monitors notice.</h2>
+            <p class="case-section__lead">
+              To ensure early-step detection is non-tautological, we benchmark our zero-decode Layer-16
+              SAE gate head-to-head against exact single-step Euler/Tweedie clean previews
+              <code>VAE(ẑ₀(σ)) + DINOv2</code> across five flow-matching noise levels, and test whether
+              Chunk-1 internal latents predict Chunk-2 collapse before pixels visibly degrade.
+            </p>
+            <div class="case-task-list">
+              <article>
+                <span>109.4× GATE SPEEDUP</span>
+                <h3>11.06 ms vs. 1,209.8 ms per check</h3>
+                <p>Decoding 49-frame 3D-VAE previews + DINOv2 inside the diffusion loop costs 1.21 seconds per check; reading Layer-16 SAE latents in SRAM takes 11.1 ms and hits 0.881–0.913 AUROC (22.5 to 14.4 steps early).</p>
+              </article>
+              <article>
+                <span>NEXT-CHUNK PREDICTION</span>
+                <h3>0.8968 SAE vs. 0.8571 VBench DINOv2</h3>
+                <p>Zero-decode Chunk-1 Layer-16 SAE features at <code>σ = 0.75</code> outperform a black-box VBench pixel monitor run on Chunk 1’s fully rendered frames (Spearman ρ = +0.964 on screening controls).</p>
+              </article>
+              <article>
+                <span>SILENT DRIFT RECOVERY</span>
+                <h3>85.7% (6 / 7) monitor-evading collapses caught</h3>
+                <p>Among rollouts whose Chunk-1 rendered video passes standard pixel checks (<code>DINOv2 ≥ 0.90</code>) yet suffers severe collapse in Chunk 2, the Chunk-1 SAE gate catches 6 of 7 at 75% specificity.</p>
+              </article>
+            </div>
+            <figure class="case-figure" aria-labelledby="study2-caption">
+              <img
+                src="./assets/img/stl-study2-silent-drift-v1.webp"
+                width="1800"
+                height="686"
+                loading="lazy"
+                decoding="async"
+                alt="Two-panel plot showing intra-chunk denoising lead-time AUROC for Layer-16 16k SAE versus Dense and Tweedie VAE+DINOv2 previews, and inter-chunk Silent Drift next-collapse AUROC and 85.7 percent evasion recovery"
+              />
+              <figcaption id="study2-caption">
+                Study 2 Non-Tautological Silent Drift: (A) intra-chunk lead time across <code>σ ∈ [0.88, 0.20]</code> (11.1 ms in-stream SAE vs. 1,210 ms Tweedie preview decode), and (B) inter-chunk collapse prediction and recovery on <code>DINOv2 ≥ 0.90</code> Chunk-1 rollouts.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="study3" class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">04 / STUDY 3: CLOSED-LOOP CONTROL &amp; SPATIAL SHEAR</p>
+        </div>
+        <div class="case-section__body">
+          <h2>In-flight sparse steering does no harm; Step-12 early-abort latching rescues severe collapses.</h2>
+          <p class="case-section__lead">
+            Across 16 four-chunk drift scenarios stratified over four taxonomies plus disjoint faithful
+            benign controls (<code>τ_SAE = 0.29928</code>), Study 3 separates two distinct questions:
+            what happens when you steer activations <em>inside</em> a fixed noise draw, and what happens
+            when you use the 11 ms SAE gate to <em>abort bad noise draws early</em>?
+          </p>
+          <div class="case-comparison">
+            <div>
+              <span>IN-FLIGHT COORDINATE-PRESERVING LATCHING</span>
+              <p>
+                Within a fixed noise seed, Always-On Dense hits a −10.74 pt Video Polysemantic Cliff
+                (0.6745 DINOv2) and STG slashes RAFT flow 28.4%–54.4%. Gated SAE warble damping +
+                subject-routed <code>attn1</code> coherence achieves <strong>0.0% benign FPR</strong>,
+                retains <strong>110.4%–111.9% motion</strong>, lifts Character Identity to <strong>0.8007 (#1)</strong>,
+                and reveals moving-edge boundary shear under sharp masks (0.7116 sharp vs. 0.7708 smooth ramp).
+              </p>
+            </div>
+            <div>
+              <span>STEP-12 ZERO-DECODE EARLY-ABORT LATCHING</span>
+              <p>
+                Severe 3D collapses occur when a chunk’s Gaussian noise seed enters a corrupted pose basin
+                that linear nudges cannot rebuild. Aborting tripped seeds at Step 12/30 (<code>σ = 0.58</code>,
+                skipping 60% of DiT steps and 100% of 3D-VAE decodes) and selecting the lowest-<code>D_SAE</code>
+                seed (<code>K = 6</code>) rescues severe collapses by up to <strong>+11.6 DINOv2 points</strong>
+                at full dynamic velocity.
+              </p>
+            </div>
+          </div>
+          <figure class="case-figure" aria-labelledby="study3-caption">
+            <img
+              src="./assets/img/stl-study3-pareto-v1.webp"
+              width="1800"
+              height="681"
+              loading="lazy"
+              decoding="async"
+              alt="Two-panel plot showing the Study 3 Consistency-versus-Motion Pareto frontier across 169-frame rollouts and per-taxonomy DINOv2 subject preservation comparing Sharp Mask versus Smooth Ramp SAE routing"
+            />
+            <figcaption id="study3-caption">
+              Study 3 Consistency–Dynamism Pareto Suite: (A) Chunk-3 DINOv2 subject consistency versus RAFT optical flow (px/frame), and (B) sharp silhouette (<code>w₀ = 0.08</code>) versus smooth ramp (<code>w₀ = 0.72</code>) spatial-shear ablation across four drift taxonomies.
+            </figcaption>
+          </figure>
+          <figure class="case-figure" aria-labelledby="qual-strip-caption">
+            <img
+              src="./assets/img/stl-qualitative-strip-v1.webp"
+              width="1800"
+              height="774"
+              loading="lazy"
+              decoding="async"
+              alt="Multi-frame qualitative filmstrip comparing Unsteered, Always-On Dense, High STG 3.2, and Closed-Loop 16k SAE across Golden Retriever water spray, Mountaineer snow climb, and Espresso Machine twin gauges"
+            />
+            <figcaption id="qual-strip-caption">
+              Multi-horizon filmstrip (<code>Chunk 0</code> shared anchor → <code>Chunk 3</code>, Frame 164): (A) Step-12 SAE early-abort rescue (+11.6 pts) versus Dense orb hallucination, and (B) −97.6% High-STG statue freeze and 6-dial rigid distortion versus 16k SAE preservation.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="synthesis" class="case-section case-section--paper-dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">05 / UNIFIED SYNTHESIS &amp; BOUNDARIES</p>
+          </div>
+          <div class="case-section__body">
+            <h2>One control architecture across autoregressive tool agents and 4D video world models.</h2>
+            <div class="case-columns">
+              <div>
+                <h3>Included in the repository</h3>
+                <ul>
+                  <li>Deterministic 4-taxonomy drift + faithful control benchmark generator (<code>JSONL</code>)</li>
+                  <li>6-bin <code>TimestepStandardizer</code> &amp; 16,384-latent STE JumpReLU SAE trainer</li>
+                  <li>Zero-overhead T5 cross-attention noun router &amp; Tweedie <code>ẑ₀(σ)</code> lead-time suite</li>
+                  <li>In-flight coordinate-preserving SAE breaker + Step-12 zero-decode early-abort seed latch</li>
+                  <li>Compiled 6-page two-column Typst PDF, self-contained arXiv LaTeX bundle &amp; unit tests</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Current boundaries</h3>
+                <ul>
+                  <li>Evaluates <code>Lightricks/LTX-Video-0.9.5</code> (2B 3D DiT) across 4-chunk (169-frame) rollouts on a single 24 GB L4 GPU</li>
+                  <li>In-flight linear/<code>attn1</code> nudges yield modest (+2–4%) stabilization; large visual rescues (+11.6 pts) require Step-12 early-abort seed resampling</li>
+                  <li>Sharp T5 cross-attention masks shear fast-translating rigid edges without flow-advected <code>SAM-2</code> masks</li>
+                  <li>Internal white-box monitoring complements—never replaces—external safety and physics verifiers (<a href="./mendmark.html">Mendmark</a>, <a href="./human-review-ai-agents.html">human review</a>)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next section-shell">
+        <p class="section-index">06 / REPRODUCE IT</p>
+        <h2>Clone the repository, inspect the JSON telemetry, or run on a single L4 GPU.</h2>
+        <p>
+          All source code, benchmark prompts, cached Study 1–3 telemetry, unit tests, and the compiled
+          6-page preprint PDF are MIT-licensed on GitHub and run end-to-end in <code>torch.bfloat16</code>
+          on a single 24 GB NVIDIA L4 GPU with zero model fine-tuning.
+        </p>
+        <div class="case-next__actions">
+          <a class="button button--primary" href="https://github.com/danielgaskins/sparse-temporal-latching" target="_blank" rel="noopener">View sparse-temporal-latching on GitHub</a>
+          <a class="button button--quiet" href="./papers/sparse_temporal_latching_preprint.pdf" target="_blank" rel="noopener">Download the 6-page preprint PDF</a>
+          <a class="button button--quiet" href="https://doi.org/10.5281/zenodo.24569368" target="_blank" rel="noopener">Zenodo Archive (v1.0.0)</a>
+          <a class="button button--quiet" href="./agentic-sabotage.html">Companion Paper: Agentic Sabotage (LLMs)</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span data-year></span> Daniel Gaskins</p>
+      <p>Physics · Models · Products</p>
+      <a href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
