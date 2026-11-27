@@ -9,6 +9,7 @@ const corePages = [
   "mendmark.html",
   "agentic-sabotage.html",
   "sparse-temporal-latching.html",
+  "sycophantic-world-models.html",
   "lightgbm-model-to-code.html",
   "syncabill.html",
   "agent-eval-mutation-testing.html",
@@ -71,6 +72,7 @@ test("the homepage and published articles reinforce the Daniel Gaskins entity", 
     "lightgbm-model-to-code.html",
     "agentic-sabotage.html",
     "sparse-temporal-latching.html",
+    "sycophantic-world-models.html",
   ]) {
     assert.match(
       htmlByPage.get(page),

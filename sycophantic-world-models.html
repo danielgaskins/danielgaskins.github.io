@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zero-decode Layer-16 (57.1% depth) 16k JumpReLU Sparse Autoencoder circuit breaker (LatchGate) across NVIDIA Cosmos-Predict2.5-2B and Cosmos-Policy-LIBERO-Predict2-2B: 0.9861 out-of-fold AUROC (+47.2 pts over dense), 42.8x validation speedup, 97.1% DreamGen curation purity, and 80.0% out-of-suite LIBERO MPC selection."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta property="og:title" content="Sycophantic Physics in Embodied World Models: Zero-Decode SAE Circuit Breakers" />
+    <meta
+      property="og:description"
+      content="Catching action-marginalized physics hallucinations inside NVIDIA Cosmos-Predict2.5-2B and Cosmos-Policy-LIBERO in 16.1 ms without 3D-VAE decoding: 0.986 AUROC on Bridge V2, 97.1% DreamGen purity (-26.1% GPU compute), and 80% shielded LIBERO MPC."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://danielgaskins.com/sycophantic-world-models.html" />
+    <meta property="og:site_name" content="Daniel Gaskins" />
+    <meta property="article:author" content="Daniel Gaskins" />
+    <meta property="article:published_time" content="2026-11-27" />
+    <meta property="article:modified_time" content="2026-11-27" />
+    <meta property="og:image" content="https://danielgaskins.com/assets/img/sycophantic-world-models-og-v1.jpg" />
+    <meta property="og:image:secure_url" content="https://danielgaskins.com/assets/img/sycophantic-world-models-og-v1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Dual-backbone LatchGate zero-decode SAE circuit breaker across NVIDIA Cosmos-Predict2.5 Bridge V2 and Cosmos-Policy MuJoCo LIBERO" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sycophantic Physics in Embodied World Models: Zero-Decode SAE Circuit Breakers" />
+    <meta
+      name="twitter:description"
+      content="16.1 ms Layer-16 JumpReLU SAE gate inside NVIDIA Cosmos world models: 0.986 AUROC (+47.2 pts over dense), 42.8x faster than Wan2.1 VAE+DINOv2, 97.1% DreamGen purity, and 80% LIBERO MPC."
+    />
+    <meta name="twitter:image" content="https://danielgaskins.com/assets/img/sycophantic-world-models-og-v1.jpg" />
+    <meta name="twitter:image:alt" content="Dual-backbone LatchGate zero-decode SAE circuit breaker across NVIDIA Cosmos-Predict2.5 Bridge V2 and Cosmos-Policy MuJoCo LIBERO" />
+    <link rel="canonical" href="https://danielgaskins.com/sycophantic-world-models.html" />
+    <meta name="citation_title" content="Sycophantic Physics in Embodied World Models: Zero-Decode SAE Circuit Breakers for Action-Marginalized Hallucinations and Synthetic Rollout Curation" />
+    <meta name="citation_author" content="Gaskins, Daniel" />
+    <meta name="citation_publication_date" content="2026/11/27" />
+    <meta name="citation_online_date" content="2026/11/27" />
+    <meta name="citation_doi" content="10.5281/zenodo.24593275" />
+    <meta name="citation_language" content="en" />
+    <meta name="citation_pdf_url" content="https://danielgaskins.com/papers/sycophantic_world_models_preprint.pdf" />
+    <meta name="citation_abstract_html_url" content="https://danielgaskins.com/sycophantic-world-models.html" />
+    <meta name="citation_keywords" content="embodied world models; sparse autoencoders; mechanistic interpretability; NVIDIA Cosmos; robotics; synthetic data curation; circuit breakers" />
+    <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins - Field Notes" href="https://danielgaskins.com/feed.xml" />
+    <title>Sycophantic Physics in Embodied World Models | Daniel Gaskins</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://danielgaskins.com/sycophantic-world-models.html#article",
+            "headline": "Sycophantic Physics in Embodied World Models: Zero-Decode SAE Circuit Breakers for Action-Marginalized Hallucinations and Synthetic Rollout Curation",
+            "description": "Mechanistic interpretability and closed-loop curation study across NVIDIA Cosmos-Predict2.5-2B/robot/action-cond and Cosmos-Policy-LIBERO-Predict2-2B introducing LatchGate, a 16.1 ms Layer-16 (57.1% depth) 16k JumpReLU SAE circuit breaker that resolves high-velocity motion superposition (0.9861 Bridge AUROC, 0.7662 LIBERO AUROC), exposes Silent Sycophantic Physics in Cosmos-Policy's value critic (0.5112 AUROC), achieves 97.1% DreamGen synthetic dataset purity (-26.1% GPU compute), and reaches 80.0% out-of-suite LIBERO Best-of-K action selection.",
+            "image": "https://danielgaskins.com/assets/img/sycophantic-world-models-og-v1.jpg",
+            "datePublished": "2026-11-27",
+            "dateModified": "2026-11-27",
+            "author": {
+              "@id": "https://danielgaskins.com/#daniel-gaskins",
+              "@type": "Person",
+              "name": "Daniel Gaskins",
+              "url": "https://danielgaskins.com/"
+            },
+            "mainEntityOfPage": "https://danielgaskins.com/sycophantic-world-models.html",
+            "sameAs": [
+              "https://danielgaskins.com/papers/sycophantic_world_models_preprint.pdf",
+              "https://doi.org/10.5281/zenodo.24593275",
+              "https://github.com/danielgaskins/sycophantic-world-models"
+            ],
+            "about": {"@id": "https://danielgaskins.com/sycophantic-world-models.html#software"}
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://danielgaskins.com/sycophantic-world-models.html#software",
+            "name": "sycophantic-world-models",
+            "version": "1.0.0",
+            "identifier": "https://doi.org/10.5281/zenodo.24593275",
+            "description": "Zero-compile pure-PyTorch inference and Layer-16 16,384-latent JumpReLU SAE circuit-breaker suite (LatchGate) for NVIDIA Cosmos-Predict2.5-2B/robot/action-cond and Cosmos-Policy-LIBERO-Predict2-2B.",
+            "url": "https://danielgaskins.com/sycophantic-world-models.html",
+            "codeRepository": "https://github.com/danielgaskins/sycophantic-world-models",
+            "programmingLanguage": "Python",
+            "runtimePlatform": "Python 3.10+",
+            "license": "https://opensource.org/license/mit",
+            "author": {
+              "@id": "https://danielgaskins.com/#daniel-gaskins",
+              "@type": "Person",
+              "name": "Daniel Gaskins",
+              "url": "https://danielgaskins.com/"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="./" aria-label="Daniel Gaskins, home">
+        <span>DG</span>
+        <span class="wordmark__name">Daniel Gaskins</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="./#work">Work</a>
+        <a href="./#capabilities">How I work</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./#about">About</a>
+        <a href="./resume.html">Résumé</a>
+        <a class="nav-cta" href="./meet.html">Talk with me</a>
+      </nav>
+    </header>
+
+    <main id="main" class="case-study">
+      <section class="case-hero section-shell">
+        <p class="eyebrow"><span class="status-dot"></span> Open source / Embodied World Models / NVIDIA Cosmos-Predict2.5 &amp; Cosmos-Policy · 16k JumpReLU SAE</p>
+        <h1>Embodied world models fabricate optimistic physics on bad robot actions, fooling their own value critics until a 16 ms SAE gate steps in.</h1>
+        <p class="case-hero__lede">
+          Action-conditioned video world models such as NVIDIA <code>Cosmos</code> power both synthetic robot
+          data generation (<code>DreamGen</code>) and model-predictive action selection for VLA policies. Yet
+          when conditioned on mistimed or invalid actions, models trained on successful demonstrations suffer
+          from <em>action-marginalized ("sycophantic") physics hallucinations</em>: visual priors override the
+          bad action to render fluent grasp progress while fast benign arm sweeps confound runtime instability
+          metrics. Completing the mechanistic control trilogy begun in
+          <a href="./agentic-sabotage.html">Agentic Sabotage</a> and
+          <a href="./sparse-temporal-latching.html">Sparse Temporal Latching</a> across two official 2B
+          <code>Cosmos</code> backbones on a single 24 GB L4 GPU, <strong><code>LatchGate</code></strong> reaches
+          0.9861 out-of-fold AUROC on Bridge V2 (+47.2 pts over dense probes), runs 42.8× faster than
+          <code>Wan2.1</code> 3D-VAE + <code>DINOv2</code> critique, cuts <code>DreamGen</code> dataset
+          corruption 11.3× while saving 26.1% GPU compute, and lifts out-of-suite LIBERO MPC selection to 80.0%.
+        </p>
+        <div class="note-byline">
+          <a href="./" rel="author">Daniel Gaskins</a>
+          <time datetime="2026-11-27">Published November 27, 2026</time>
+          <span>Physical AI interpretability, synthetic rollout curation &amp; MPC safety</span>
+        </div>
+        <div class="case-hero__actions">
+          <a class="button button--primary" href="https://github.com/danielgaskins/sycophantic-world-models" target="_blank" rel="noopener">Inspect the code &amp; suite on GitHub</a>
+          <a class="button button--quiet" href="./papers/sycophantic_world_models_preprint.pdf" target="_blank" rel="noopener">Read the 6-page academic preprint PDF</a>
+          <a class="button button--quiet" href="https://doi.org/10.5281/zenodo.24593275" target="_blank" rel="noopener">Zenodo DOI: 10.5281/zenodo.24593275</a>
+          <a class="button button--quiet" href="./sparse-temporal-latching.html">Paper 2: Video DiTs →</a>
+          <a class="button button--quiet" href="./agentic-sabotage.html">Paper 1: Tool Agents →</a>
+        </div>
+      </section>
+
+      <section class="case-signal" aria-label="Empirical benchmark and circuit summary">
+        <div class="section-shell case-signal__grid">
+          <div><strong>0.9861</strong><span>Bridge Layer-16 SAE AUROC (+47.2 pts over dense)</span></div>
+          <div><strong>42.8×</strong><span>faster than <code>Wan2.1 VAE + DINOv2</code> (16.1 ms)</span></div>
+          <div><strong>97.1%</strong><span><code>DreamGen</code> physical purity (−26.1% GPU compute)</span></div>
+          <div><strong>80.0%</strong><span>out-of-suite LIBERO MPC (100% Spatial &amp; Object)</span></div>
+        </div>
+      </section>
+
+      <section id="showcase" class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">01 / DUAL-BACKBONE VIDEO SHOWCASE</p>
+        </div>
+        <div class="case-section__body">
+          <h2>Zero-decode rollout filtering on Bridge V2 and Best-of-K candidate selection in MuJoCo LIBERO.</h2>
+          <p class="case-section__lead">
+            Unlike passive video activation steering (<a href="./sparse-temporal-latching.html">Paper 2</a>),
+            <code>LatchGate</code> operates as a zero-decode circuit breaker: in <code>DreamGen</code> synthetic
+            curation it aborts corrupted rollouts at Step 10/35 before 3D-VAE decoding while passing valid and
+            high-speed trajectories untouched, and in test-time planning it rejects sycophantic action candidates
+            at Step 3/10 before they fool <code>Cosmos-Policy</code>’s internal value critic.
+          </p>
+
+          <figure class="case-figure" aria-labelledby="vid-bridge-caption">
+            <video
+              controls
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              poster="./assets/img/swm-bridge-poster-v1.webp"
+              width="1344"
+              height="448"
+              style="width: 100%; height: auto; border-radius: 8px; display: block; background: #0d1117;"
+            >
+              <source src="./assets/media/swm-bridge-dreamgen-firewall-v1.mp4" type="video/mp4" />
+            </video>
+            <figcaption id="vid-bridge-caption">
+              <strong>Multi-Chunk Real-Robot Bridge V2 <code>DreamGen</code> Firewall (<code>Cosmos-Predict2.5-2B/robot/action-cond</code>, 37 frames × 2 scenes):</strong> Across <em>"take yellow banana out of silver colander"</em> and <em>"pick up toy and place inside vessel"</em>, <em>Rollout A (1.85× Fast Valid)</em> triggers a dense-probe false alarm (<code>0.69–0.77</code> cosine distance) from arm velocity yet passes <code>LatchGate</code> cleanly (<code>D_SAE = 0.03–0.09</code>). <em>Rollout B (Bad Action)</em> leaves the yellow banana stuck in the colander while warping the arm; <code>LatchGate</code> spikes red (<code>D_SAE = 0.49–0.78 &gt; τ</code>) and aborts at Step 10/35 (16.1 ms, zero 3D-VAE decodes), while keeping <em>Rollout C (Valid Action)</em> untouched (97.1% dataset purity).
+            </figcaption>
+          </figure>
+
+          <figure class="case-figure" aria-labelledby="vid-libero-caption">
+            <video
+              controls
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              poster="./assets/img/swm-libero-poster-v1.webp"
+              width="992"
+              height="512"
+              style="width: 100%; height: auto; border-radius: 8px; display: block; background: #0d1117;"
+            >
+              <source src="./assets/media/swm-libero-mpc-firewall-v1.mp4" type="video/mp4" />
+            </video>
+            <figcaption id="vid-libero-caption">
+              <strong>Pixel-Identical Stepped MuJoCo LIBERO + <code>Cosmos-Policy</code> "Silent Sycophancy" Firewall (<code>Cosmos-Policy-LIBERO-Predict2-2B</code>):</strong> Branching from an identical contact state across <code>LIBERO-Spatial</code> (<em>black bowl → plate</em>) and <code>LIBERO-Object</code> (<em>alphabet soup → basket</em>), <em>Candidate A (Bad Action, left)</em> misses at contact and carries an empty gripper to the goal in real MuJoCo physics. Because <code>Cosmos-Policy</code> is a single-keyframe jump predictor (<code>s_t → ŝ_{t+16}</code>, center), it hallucinates optimistic grasp progress on Candidate A and predicts <strong>higher value (<code>V = 0.76 &gt; 0.75</code>)</strong> than on the valid grasp. Out-of-suite Step-3 <code>LatchGate</code> rejects Candidate A (<code>D_SAE = 0.39 &gt; 0.11</code>, zero VAE decodes) and selects <em>Candidate B (right)</em>, completing both MuJoCo tasks.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="study1" class="case-section case-section--paper-dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">02 / STUDY 1: MOTION SUPERPOSITION &amp; SCENE MEMORIZATION</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Separating background anchor conservation from a 48-latent motion-invariant sycophancy subspace.</h2>
+            <p class="case-section__lead">
+              Recent Physical AI studies expose two obstacles: high scene velocity confounds multi-pass flow
+              instability signals (Hansen &amp; Wang, 2026), and un-anchored VLA SAE features memorize single
+              training scenes (&lt;15%–35% overlap across episodes; Swann et al., 2026). Furthermore, unlike
+              passive video generation, valid robot manipulation legitimately displaces foreground objects.
+            </p>
+            <div class="case-flow" aria-label="LatchGate sparse decomposition pipeline">
+              <div><span>01</span><strong>Norm-Match</strong><small><code>‖a_bad‖₂ = ‖a_gt‖₂</code> kinematics</small></div>
+              <i>→</i>
+              <div><span>02</span><strong>Split fg / bg</strong><small>Pre-pool 16k JumpReLU SAE</small></div>
+              <i>→</i>
+              <div><span>03</span><strong>Anchor bg</strong><small>Episode Top-64 <code>S₀⁽ⁱ⁾(t)</code></small></div>
+              <i>→</i>
+              <div><span>04</span><strong>Subtract Motion</strong><small>48-latent <code>D_phys</code> surge</small></div>
+            </div>
+            <div class="case-task-list">
+              <article>
+                <span>DENSE &amp; STATIC SAE COLLAPSE</span>
+                <h3>0.340–0.355 vs. High-Motion Sweeps</h3>
+                <p>Across 114 paired norm-matched rollouts (54 Bridge V2 + 60 LIBERO), standardized dense cosine probes collapse across all 28 DiT layers (0.514 Bridge / 0.394 LIBERO at Layer 16), and static Top-64 SAE features overlap by only 10.5% on Bridge and 29.4% across LIBERO suites.</p>
+              </article>
+              <article>
+                <span>16K JUMPRELU SPARSITY AT 57.1% DEPTH</span>
+                <h3>Mean L0 = 25.1 &amp; 35.8 / 16,384</h3>
+                <p>Trained at Layer 16/28 on standardized spacetime tokens, our STE JumpReLU SAEs achieve <code>R² = 0.8778</code> (99.994% live) on Bridge and <code>R² = 0.9215</code> (100.0% live) on LIBERO with 0.15%–0.22% active sparsity.</p>
+              </article>
+              <article>
+                <span>OUT-OF-FOLD LATCHGATE DETECTION</span>
+                <h3>0.9861 Bridge &amp; 0.7662 LIBERO AUROC</h3>
+                <p>Penalizing high-velocity sensitivity (<code>d_syc − 0.70 d_mot</code>) on training scenes only yields 0.9861 out-of-fold AUROC (0.0% FPR@80%TPR, <code>d = 2.80</code>) on Bridge and 0.7662 AUROC (0.7925 directly vs. fast sweeps) on LIBERO.</p>
+              </article>
+            </div>
+            <figure class="case-figure" aria-labelledby="study1-caption">
+              <img
+                src="./assets/img/swm-study1-cosmos-superposition-v1.webp"
+                width="1800"
+                height="691"
+                loading="lazy"
+                decoding="async"
+                alt="Two-panel Study 1 plot showing 8-layer standardized dense residual AUROC collapsing near chance across Bridge V2 and MuJoCo LIBERO while Layer-16 LatchGate reaches 0.9861 and 0.7662 AUROC, alongside head-to-head runtime detector bars"
+              />
+              <figcaption id="study1-caption">
+                Study 1 Action-Motion Superposition Collapse vs. Layer-16 <code>LatchGate</code> SAE (<code>N = 114</code> norm-matched rollouts): (A) 8-layer standardized dense cosine sweep across 28 DiT blocks, and (B) out-of-fold comparison against Flow Instability, Static SAE, and 2-pass Scrambled Flow-MSE.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="study2" class="case-section case-section--dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">03 / STUDY 2: 42.8× SPEEDUP &amp; SILENT SYCOPHANCY</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Action-marginalized physics commits by Step 3, and fools <code>Cosmos</code>’s own value head.</h2>
+            <p class="case-section__lead">
+              Production synthetic rollout pipelines validate trajectories post-hoc via full denoising, causal
+              <code>Wan2.1</code> 3D-VAE pixel decoding, and visual critique. Worse, <code>Cosmos-Policy</code>’s
+              learned value critic <code>V(ŝ')</code> evaluates the model’s own predicted future latents, inheriting
+              any optimistic visual hallucination.
+            </p>
+            <div class="case-task-list">
+              <article>
+                <span>STEP-3 / STEP-10 LEAD TIME</span>
+                <h3>0.9630 AUROC by Step 3/35</h3>
+                <p>Tracking out-of-fold Bridge detection across six rectified-flow noise coordinates shows sycophantic physics decoupling commits immediately: 0.9630 AUROC at Step 3 (<code>t = 0.96</code>), 0.9861 at Step 10 (<code>t = 0.82</code>), and 0.9907 at Step 21.</p>
+              </article>
+              <article>
+                <span>ZERO-DECODE GPU LATENCY</span>
+                <h3>16.14 ms vs. 690.35 ms (42.8× faster)</h3>
+                <p>Measured with <code>torch.cuda.synchronize()</code> on NVIDIA L4, single-pass <code>LatchGate</code> runs 20.5× faster than 2-pass scrambled-action overhead (330.4 ms), 42.8× faster than <code>Wan2.1</code> VAE + <code>DINOv2</code> (690.4 ms), and 759× faster than full 35-step post-hoc filtering (12.25 s).</p>
+              </article>
+              <article>
+                <span>SILENT SYCOPHANTIC PHYSICS</span>
+                <h3>0.5619 vs. 0.5799 Value Critic Blindness</h3>
+                <p>Across 60 LIBERO rollouts, <code>Cosmos-Policy</code>’s internal value head <code>V(ŝ')</code> scores failed counterfactual actions nearly identically to faithful grasps (0.5112 AUROC); Step-3 <code>LatchGate</code> catches 58.3% of high-value hallucinations at 8% FPR without pixel decoding.</p>
+              </article>
+            </div>
+            <figure class="case-figure" aria-labelledby="study2-caption">
+              <img
+                src="./assets/img/swm-study2-leadtime-speedup-v1.webp"
+                width="1800"
+                height="691"
+                loading="lazy"
+                decoding="async"
+                alt="Two-panel Study 2 plot showing out-of-fold AUROC reaching 0.9630 at Step 3 and 0.9861 at Step 10 on Bridge V2, alongside log-scale L4 GPU latency showing 16.1 ms LatchGate versus 690.4 ms Wan2.1 3D-VAE plus DINOv2"
+              />
+              <figcaption id="study2-caption">
+                Study 2 Zero-Decode Lead Time &amp; L4 GPU Latency: (A) out-of-fold detection across the 35-step <code>Cosmos-Predict2.5</code> trajectory, and (B) synchronized CUDA wall-clock latency breakdown.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="study3" class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">04 / STUDY 3: DREAMGEN CURATION &amp; SHIELDED MPC</p>
+        </div>
+        <div class="case-section__body">
+          <h2>11.3× cleaner synthetic training pools and 80.0% out-of-suite LIBERO action selection.</h2>
+          <p class="case-section__lead">
+            We deploy <code>LatchGate</code> closed-loop across both Physical AI workloads using strictly
+            held-out scene and suite thresholds so neither the 48-latent subspace <code>D_phys</code> nor
+            the abort threshold <code>τ</code> ever sees test scenes or target LIBERO suites.
+          </p>
+          <div class="case-comparison">
+            <div>
+              <span>STUDY 3A: DREAMGEN SYNTHETIC DATA FIREWALL</span>
+              <p>
+                Across the <code>N = 54</code> Bridge stream (33.3% base corruption), post-hoc
+                <code>VAE + DINOv2</code> leaves 34.8% corruption while saving 0% compute. Aborting rollouts
+                at Step 10/35 via out-of-scene <code>LatchGate</code> catches <strong>94.4% (17 / 18)</strong>
+                of sycophantic trajectories, cuts accepted corruption <strong>11.3× (33.3% → 2.9%, 97.1% purity)</strong>,
+                eliminates <strong>37.0% of all 3D-VAE decodes</strong>, and saves <strong>26.1% end-to-end GPU wall-clock</strong>
+                (68.6% DiT passes saved per rejected rollout).
+              </p>
+            </div>
+            <div>
+              <span>STUDY 3B: OUT-OF-SUITE LIBERO K=4 MPC</span>
+              <p>
+                Across 20 LIBERO tasks (4 suites, <code>K = 4</code> norm-matched candidates per task),
+                <code>Cosmos</code> internal <code>V(ŝ')</code> reaches 75.0% (8.93 s), failing whenever
+                sycophantic candidates hallucinate inflated value. Aborting <code>D_SAE &gt; τ_suite</code>
+                at Step 3/10 and evaluating <code>V(ŝ')</code> only on surviving faithful candidates lifts
+                selection to <strong>80.0% (#1 overall; 100% Spatial, 100% Object, 80% Goal)</strong> while
+                cutting planning latency by <strong>32.6%</strong> (6.02 s; 2.98 s pure zero-decode).
+              </p>
+            </div>
+          </div>
+          <figure class="case-figure" aria-labelledby="study3-caption">
+            <img
+              src="./assets/img/swm-study3-dreamgen-libero-v1.webp"
+              width="1800"
+              height="686"
+              loading="lazy"
+              decoding="async"
+              alt="Two-panel Study 3 plot showing DreamGen synthetic dataset purity (97.1%) versus end-to-end GPU compute saved (26.1%) on the left, and out-of-suite LIBERO K=4 Best-of-K action selection reaching 80.0% on the right"
+            />
+            <figcaption id="study3-caption">
+              Study 3 Closed-Loop Physical AI Interventions: (A) <code>DreamGen</code> curation purity versus end-to-end GPU compute saved on Bridge V2, and (B) out-of-suite LIBERO <code>K = 4</code> Best-of-K action selection rate.
+            </figcaption>
+          </figure>
+          <figure class="case-figure" aria-labelledby="qual-strip-caption">
+            <img
+              src="./assets/img/swm-qualitative-strip-v1.webp"
+              width="1800"
+              height="917"
+              loading="lazy"
+              decoding="async"
+              alt="Two-row qualitative strip comparing stepped MuJoCo LIBERO candidate outcomes and Cosmos-Policy keyframe hallucination (top, with wrist-camera insets) and Bridge V2 yellow banana in silver colander rollouts (bottom)"
+            />
+            <figcaption id="qual-strip-caption">
+              Dual-backbone qualitative strip: (Top) Stepped MuJoCo LIBERO failure vs. <code>Cosmos-Policy</code> optimistic keyframe (<code>V = 0.76</code>) vs. <code>LatchGate</code> Candidate B selection placing the black bowl on the plate; (Bottom) Bridge V2 <em>"take banana out of colander"</em> Step-10 early abort vs. retained rollout.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="synthesis" class="case-section case-section--paper-dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">05 / TRILOGY SYNTHESIS &amp; BOUNDARIES</p>
+          </div>
+          <div class="case-section__body">
+            <h2>One 57.1%-depth sparse control law across tool agents, Video DiTs, and embodied world models.</h2>
+            <div class="case-columns">
+              <div>
+                <h3>Included in the repository</h3>
+                <ul>
+                  <li>Zero-compile pure-PyTorch loader for <code>Cosmos-Predict2.5-2B</code> &amp; <code>Cosmos-Policy-LIBERO-Predict2-2B</code> (&lt; 8 GB VRAM, strict weight verification)</li>
+                  <li>L2-norm-matched counterfactual &amp; high-velocity suites across Bridge V2 (<code>N = 54</code>) and all 4 LIBERO suites (<code>N = 60</code>)</li>
+                  <li>Per-<code>t</code> <code>TimestepStandardizer</code>, 16,384-latent STE JumpReLU SAE trainer &amp; motion-invariant <code>D_phys</code> attribution</li>
+                  <li>Single-pass 16.1 ms <code>LatchGateFirewall</code> with <code>EarlyAbortSycophancy</code> callback + headless Python-3.10 MuJoCo worker</li>
+                  <li>Compiled 6-page two-column Typst PDF, self-contained arXiv LaTeX tarball &amp; unit tests</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Current boundaries</h3>
+                <ul>
+                  <li>Evaluates 2B-scale open-weights <code>Cosmos</code> backbones across 114 paired counterfactual trajectories and 20 closed-loop MPC tasks on a single 24 GB L4 GPU</li>
+                  <li><code>LatchGate</code> filters/aborts corrupted rollouts and ranks candidate actions; it does not rewrite an invalid action command into a valid grasp</li>
+                  <li>On multi-subgoal <code>LIBERO-10</code> horizons (40% shielded vs. 100% <code>Spatial</code>/<code>Object</code>), combining Step-3 sycophancy rejection with phase-aware subgoal value conditioning is an open extension</li>
+                  <li>In-stream latent circuit breakers complement kinematic safety envelopes and external verification (<a href="./mendmark.html">Mendmark</a>, <a href="./human-review-ai-agents.html">human review</a>)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next section-shell">
+        <p class="section-index">06 / REPRODUCE IT</p>
+        <h2>Clone the pure-PyTorch Cosmos suite, inspect the telemetry, or run on a single 24 GB GPU.</h2>
+        <p>
+          All pure-PyTorch <code>Cosmos</code> backbone loaders, norm-matched counterfactual builders,
+          cached Study 1–3 JSON results, unit tests, and the compiled 6-page preprint PDF are MIT-licensed
+          on GitHub and run without <code>transformer_engine</code>, <code>megatron-core</code>, or
+          <code>natten</code> compilation on a single 24 GB NVIDIA L4 GPU.
+        </p>
+        <div class="case-next__actions">
+          <a class="button button--primary" href="https://github.com/danielgaskins/sycophantic-world-models" target="_blank" rel="noopener">View sycophantic-world-models on GitHub</a>
+          <a class="button button--quiet" href="./papers/sycophantic_world_models_preprint.pdf" target="_blank" rel="noopener">Download the 6-page preprint PDF</a>
+          <a class="button button--quiet" href="https://doi.org/10.5281/zenodo.24593275" target="_blank" rel="noopener">Zenodo Archive (v1.0.0)</a>
+          <a class="button button--quiet" href="./sparse-temporal-latching.html">Paper 2: Sparse Temporal Latching (Video DiTs)</a>
+          <a class="button button--quiet" href="./agentic-sabotage.html">Paper 1: Agentic Sabotage (LLMs)</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span data-year></span> Daniel Gaskins</p>
+      <p>Physics · Models · Products</p>
+      <a href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
