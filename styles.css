@@ -739,6 +739,16 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round
 .case-section--dark .case-figure figcaption { color: #aeb3aa; }
 .case-next { padding-block: 140px; }
 .case-next > p:not(.section-index) { max-width: 760px; margin: 32px 0 0; color: #434741; font-size: 17px; line-height: 1.75; }
+.case-code-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.case-code-card { min-width: 0; padding: 26px; border: 1px solid var(--light-line); background: rgba(255, 255, 255, 0.035); display: flex; flex-direction: column; gap: 16px; }
+.case-code-card > span { color: var(--acid); font: 500 10px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.case-code-card h3 { margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -.02em; color: #eef0e8; }
+.case-code-card p { margin: 0; color: #aeb3aa; font-size: 14.5px; line-height: 1.65; }
+.case-code { margin: 4px 0 0; padding: 18px 20px; max-width: 100%; overflow-x: auto; background: #070908; border: 1px solid rgba(255, 255, 255, 0.12); color: #e7e8df; font: 400 12.5px/1.68 var(--mono); }
+.case-code code { font: inherit; color: inherit; background: transparent; padding: 0; }
+@media (max-width: 1120px) {
+  .case-code-grid { grid-template-columns: 1fr; }
+}
 
 /* Technical field notes */
 .note-page { padding-top: 76px; }

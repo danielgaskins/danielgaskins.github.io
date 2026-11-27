@@ -56,7 +56,7 @@
         "programmingLanguage": "Python",
         "runtimePlatform": "Python 3",
         "license": "https://opensource.org/license/mit",
-        "version": "0.4.2",
+        "version": "0.7.2",
         "author": {"@id": "https://danielgaskins.com/#daniel-gaskins", "@type": "Person", "name": "Daniel Gaskins"}
       }
     </script>
@@ -87,7 +87,7 @@
 
     <main id="main" class="case-study">
       <section class="case-hero section-shell">
-        <p class="eyebrow"><span class="status-dot"></span> Open source / PyPI 0.4.2 / 2026</p>
+        <p class="eyebrow"><span class="status-dot"></span> Open source / PyPI 0.7.2 / 2026</p>
         <h1>Your agent passed the test. Would the test notice if it broke?</h1>
         <p class="case-hero__lede">
           Mendmark plants controlled faults in passing agent traces, then runs the same evals
@@ -97,6 +97,7 @@
         <div class="case-hero__actions">
           <a class="button button--primary" href="https://pypi.org/project/mendmark-evals/" target="_blank" rel="noreferrer">Install from PyPI</a>
           <a class="button button--quiet" href="https://github.com/danielgaskins/mendmark" target="_blank" rel="noreferrer">View source on GitHub</a>
+          <a class="button button--quiet" href="./latchgate.html">Runtime firewall: LatchGate →</a>
         </div>
       </section>
 
@@ -263,6 +264,7 @@
                   <li>Per-tool mutation coverage</li>
                   <li>Tool contract and schema tracking</li>
                   <li>Regression-aware CI gates</li>
+                  <li><code>mendmark export-latchgate</code> calibration bridge</li>
                 </ul>
               </div>
               <div>
@@ -295,13 +297,16 @@
           The repository includes both a small refund-agent demonstration and the public golden
           set with 263 pinned mutations. Clone the project and reproduce the results without an
           API key. Teams with an existing suite can use the DeepEval adapter or connect any local
-          evaluator through the versioned JSON protocol. For companion research on what happens
-          inside open-weight models right before they skip a failing test or fabricate a 503 tool
-          result, read the study on
+          evaluator through the versioned JSON protocol, then export surviving blind spots via
+          <code>mendmark export-latchgate</code> directly into
+          <a href="./latchgate.html">LatchGate</a> runtime residual-stream circuit breakers. For
+          companion research on what happens inside open-weight models right before they skip a
+          failing test or fabricate a 503 tool result, read the study on
           <a href="./agentic-sabotage.html">mechanistic debugging of agentic sabotage</a>.
         </p>
         <div class="case-next__actions">
           <a class="button button--primary" href="https://github.com/danielgaskins/mendmark#quick-start" target="_blank" rel="noreferrer">Run the quick start</a>
+          <a class="button button--quiet" href="./latchgate.html">Explore LatchGate runtime firewall →</a>
           <a class="button button--quiet" href="https://github.com/danielgaskins/mendmark/issues/1" target="_blank" rel="noreferrer">Request a design-partner pilot</a>
         </div>
       </section>

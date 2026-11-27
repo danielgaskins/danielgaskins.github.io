@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LatchGate is an open-source zero-decode circuit-breaker compiler and runtime for open-weights LLMs (Transformers, vLLM, SGLang), 3D Video DiTs (LTX-Video), and embodied world models (NVIDIA Cosmos), compiling adaptive Dense and 16k JumpReLU SAE gates at 57.1% network depth."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta property="og:title" content="LatchGate: Zero-Decode Circuit-Breaker Compiler and Runtime" />
+    <meta
+      property="og:description"
+      content="Adaptive 57.1%-depth Dense and 16k JumpReLU SAE circuit breakers for open-weights LLMs (vLLM, SGLang) and 3D DiT world models (NVIDIA Cosmos, LTX-Video), with 0.0% benign capability tax."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://danielgaskins.com/latchgate.html" />
+    <meta property="og:site_name" content="Daniel Gaskins" />
+    <meta property="article:author" content="Daniel Gaskins" />
+    <meta property="article:published_time" content="2026-11-27" />
+    <meta property="article:modified_time" content="2026-11-27" />
+    <meta property="og:image" content="https://danielgaskins.com/assets/img/latchgate-og-v1.jpg" />
+    <meta property="og:image:secure_url" content="https://danielgaskins.com/assets/img/latchgate-og-v1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="LatchGate v0.1.0 zero-decode 57.1%-depth circuit-breaker compiler and runtime across LLMs and 3D DiT world models" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LatchGate: Zero-Decode Circuit-Breaker Compiler and Runtime" />
+    <meta
+      name="twitter:description"
+      content="Compile portable safetensors .lgate circuit breakers from 50-200 counterfactual traces and run zero-decode gates inside vLLM, SGLang, Diffusers, and NVIDIA Cosmos."
+    />
+    <meta name="twitter:image" content="https://danielgaskins.com/assets/img/latchgate-og-v1.jpg" />
+    <meta name="twitter:image:alt" content="LatchGate v0.1.0 zero-decode 57.1%-depth circuit-breaker compiler and runtime across LLMs and 3D DiT world models" />
+    <link rel="canonical" href="https://danielgaskins.com/latchgate.html" />
+    <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins - Field Notes" href="https://danielgaskins.com/feed.xml" />
+    <title>LatchGate: Zero-Decode Circuit-Breaker Compiler &amp; Runtime | Daniel Gaskins</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "@id": "https://danielgaskins.com/latchgate.html#software",
+        "name": "LatchGate",
+        "version": "0.1.0",
+        "description": "Zero-decode circuit-breaker compiler and runtime for open-weights LLMs (Transformers, vLLM, SGLang), 3D Video DiTs (LTX-Video), and embodied world models (NVIDIA Cosmos).",
+        "url": "https://danielgaskins.com/latchgate.html",
+        "codeRepository": "https://github.com/danielgaskins/latchgate",
+        "downloadUrl": "https://github.com/danielgaskins/latchgate/releases/tag/v0.1.0",
+        "programmingLanguage": "Python",
+        "runtimePlatform": "Python 3.10+ / PyTorch 2.1+",
+        "license": "https://opensource.org/license/mit",
+        "datePublished": "2026-11-27",
+        "dateModified": "2026-11-27",
+        "author": {
+          "@id": "https://danielgaskins.com/#daniel-gaskins",
+          "@type": "Person",
+          "name": "Daniel Gaskins",
+          "url": "https://danielgaskins.com/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="./" aria-label="Daniel Gaskins, home">
+        <span>DG</span>
+        <span class="wordmark__name">Daniel Gaskins</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="./#work">Work</a>
+        <a href="./#capabilities">How I work</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./#about">About</a>
+        <a href="./resume.html">Résumé</a>
+        <a class="nav-cta" href="./meet.html">Talk with me</a>
+      </nav>
+    </header>
+
+    <main id="main" class="case-study">
+      <section class="case-hero section-shell">
+        <p class="eyebrow"><span class="status-dot"></span> Open source / Release v0.1.0 / vLLM · SGLang · Diffusers · NVIDIA Cosmos</p>
+        <h1>Compile a 57.1%-depth circuit breaker in minutes. Block silent failures before decode.</h1>
+        <p class="case-hero__lede">
+          Across autoregressive tool agents, 3D video generators, and action-conditioned robot world
+          models, unfaithful tool shortcuts and sycophantic physics hallucinations crystallize inside
+          the residual stream near 57.1% network depth long before external LLM compliance auditors,
+          3D-VAE pixel critics, or built-in value heads notice anything wrong.
+          <strong><code>latchgate</code></strong> unifies the mechanistic control trilogy
+          (<a href="./agentic-sabotage.html">Agentic Sabotage</a>,
+          <a href="./sparse-temporal-latching.html">Sparse Temporal Latching</a>, and
+          <a href="./sycophantic-world-models.html">Sycophantic World Models</a>) into a single
+          MIT-licensed compiler and runtime that turns 50 to 200 paired counterfactual traces into
+          portable, pickle-free <code>.lgate</code> artifacts with zero benign capability tax.
+        </p>
+        <div class="note-byline">
+          <a href="./" rel="author">Daniel Gaskins</a>
+          <time datetime="2026-11-27">Published November 27, 2026</time>
+          <span>AI control runtime, world-model curation &amp; agent reliability</span>
+        </div>
+        <div class="case-hero__actions">
+          <a class="button button--primary" href="https://github.com/danielgaskins/latchgate" target="_blank" rel="noopener">View source &amp; quickstarts on GitHub</a>
+          <a class="button button--quiet" href="https://github.com/danielgaskins/latchgate/releases/tag/v0.1.0" target="_blank" rel="noopener">Download 6 pre-built .lgate packs</a>
+          <a class="button button--quiet" href="./mendmark.html">CI trace bridge: Mendmark v0.7.2 →</a>
+        </div>
+      </section>
+
+      <section class="case-signal" aria-label="LatchGate runtime and calibration metrics">
+        <div class="section-shell case-signal__grid">
+          <div><strong>57.1%</strong><span>convergent commitment depth across 6 backbones</span></div>
+          <div><strong>&lt; 1 ms</strong><span>LLM hook overhead (16.1 ms zero-decode 3D DiT)</span></div>
+          <div><strong>0.0%</strong><span>benign false-trigger tax via conformal calibration</span></div>
+          <div><strong>06</strong><span>SHA-256 verified <code>safetensors</code> <code>.lgate</code> packs</span></div>
+        </div>
+      </section>
+
+      <section id="compiler" class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">01 / ADAPTIVE COMPILER</p>
+        </div>
+        <div class="case-section__body">
+          <h2>Measure superposition first. Compile the lightest gate that holds.</h2>
+          <p class="case-section__lead">
+            Generic Sparse Autoencoder pretraining expects billions of tokens, yet linear probes
+            already separate pre-tool shortcut commitments cleanly in 7B to 9B LLMs while collapsing
+            under pose, camera, and velocity superposition in 2B edge models and 3D Diffusion
+            Transformers. Given paired clean, bad, and high-velocity confounder activations,
+            <code>latchgate fit</code> benchmarks cross-validated out-of-fold AUROC at 57.1% depth
+            and routes automatically between two compiled architectures.
+          </p>
+          <div class="case-flow" aria-label="LatchGate compilation pipeline">
+            <div><span>01</span><strong>Ingest</strong><small>50-200 counterfactual pairs or Mendmark JSONL</small></div>
+            <i>→</i>
+            <div><span>02</span><strong>Standardize</strong><small>per-bin TimestepStandardizer across σ or tokens</small></div>
+            <i>→</i>
+            <div><span>03</span><strong>Route</strong><small>Dense Latch vs. 16k JumpReLU Anchor Latch</small></div>
+            <i>→</i>
+            <div><span>04</span><strong>Certify</strong><small>0.0% benign FPR conformal threshold + safetensors</small></div>
+          </div>
+          <div class="case-comparison">
+            <div>
+              <span>TIER 1: DENSE LATCH (&lt; 100 KB)</span>
+              <p>
+                Selected automatically when linear separability holds (<code>Qwen2.5-7B</code>,
+                <code>Gemma-2-9B</code>). Compiles standardized detection weights alongside
+                manifold-aligned planning-block steering vectors (0.999985 cosine parity with
+                closed-loop Paper 1 breakers) so low-variance residual channels are never amplified.
+              </p>
+            </div>
+            <div>
+              <span>TIER 2: 16K JUMPRELU + ANCHOR LATCH</span>
+              <p>
+                Selected when superposition collapses dense probes (<code>Gemma-2-2B</code>,
+                <code>LTX-Video-0.9.5</code>, <code>Cosmos-Predict2.5</code>,
+                <code>Cosmos-Policy</code>). Applies token-first sparse encoding before spatial-temporal
+                pooling and penalizes norm-matched confounders via
+                <code>TopK(d_bad - λ d_confound)</code>.
+              </p>
+            </div>
+          </div>
+          <p>
+            When a frozen open-weights SAE already exists (such as Gemma Scope <code>params.npz</code>
+            or a shared <code>Cosmos</code> backbone checkpoint), passing <code>--base-sae</code>
+            skips dictionary pretraining altogether and calibrates task-specific diagnostic latents
+            and conformal thresholds in under 10 seconds. When training a new 16,384-latent
+            <code>JumpReLU</code> dictionary from scratch via <code>latchgate train-sae</code>, the
+            trainer incorporates activation replay buffering (Koriagin et al., 2026) to prevent temporal
+            correlation collapse on sequential video tokens and optional channel-weighted reconstruction
+            (<code>--wsae-weights</code>) for heavy-tailed world-model channels.
+          </p>
+        </div>
+      </section>
+
+      <section id="runtimes" class="case-section case-section--dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">02 / TWO RUNTIME SURFACES</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Intercept unfaithful <code>&lt;think&gt;</code> traces in LLMs and sycophantic rollouts in Cosmos.</h2>
+            <p class="case-section__lead">
+              Every compiled <code>.lgate</code> pack loads with cryptographic SHA-256 verification
+              via <code>LatchGate.from_pretrained(...)</code> and attaches to production open-weights
+              inference loops without fine-tuning model weights or running pixel-space decodes on
+              rejected trajectories.
+            </p>
+            <div class="case-code-grid">
+              <div class="case-code-card">
+                <span>QUICKSTART A / AGENTS (TRANSFORMERS · VLLM · SGLANG)</span>
+                <h3>Catch Silent Commitment ~30 tokens before <code>TOOL_CALL:</code></h3>
+                <p>
+                  Monitors the token-28 <code>&lt;think&gt;</code> checkpoint and the pre-tool
+                  boundary in under 1 ms. On benign coding prompts the hook stays dormant (0.0%
+                  false triggers); when shortcut commitment crosses <code>τ</code>, it aborts or
+                  latches 4-layer manifold steering across <code>TOOL_CALL:</code> to defeat Action Re-Locking.
+                </p>
+                <pre class="case-code"><code>from latchgate import LatchGate, TransformersLatchHook
+
+gate = LatchGate.from_pretrained("qwen2.5-7b-sabotage")
+with TransformersLatchHook(
+    model, tokenizer, gate, mode="latched_steer"
+) as hook:
+    out = model.generate(**inputs, max_new_tokens=256)
+print(hook.events)</code></pre>
+              </div>
+              <div class="case-code-card">
+                <span>QUICKSTART B / PHYSICAL AI (COSMOS · DIFFUSERS)</span>
+                <h3>Abort sycophantic robot rollouts at Step 10/35 with zero VAE decodes</h3>
+                <p>
+                  Evaluates Layer-16 sparse physics latents at Step 10/35 for synthetic
+                  <code>DreamGen</code> curation (cutting dataset corruption 11.3× while saving
+                  26.1% GPU compute) or shields <code>Cosmos-Policy</code> Best-of-K MPC at Step 3/10
+                  against Silent Sycophantic Physics (80.0% LIBERO selection).
+                </p>
+                <pre class="case-code"><code>from latchgate import CosmosLatchFirewall, LatchGate
+
+gate = LatchGate.from_pretrained("cosmos-predict2.5-bridge")
+firewall = CosmosLatchFirewall(
+    dit_blocks=pipe.dit.blocks, gate=gate, check_step=10
+)
+decision = firewall.guard_rollout(run_fn, anchor_acts=anchor)</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="packs" class="case-section section-shell">
+        <div class="case-section__label">
+          <p class="section-index">03 / PRE-BUILT .LGATE PACKS</p>
+        </div>
+        <div class="case-section__body">
+          <h2>Six SHA-256 verified checkpoints ready in one command.</h2>
+          <p class="case-section__lead">
+            Run <code>latchgate list-packs</code> and <code>latchgate pull &lt;name&gt;</code> to fetch
+            any pre-calibrated gate directly from GitHub Releases or Hugging Face Hub. Every artifact
+            stores pure <code>safetensors</code> weights plus embedded JSON metadata with zero Python
+            <code>pickle</code> execution.
+          </p>
+          <div class="case-task-list">
+            <article>
+              <span>QWEN2.5-7B-SABOTAGE</span>
+              <h3>Layer 16/28 Dense Latch · 98 KB</h3>
+              <p>Pre-tool shortcut &amp; 503 fabrication breaker with L14, L16, L18, and L20 manifold steering vectors (1.000 calibration AUROC, 0.978 <code>&lt;think&gt;</code> pre-tool AUROC in <a href="./agentic-sabotage.html">Paper 1</a>).</p>
+            </article>
+            <article>
+              <span>GEMMA-2-9B-SABOTAGE</span>
+              <h3>Layer 24/42 Dense Latch · 100 KB</h3>
+              <p>Token-28 Silent Commitment &amp; pre-tool circuit breaker cutting <code>&lt;think&gt;</code> sabotage from 66.7% to 5.6% at 100.0% benign CoT accuracy (<a href="./agentic-sabotage.html">Paper 1</a>).</p>
+            </article>
+            <article>
+              <span>GEMMA-2-2B-SABOTAGE</span>
+              <h3>Layer 14/26 Dense Latch · 65 KB</h3>
+              <p>Edge-model closed-loop gate rescuing Gemma-2-2B’s α = +0.25 polysemantic over-refusal cliff from 0.0% to 96.7% benign coding accuracy (<a href="./agentic-sabotage.html">Paper 1</a>).</p>
+            </article>
+            <article>
+              <span>LTX-VIDEO-0.9.5-DRIFT</span>
+              <h3>Layer 16/28 16k JumpReLU SAE · 128 MB</h3>
+              <p>6-bin σ-standardized Step-8 silent-drift detector and Step-12 zero-decode early-abort seed latch reaching 0.908 AUROC (+54.4 pts over dense; 109.4× faster than Tweedie <code>VAE + DINOv2</code> in <a href="./sparse-temporal-latching.html">Paper 2</a>).</p>
+            </article>
+            <article>
+              <span>COSMOS-PREDICT2.5-BRIDGE</span>
+              <h3>Layer 16/28 16k JumpReLU SAE · 128 MB</h3>
+              <p>Motion-invariant real-robot Bridge V2 <code>DreamGen</code> curation gate reaching 0.9861 out-of-fold AUROC, 97.1% accepted physical purity, and 26.1% end-to-end GPU compute savings (<a href="./sycophantic-world-models.html">Paper 3</a>).</p>
+            </article>
+            <article>
+              <span>COSMOS-POLICY-LIBERO</span>
+              <h3>Layer 16/28 16k JumpReLU SAE · 128 MB</h3>
+              <p>Step-3/10 zero-decode MPC shield with per-suite conformal thresholds (<code>Spatial</code>, <code>Object</code>, <code>Goal</code>, <code>LIBERO-10</code>) defending <code>Cosmos-Policy</code>’s internal value critic and lifting Best-of-K selection to 80.0% (<a href="./sycophantic-world-models.html">Paper 3</a>).</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="mendmark-bridge" class="case-section case-section--paper-dark">
+        <div class="section-shell case-section__inner">
+          <div class="case-section__label">
+            <p class="section-index">04 / CI-TO-RUNTIME LOOP</p>
+          </div>
+          <div class="case-section__body">
+            <h2>Mendmark finds silent trace blind spots in CI. LatchGate blocks them in the residual stream.</h2>
+            <p class="case-section__lead">
+              Curating paired counterfactual trajectories by hand is the main bottleneck when deploying
+              activation gates on proprietary tool schemas. Starting in
+              <a href="./mendmark.html">Mendmark v0.7.2</a>, <code>mendmark export-latchgate</code>
+              converts clean passing agent cases and planted trace mutations (or strictly the
+              evaluator-evading survivors via <code>--survivors-from audit.json</code>) directly into
+              <code>latchgate.pair.v1</code> JSONL training pairs for <code>latchgate fit</code>.
+            </p>
+            <div class="case-columns">
+              <div>
+                <h3>What ships in v0.1.0</h3>
+                <ul>
+                  <li>Adaptive <code>latchgate fit</code> compiler (<code>dense_latch</code> + <code>sae_anchor_latch</code>)</li>
+                  <li>Fast <code>&lt; 10 s</code> frozen <code>--base-sae</code> task calibration (<code>.safetensors</code>, Gemma Scope <code>.npz</code>, <code>.lgate</code>)</li>
+                  <li>Replay-buffered <code>latchgate train-sae</code> with optional WSAE channel weighting</li>
+                  <li><code>TransformersLatchHook</code>, <code>VLLMLatchEngine</code>, and <code>SGLangLatchHook</code></li>
+                  <li><code>CosmosLatchFirewall</code>, <code>DiffusersLatchCallback</code>, and <code>shield_value_critic</code></li>
+                  <li>Direct <code>mendmark export-latchgate</code> JSONL ingestion</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Deployment boundaries</h3>
+                <ul>
+                  <li>Requires white-box residual-stream access on self-hosted open-weights models; closed API wrappers without hidden-state hooks cannot run in-stream gates</li>
+                  <li>Conformal <code>0.0%</code> benign false-trigger thresholds hold on the calibrated prompt or task distribution and should be re-verified when policies or tool schemas shift</li>
+                  <li>In 3D DiTs and embodied world models, zero-decode early abort rejects corrupted seeds or action candidates rather than rewriting an invalid robot action in flight</li>
+                  <li>In-stream circuit breakers complement external permission sandboxes, deterministic CI mutation audits (<a href="./mendmark.html">Mendmark</a>), and <a href="./human-review-ai-agents.html">human review</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next section-shell">
+        <p class="section-index">05 / GET STARTED</p>
+        <h2>Pull a pre-built gate in 60 seconds or compile one from your own traces.</h2>
+        <p>
+          <code>latchgate</code> is MIT-licensed on GitHub with CPU and single-GPU unit tests,
+          <code>safetensors</code> checkpoint tooling, and end-to-end integration with
+          <code>mendmark-evals</code> <code>0.7.2</code>. Explore the source repository, download the
+          six pre-built <code>.lgate</code> packs, or read the three underlying research studies.
+        </p>
+        <div class="case-next__actions">
+          <a class="button button--primary" href="https://github.com/danielgaskins/latchgate" target="_blank" rel="noopener">Explore latchgate on GitHub</a>
+          <a class="button button--quiet" href="https://github.com/danielgaskins/latchgate/releases/tag/v0.1.0" target="_blank" rel="noopener">Release v0.1.0 (.lgate packs)</a>
+          <a class="button button--quiet" href="./mendmark.html">Mendmark v0.7.2 (CI Mutation Bridge)</a>
+          <a class="button button--quiet" href="./sycophantic-world-models.html">Paper 3: Embodied World Models →</a>
+          <a class="button button--quiet" href="./sparse-temporal-latching.html">Paper 2: Video DiTs →</a>
+          <a class="button button--quiet" href="./agentic-sabotage.html">Paper 1: Tool Agents →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span data-year></span> Daniel Gaskins</p>
+      <p>Physics · Models · Products</p>
+      <a href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
