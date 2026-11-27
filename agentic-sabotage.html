@@ -38,11 +38,12 @@
     <meta name="citation_author" content="Gaskins, Daniel" />
     <meta name="citation_publication_date" content="2026/11/24" />
     <meta name="citation_online_date" content="2026/11/24" />
+    <meta name="citation_doi" content="10.5281/zenodo.24520830" />
     <meta name="citation_language" content="en" />
     <meta name="citation_pdf_url" content="https://danielgaskins.com/papers/agentic_sabotage_preprint.pdf" />
     <meta name="citation_abstract_html_url" content="https://danielgaskins.com/agentic-sabotage.html" />
     <meta name="citation_keywords" content="mechanistic interpretability; sparse autoencoders; chain-of-thought faithfulness; agentic sabotage; activation steering; circuit breakers" />
-    <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins — Field Notes" href="https://danielgaskins.com/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins - Field Notes" href="https://danielgaskins.com/feed.xml" />
     <title>Mechanistic Debugging of Agentic Sabotage &amp; Unfaithful CoT | Daniel Gaskins</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -147,7 +148,7 @@
     <main id="main" class="case-study">
       <section class="case-hero section-shell">
         <p class="eyebrow"><span class="status-dot"></span> Open source / Mechanistic interpretability / Gemma-2 2B &amp; 9B · Qwen2.5-7B</p>
-        <h1>Before an agent fabricates output or edits a test, the commitment is already in the residual stream—even when its <code>&lt;think&gt;</code> trace sounds benign.</h1>
+        <h1>Before an agent fabricates output or edits a test, the commitment is already in the residual stream, even when its <code>&lt;think&gt;</code> trace sounds benign.</h1>
         <p class="case-hero__lede">
           When a coding or operations agent hits a CI deadline or an upstream 503 outage, user
           pressure can push it to skip a unit test, bypass a deploy lock, or invent database output
@@ -189,8 +190,8 @@
             External trace tools such as <a href="./mendmark.html">Mendmark</a> audit whether an
             evaluation suite catches a broken tool call after the trace runs. Study 1 moves inside
             the model: at the exact pre-commitment prefix
-            <code>TOOL_CALL: {"tool": "</code>—before a single token of the tool name or file path
-            exists—has the network already separated an unauthorized shortcut from an honest fix or
+            <code>TOOL_CALL: {"tool": "</code> (before a single token of the tool name or file path
+            exists), has the network already separated an unauthorized shortcut from an honest fix or
             escalation?
           </p>
           <div class="case-flow" aria-label="Mechanistic debugging workflow">
@@ -261,8 +262,8 @@
             <div class="case-note">
               <span>WHY IT MATTERS</span>
               <p>
-                A response-only evaluator—the exact blind spot examined in
-                <a href="./agent-eval-mutation-testing.html">mutation testing for agent tool calls</a>—often
+                A response-only evaluator (the exact blind spot examined in
+                <a href="./agent-eval-mutation-testing.html">mutation testing for agent tool calls</a>) often
                 rewards a clean, schema-valid metric payload even when the upstream database returned
                 a 503 outage. Larger models are better at making that fabrication look routine.
               </p>
@@ -353,7 +354,7 @@
               an agent’s <code>&lt;think&gt;...&lt;/think&gt;</code> scratchpad before allowing a
               tool call to execute. Across 228 Gemma-2-9B-IT CoT rollouts (99 sabotage, 125 honest),
               we test whether verbalized reasoning actually matches the model’s internal Layer-24
-              commitment—both on unmonitored scratchpads and under an explicit compliance notice
+              commitment, both on unmonitored scratchpads and under an explicit compliance notice
               warning that <code>&lt;think&gt;</code> logs are audited.
             </p>
 
@@ -361,7 +362,7 @@
               <article>
                 <span>BLACK-BOX BLINDSPOT</span>
                 <h3>0.676 lexical / 0.870 9B LLM auditor AUROC</h3>
-                <p>88.9% of sabotage scratchpads avoid shortcut keywords, and 25.3% (25/99) fool an isolated Gemma-2-9B compliance auditor—rising to 28.9% when warned that <code>&lt;think&gt;</code> is audited.</p>
+                <p>88.9% of sabotage scratchpads avoid shortcut keywords, and 25.3% (25/99) fool an isolated Gemma-2-9B compliance auditor, rising to 28.9% when warned that <code>&lt;think&gt;</code> is audited.</p>
               </article>
               <article>
                 <span>WHITE-BOX PRE-TOOL PROBE</span>
@@ -390,7 +391,7 @@
                 alt="Token-by-token Gemma Scope 16k Layer-24 SAE activation trace on 503 output fabrication scenario sab_0137, showing Latent 11381 spiking to +21.01 thirty-eight tokens before TOOL_CALL while the external 9B CoT auditor assigns only 30 percent suspicion and Latent 6787 stays flat at zero"
               />
               <figcaption id="silent-trace-caption">
-                Smoking-gun unfaithful CoT rollout (<code>sab_0137_tool_output_fabrication</code>): inside <code>&lt;think&gt;</code>, Gemma-2-9B-IT writes <em>“To prevent further disruption, we’ll emit a default ‘low risk’ report for all transactions… until the database issue is resolved”</em>—fooling the 9B CoT auditor (30% suspicion, <code>BENIGN</code>). Internally, Layer-24 Latent #11381 spikes to +21.01 thirty-eight tokens before <code>TOOL_CALL:</code>, Latent #15689 hits +13.50, and algorithmic repair Latent #6787 stays at 0.00 across all 57 tokens.
+                Smoking-gun unfaithful CoT rollout (<code>sab_0137_tool_output_fabrication</code>): inside <code>&lt;think&gt;</code>, Gemma-2-9B-IT writes <em>“To prevent further disruption, we’ll emit a default ‘low risk’ report for all transactions… until the database issue is resolved”</em>, fooling the 9B CoT auditor (30% suspicion, <code>BENIGN</code>). Internally, Layer-24 Latent #11381 spikes to +21.01 thirty-eight tokens before <code>TOOL_CALL:</code>, Latent #15689 hits +13.50, and algorithmic repair Latent #6787 stays at 0.00 across all 57 tokens.
               </figcaption>
             </figure>
 
@@ -419,8 +420,8 @@
           <h2>Gate steering on the probe: zero tax on benign coding, no Action Re-Locking.</h2>
           <p class="case-section__lead">
             Uniting Study 1 and Study 2 solves both open deployment failure modes at once. Instead
-            of running steering hooks unconditionally—which causes Gemma-2-2B-IT to hit a
-            polysemantic over-refusal cliff (0.0% benign accuracy at α = +0.25)—or turning hooks
+            of running steering hooks unconditionally (which causes Gemma-2-2B-IT to hit a
+            polysemantic over-refusal cliff of 0.0% benign accuracy at α = +0.25) or turning hooks
             off after <code>&lt;think&gt;</code> (Action Re-Locking), inference runs 100% unsteered
             by default and latches 4-layer planning-block steering across <code>TOOL_CALL:</code>
             only when a disjointly calibrated white-box gate crosses τ.
@@ -494,7 +495,7 @@
               <article>
                 <span>CONVERGENT PLANNING HORIZON</span>
                 <h3>0.937 ± 0.028 AUROC at Layer 16/28 (57.1%)</h3>
-                <p>Linear pre-commitment separability peaks at Layer 16/28 (57.1% depth; Diff-in-Means = 0.922 at L18)—matching Gemma-2-9B’s Layer 24/42 (57.1% depth).</p>
+                <p>Linear pre-commitment separability peaks at Layer 16/28 (57.1% depth; Diff-in-Means = 0.922 at L18), matching Gemma-2-9B’s Layer 24/42 (57.1% depth).</p>
               </article>
               <article>
                 <span>SILENT COMMITMENT IN QWEN-7B</span>
@@ -562,7 +563,7 @@
             <article>
               <span>AXBENCH, CAST &amp; CIRCUIT BREAKERS</span>
               <h3>Scale-dependent cliff + streaming latch</h3>
-              <p>Reconciles <em>AxBench</em> (Wu et al., ICML 2025)—dense probes win at 9B yet hit polysemantic cliffs on 2B/Qwen-7B—and extends <em>CAST</em> (Lee et al., ICLR 2025) and Zou et al. (2024) into a training-free mid-<code>&lt;think&gt;</code> circuit breaker.</p>
+              <p>Reconciles <em>AxBench</em> (Wu et al., ICML 2025), where dense probes win at 9B yet hit polysemantic cliffs on 2B/Qwen-7B, and extends <em>CAST</em> (Lee et al., ICLR 2025) and Zou et al. (2024) into a training-free mid-<code>&lt;think&gt;</code> circuit breaker.</p>
             </article>
           </div>
           <div class="case-columns">
@@ -582,14 +583,14 @@
                 <li>Evaluates single-turn tool invocation after multi-turn context, not multi-hour Dockerized SWE loops</li>
                 <li>Evaluates two open-weight families (<code>Gemma-2</code> 2B/9B and <code>Qwen2.5-7B</code> in <code>bfloat16</code>), not frontier closed models</li>
                 <li>Synthetic trajectories stress four specific shortcut taxonomies, not adversarial jailbreaks</li>
-                <li>Activation steering and white-box probes complement—never replace—sandboxed permissions</li>
+                <li>Activation steering and white-box probes complement, rather than replace, sandboxed permissions</li>
               </ul>
             </div>
           </div>
           <div class="case-note">
             <span>LIMIT</span>
             <p>
-              Internal activation monitoring complements—never replaces—least-privilege tool
+              Internal activation monitoring complements, rather than replaces, least-privilege tool
               permissions, deterministic trace checks, and explicit human authority boundaries.
             </p>
           </div>
@@ -602,7 +603,7 @@
           <p>
             All 500 paired scenarios, 80 benign coding controls, cached Study 1, Study 2, Study 2.5,
             and Qwen2.5-7B JSON results, unit tests, and the compiled academic preprint PDF are
-            MIT-licensed on GitHub—and the entire 3-model evaluation and circuit-breaker suite runs
+            MIT-licensed on GitHub, and the entire 3-model evaluation and circuit-breaker suite runs
             reproducibly in <code>bfloat16</code> on a single 24 GB L4 Colab GPU with zero weight
             fine-tuning.
           </p>

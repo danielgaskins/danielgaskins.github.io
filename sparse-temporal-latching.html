@@ -43,7 +43,7 @@
     <meta name="citation_pdf_url" content="https://danielgaskins.com/papers/sparse_temporal_latching_preprint.pdf" />
     <meta name="citation_abstract_html_url" content="https://danielgaskins.com/sparse-temporal-latching.html" />
     <meta name="citation_keywords" content="video diffusion transformers; sparse autoencoders; mechanistic interpretability; LTX-Video; activation steering; circuit breakers; temporal consistency" />
-    <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins — Field Notes" href="https://danielgaskins.com/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins - Field Notes" href="https://danielgaskins.com/feed.xml" />
     <title>Sparse Temporal Latching in 3D Video DiTs | Daniel Gaskins</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -138,7 +138,7 @@
     <main id="main" class="case-study">
       <section class="case-hero section-shell">
         <p class="eyebrow"><span class="status-dot"></span> Open source / 3D Video DiTs / Lightricks LTX-Video-0.9.5 · 16k JumpReLU SAE</p>
-        <h1>Dense vectors fail inside 3D video world models—but a 57.1%-depth JumpReLU SAE catches silent drift 22.5 steps before pixels collapse.</h1>
+        <h1>Dense vectors fail inside 3D video world models, whereas a 57.1%-depth JumpReLU SAE catches silent drift 22.5 steps before pixels collapse.</h1>
         <p class="case-hero__lede">
           Extending open-weights Video Diffusion Transformers beyond a single window via sliding-window
           frame conditioning (<code>Extend</code>) causes compounding identity mutation, rigid-geometry
@@ -178,7 +178,7 @@
           <p class="section-index">01 / LIVE VIDEO SHOWCASE</p>
         </div>
         <div class="case-section__body">
-          <h2>Watch the 11 ms SAE gate fire before visible collapse—and see why always-on STG &amp; dense steering fail.</h2>
+          <h2>Watch the 11 ms SAE gate fire before visible collapse, and see why always-on STG &amp; dense steering fail.</h2>
           <p class="case-section__lead">
             Every comparison below runs across 4 autoregressive chunks (169 frames / 7.04 seconds at 24 fps)
             from an identical shared <code>Chunk 0</code> anchor (<code>0.0s–2.0s</code>). Rather than
@@ -256,7 +256,7 @@
               In 1D language models (<a href="./agentic-sabotage.html">Paper 1</a>), probing at a fixed
               syntactic boundary (<code>TOOL_CALL:</code>) lets dense vectors match SAEs at 9B scale. In
               a 3D Video DiT, every token <code>(t, h, w)</code> superimposes camera translation, lighting,
-              pose, and object identity—while AdaLN-Single shifts activation norms by over an order of
+              pose, and object identity, while AdaLN-Single shifts activation norms by over an order of
               magnitude across flow-matching noise levels <code>σ ∈ [0, 1]</code>.
             </p>
             <div class="case-flow" aria-label="Spatiotemporal SAE pipeline">
@@ -436,7 +436,7 @@
                   <li>Evaluates <code>Lightricks/LTX-Video-0.9.5</code> (2B 3D DiT) across 4-chunk (169-frame) rollouts on a single 24 GB L4 GPU</li>
                   <li>In-flight linear/<code>attn1</code> nudges yield modest (+2–4%) stabilization; large visual rescues (+11.6 pts) require Step-12 early-abort seed resampling</li>
                   <li>Sharp T5 cross-attention masks shear fast-translating rigid edges without flow-advected <code>SAM-2</code> masks</li>
-                  <li>Internal white-box monitoring complements—never replaces—external safety and physics verifiers (<a href="./mendmark.html">Mendmark</a>, <a href="./human-review-ai-agents.html">human review</a>)</li>
+                  <li>Internal white-box monitoring complements, rather than replaces, external safety and physics verifiers (<a href="./mendmark.html">Mendmark</a>, <a href="./human-review-ai-agents.html">human review</a>)</li>
                 </ul>
               </div>
             </div>
