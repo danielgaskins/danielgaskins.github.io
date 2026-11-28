@@ -125,9 +125,11 @@
         </div>
         <div class="case-hero__actions">
           <a class="button button--primary" href="https://pypi.org/project/latchgate/" target="_blank" rel="noopener">Install from PyPI</a>
-          <a class="button button--quiet" href="https://github.com/danielgaskins/latchgate" target="_blank" rel="noopener">View source &amp; quickstarts on GitHub</a>
-          <a class="button button--quiet" href="https://github.com/danielgaskins/latchgate/releases/tag/v0.1.0" target="_blank" rel="noopener">Download 6 pre-built .lgate packs</a>
-          <a class="button button--quiet" href="https://www.youtube.com/@danielgaskinsml" target="_blank" rel="noopener">Watch trilogy on YouTube ↗</a>
+          <a class="button button--quiet" href="https://huggingface.co/danielgaskins/latchgate-packs" target="_blank" rel="noopener">Hugging Face Hub (.lgate packs) ↗</a>
+          <a class="button button--quiet" href="https://github.com/danielgaskins/latchgate" target="_blank" rel="noopener">View source on GitHub</a>
+          <a class="button button--quiet" href="https://colab.research.google.com/github/danielgaskins/latchgate/blob/main/notebooks/quickstart_llm_sabotage_breaker.ipynb" target="_blank" rel="noopener">Open LLM Quickstart in Colab ↗</a>
+          <a class="button button--quiet" href="https://colab.research.google.com/github/danielgaskins/latchgate/blob/main/notebooks/quickstart_cosmos_rollout_firewall.ipynb" target="_blank" rel="noopener">Open Cosmos Quickstart in Colab ↗</a>
+          <a class="button button--quiet" href="https://www.youtube.com/playlist?list=PLKS0F-aasEM4" target="_blank" rel="noopener">Watch trilogy on YouTube ↗</a>
           <a class="button button--quiet" href="./mendmark.html">CI trace bridge: Mendmark v0.7.2 →</a>
         </div>
       </section>
@@ -223,12 +225,11 @@
                 </p>
                 <pre class="case-code"><code>from latchgate import LatchGate, TransformersLatchHook
 
-gate = LatchGate.from_pretrained("qwen2.5-7b-sabotage")
-with TransformersLatchHook(
-    model, tokenizer, gate, mode="latched_steer"
-) as hook:
-    out = model.generate(**inputs, max_new_tokens=256)
-print(hook.events)</code></pre>
+gate = LatchGate.from_pretrained("qwen2.5-7b-sabotage", device="cuda")
+hook = TransformersLatchHook(gate, policy="latched_steer")
+with hook.attach(model) as telemetry:
+    out = model.generate(**inputs, max_new_tokens=160)
+print(telemetry)</code></pre>
               </div>
               <div class="case-code-card">
                 <span>QUICKSTART B / PHYSICAL AI (COSMOS · DIFFUSERS)</span>
@@ -241,11 +242,10 @@ print(hook.events)</code></pre>
                 </p>
                 <pre class="case-code"><code>from latchgate import CosmosLatchFirewall, LatchGate
 
-gate = LatchGate.from_pretrained("cosmos-predict2.5-bridge")
-firewall = CosmosLatchFirewall(
-    dit_blocks=pipe.dit.blocks, gate=gate, check_step=10
-)
-decision = firewall.guard_rollout(run_fn, anchor_acts=anchor)</code></pre>
+gate = LatchGate.from_pretrained("cosmos-predict2.5-bridge", device="cuda")
+firewall = CosmosLatchFirewall(gate, policy="early_abort", abort_step=10)
+with firewall.attach(world_model.dit) as step_cb:
+    latents = world_model.rollout(frame0, actions, step_callback=step_cb)</code></pre>
               </div>
             </div>
           </div>
@@ -351,8 +351,10 @@ decision = firewall.guard_rollout(run_fn, anchor_acts=anchor)</code></pre>
         </p>
         <div class="case-next__actions">
           <a class="button button--primary" href="https://pypi.org/project/latchgate/" target="_blank" rel="noopener">Install latchgate from PyPI</a>
+          <a class="button button--quiet" href="https://huggingface.co/danielgaskins/latchgate-packs" target="_blank" rel="noopener">Hugging Face Hub (danielgaskins/latchgate-packs)</a>
           <a class="button button--quiet" href="https://github.com/danielgaskins/latchgate" target="_blank" rel="noopener">Explore latchgate on GitHub</a>
-          <a class="button button--quiet" href="https://github.com/danielgaskins/latchgate/releases/tag/v0.1.0" target="_blank" rel="noopener">Release v0.1.0 (.lgate packs)</a>
+          <a class="button button--quiet" href="https://colab.research.google.com/github/danielgaskins/latchgate/blob/main/notebooks/quickstart_llm_sabotage_breaker.ipynb" target="_blank" rel="noopener">Colab A: LLM Agents ↗</a>
+          <a class="button button--quiet" href="https://colab.research.google.com/github/danielgaskins/latchgate/blob/main/notebooks/quickstart_cosmos_rollout_firewall.ipynb" target="_blank" rel="noopener">Colab B: Cosmos &amp; DiTs ↗</a>
           <a class="button button--quiet" href="./mendmark.html">Mendmark v0.7.2 (CI Mutation Bridge)</a>
           <a class="button button--quiet" href="./sycophantic-world-models.html">Paper 3: Embodied World Models →</a>
           <a class="button button--quiet" href="./sparse-temporal-latching.html">Paper 2: Video DiTs →</a>
