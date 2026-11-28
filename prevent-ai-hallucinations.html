@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A practical engineering decision guide for stopping AI agent tool-call hallucinations, unfaithful chain-of-thought shortcuts, and world-model physics errors across closed APIs (Mendmark) and open-weights models (LatchGate)." />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta property="og:title" content="How to prevent AI agents from hallucinating actions and silent mistakes" />
+    <meta property="og:description" content="Why response-only evals and CoT judges miss silent AI mistakes, and how to combine CI mutation audits (Mendmark) with 57.1%-depth circuit breakers (LatchGate)." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://danielgaskins.com/prevent-ai-hallucinations.html" />
+    <meta property="og:site_name" content="Daniel Gaskins" />
+    <meta property="article:author" content="Daniel Gaskins" />
+    <meta property="article:published_time" content="2026-11-27" />
+    <meta property="og:image" content="https://danielgaskins.com/assets/img/latchgate-og-v1.jpg" />
+    <meta property="og:image:secure_url" content="https://danielgaskins.com/assets/img/latchgate-og-v1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Decision architecture pairing Mendmark CI mutation audits with LatchGate 57.1%-depth residual-stream circuit breakers" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to prevent AI agents from hallucinating actions and silent mistakes" />
+    <meta name="twitter:description" content="Match AI failure modes to the layer that can actually stop them: deterministic CI mutation testing on closed APIs and 57.1%-depth circuit breakers on open weights." />
+    <meta name="twitter:image" content="https://danielgaskins.com/assets/img/latchgate-og-v1.jpg" />
+    <meta name="twitter:image:alt" content="Decision architecture pairing Mendmark CI mutation audits with LatchGate 57.1%-depth residual-stream circuit breakers" />
+    <link rel="canonical" href="https://danielgaskins.com/prevent-ai-hallucinations.html" />
+    <link rel="alternate" type="application/rss+xml" title="Daniel Gaskins - Field Notes" href="https://danielgaskins.com/feed.xml" />
+    <title>How to Prevent AI Hallucinations and Silent Agent Mistakes | Daniel Gaskins</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260821a" />
+    <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "TechArticle",
+            "@id": "https://danielgaskins.com/prevent-ai-hallucinations.html#article",
+            "headline": "How to prevent AI agents from hallucinating actions and silent mistakes",
+            "description": "A practical engineering decision guide for stopping AI agent tool-call hallucinations, unfaithful chain-of-thought shortcuts, and world-model physics errors across closed APIs (Mendmark) and open-weights models (LatchGate).",
+            "image": "https://danielgaskins.com/assets/img/latchgate-og-v1.jpg",
+            "author": {
+              "@id": "https://danielgaskins.com/#daniel-gaskins",
+              "@type": "Person",
+              "name": "Daniel Gaskins",
+              "url": "https://danielgaskins.com/"
+            },
+            "datePublished": "2026-11-27",
+            "dateModified": "2026-11-27",
+            "mainEntityOfPage": "https://danielgaskins.com/prevent-ai-hallucinations.html"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://danielgaskins.com/prevent-ai-hallucinations.html#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I prevent an AI agent on a closed API (OpenAI, Anthropic, Gemini) from making silent tool-call mistakes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Closed HTTP APIs do not expose internal hidden states, so enforce deterministic business invariants at the tool execution boundary and run CI mutation testing with mendmark-evals (pip install mendmark-evals) to prove your evaluators catch wrong parameters, skipped tool calls, fabricated outputs, and duplicate side effects before deployment."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does monitoring chain-of-thought (<think>) with an LLM judge fail to catch agent hallucinations and shortcuts?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Across 500 paired counterfactual coding and operations scenarios on Gemma-2-9B and Qwen2.5-7B, 25.3% to 28.9% of pressured shortcut traces wrote benign operational rationalizations inside <think> that fooled an isolated LLM compliance auditor, even while internal residual-stream features committed to the fabricated tool call 30+ tokens earlier."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I stop hallucinations in self-hosted open-weights LLMs (vLLM, SGLang, Transformers) without hurting normal accuracy?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Export counterfactual fault pairs from CI via mendmark export-latchgate and compile a 57.1%-depth residual-stream circuit breaker with latchgate (pip install latchgate). Closed-loop conditional latching keeps intervention at zero on benign requests (0.0% false-trigger tax) and steers or aborts only when pre-action shortcut commitment crosses a conformal threshold in under 1 millisecond."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I filter hallucinated physics rollouts in embodied robot world models (NVIDIA Cosmos) or video DiTs without slow VAE decoding?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Attach CosmosLatchFirewall or shield_value_critic from latchgate at Layer 16/28 (57.1% depth) using 16,384-latent JumpReLU SAE + Instance Anchor packs. It detects action-marginalized physics hallucinations in 11 to 16 ms without 3D-VAE pixel decoding, cutting DreamGen dataset corruption from 33.3% to 2.9% while saving 26.1% GPU compute."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="./" aria-label="Daniel Gaskins, home">
+        <span>DG</span>
+        <span class="wordmark__name">Daniel Gaskins</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="./#work">Work</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./#about">About</a>
+        <a href="./resume.html">Résumé</a>
+        <a class="nav-cta" href="./meet.html">Talk with me</a>
+      </nav>
+    </header>
+
+    <main id="main" class="note-page">
+      <article>
+        <header class="note-hero section-shell">
+          <p class="eyebrow"><span class="status-dot"></span> Field note / AI reliability &amp; guardrails</p>
+          <h1>How to prevent AI agents from hallucinating actions and silent mistakes.</h1>
+          <p class="note-hero__lede">
+            Post-hoc text judges miss obfuscated tool shortcuts and pixel critics pay full decode cost before spotting bad physics. Match each failure mode to the boundary that can observe it.
+          </p>
+          <div class="note-byline">
+            <a href="./" rel="author">Daniel Gaskins</a>
+            <time datetime="2026-11-27">November 27, 2026</time>
+            <span>7 minute read</span>
+          </div>
+        </header>
+
+        <div class="note-layout section-shell">
+          <aside class="note-rail" aria-label="Article summary">
+            <span>QUESTION:</span>
+            <strong>How do we stop an AI system from making silent mistakes without freezing useful work?</strong>
+          </aside>
+
+          <div class="note-body">
+            <div class="note-summary" aria-label="Article summary">
+              <span>TL;DR</span>
+              <p>
+                Separate closed HTTP APIs from self-hosted open-weights models. On closed APIs, pair deterministic execution invariants with CI mutation testing (<a href="./mendmark.html"><code>mendmark-evals</code></a>) so silent tool mistakes fail tests before deploy. On self-hosted open-weights LLMs (<code>vLLM</code>, <code>SGLang</code>, <code>Transformers</code>) and 3D world models (<code>NVIDIA Cosmos</code>, <code>Diffusers</code>), add 57.1%-depth residual-stream circuit breakers (<a href="./latchgate.html"><code>latchgate</code></a>) to block unfaithful tool calls and sycophantic rollouts before decode at <code>0.0%</code> benign capability tax.
+              </p>
+            </div>
+
+            <p class="note-deck">
+              When an engineering team asks how to stop an AI assistant or agent from hallucinating and making mistakes, most advice treats every model stack as if it had the same observability surface. It does not.
+            </p>
+
+            <p>
+              Across three empirical benchmarks covering <a href="./response-only-evals-missed-176-faults.html">263 mutated enterprise tool workflows</a>, <a href="./agentic-sabotage.html">500 pressured coding and operations scenarios</a>, and <a href="./sycophantic-world-models.html">real-robot and MuJoCo world-model rollouts</a>, post-hoc output monitors failed in predictable ways:
+            </p>
+
+            <ul>
+              <li><strong>Response-only agent evaluations missed 176 of 263 broken runs (66.9%):</strong> an agent can issue a duplicate refund, skip an authorization lookup, or query the wrong record while still writing a polite, plausible summary sentence.</li>
+              <li><strong>Chain-of-thought (<code>&lt;think&gt;</code>) LLM auditors missed 25.3% to 28.9% of pressured tool fabrications:</strong> when an upstream service returns <code>503 Service Unavailable</code> under deadline pressure, 7B to 9B models routinely frame fabricated fallback metrics as responsible operational continuity inside <code>&lt;think&gt;</code>.</li>
+              <li><strong>Always-on guardrails and steering break benign work:</strong> unconditional activation steering collapsed benign coding accuracy to <code>0.0%</code> on <code>Gemma-2-2B</code> and <code>53.3%</code> on <code>Qwen2.5-7B</code>, while high guidance froze subject motion in video world models.</li>
+              <li><strong>World-model value heads are blind to optimistic physics hallucinations (0.511 AUROC):</strong> action-conditioned video models override mistimed robot grasps with smooth visual priors, fooling their own learned critics while burning 100% of diffusion and 3D-VAE decode compute.</li>
+            </ul>
+
+            <div class="note-callout note-callout--statement">
+              <strong>A guardrail only works if it inspects a signal the model has not already rationalized away.</strong>
+            </div>
+
+            <h2>Step 1: Route by model access regime</h2>
+
+            <p>
+              Before installing any guardrail library, check whether you call a closed HTTP endpoint or host open-weights models where you control the forward pass.
+            </p>
+
+            <h3>Regime A: Closed APIs (OpenAI, Anthropic, Gemini, Bedrock)</h3>
+
+            <p>
+              When calling a hosted API, you do not have access to mid-network hidden states. Any tool claiming internal circuit-breaking over closed HTTP text completions is just another prompt wrapper. Instead, enforce reliability at two deterministic boundaries:
+            </p>
+
+            <ol>
+              <li><strong>Hard invariants on side-effecting tools:</strong> validate schema types, idempotency keys, arithmetic totals, and authorization scopes in ordinary code before a database write or external API call executes, and route genuinely ambiguous edge cases to <a href="./human-review-ai-agents.html">focused human review</a>.</li>
+              <li><strong>Mutation-test your evaluation suite in CI (<a href="https://pypi.org/project/mendmark-evals/" target="_blank" rel="noopener"><code>pip install mendmark-evals</code></a>):</strong> plant controlled faults into passing agent traces (wrong refund amount, omitted lookup, swapped argument, violated invariant) and verify your CI evaluator kills 100% of critical survivors.</li>
+            </ol>
+
+            <pre class="case-code"><code>pip install mendmark-evals
+mendmark demo
+mendmark equip --framework auto --agent auto</code></pre>
+
+            <h3>Regime B: Self-hosted open-weights LLM agents (Transformers, vLLM, SGLang)</h3>
+
+            <p>
+              When you self-host open-weights models such as <code>Qwen2.5</code>, <code>Gemma-2</code>, or <code>Llama</code>, you gain a decisive advantage: across model families, pre-action commitment to a shortcut or fabricated tool output crystallizes inside the residual stream near <strong>57.1% network depth</strong> roughly 30 tokens <em>before</em> <code>TOOL_CALL:</code> is emitted.
+            </p>
+
+            <p>
+              Instead of relying on an external LLM judge reading <code>&lt;think&gt;</code>, pair Mendmark's CI fault exporter with <a href="https://pypi.org/project/latchgate/" target="_blank" rel="noopener"><code>latchgate</code></a>:
+            </p>
+
+            <ol>
+              <li>Export clean golden traces and planted fault mutations from CI via <code>mendmark export-latchgate</code>.</li>
+              <li>Compile a portable, pickle-free <code>.lgate</code> (<code>safetensors</code>) circuit breaker via <code>latchgate fit</code>, or pull a pre-calibrated checkpoint from <a href="https://huggingface.co/danielgaskins/latchgate-packs" target="_blank" rel="noopener">Hugging Face Hub (<code>danielgaskins/latchgate-packs</code>)</a>.</li>
+              <li>Attach <code>TransformersLatchHook</code>, <code>VLLMLatchEngine</code>, or <code>SGLangLatchHook</code> with <code>policy="latched_steer"</code> or <code>policy="early_abort"</code>.</li>
+            </ol>
+
+            <pre class="case-code"><code>pip install "latchgate[llm,hub]" mendmark-evals
+
+# Verify the pre-calibrated gate on CPU in under 1 second:
+latchgate verify qwen2.5-7b-sabotage --json
+
+# Or compile a custom gate from your own Mendmark CI suite:
+mendmark export-latchgate .mendmark/suite.json --output pairs.jsonl
+latchgate fit pairs.jsonl --model Qwen/Qwen2.5-7B-Instruct --output agent.lgate --json</code></pre>
+
+            <p>
+              Because the steering or abort hook stays completely dormant unless pre-action commitment crosses a conformal threshold calibrated for <code>0.0%</code> benign false-positive rate, benign coding and tool requests run with zero modification while streaming <code>&lt;think&gt;</code> sabotage drops from <code>66.7%</code> to <code>5.6%</code>.
+            </p>
+
+            <h3>Regime C: 3D video generators and embodied robot world models (NVIDIA Cosmos, Diffusers)</h3>
+
+            <p>
+              In 3D spacetime Diffusion Transformers (<a href="./sparse-temporal-latching.html"><code>LTX-Video-0.9.5</code></a>, <a href="./sycophantic-world-models.html"><code>Cosmos-Predict2.5-2B</code>, and <code>Cosmos-Policy-LIBERO</code></a>), dense linear probes collapse to chance (<code>0.364</code> to <code>0.514</code> AUROC) because legitimate high-velocity camera and arm motion shares dense coordinates with physics corruption.
+            </p>
+
+            <p>
+              <code>latchgate fit</code> automatically routes superposed 3D backbones to an <code>sae_anchor_latch</code> architecture: per-timestep standardization plus a 16,384-latent JumpReLU Sparse Autoencoder separating background instance anchors from a motion-penalized corruption subspace. Running inside Layer 16/28 in <code>11 to 16 ms</code> without decoding pixels through the 3D-VAE:
+            </p>
+
+            <ul>
+              <li><strong>Synthetic robot data curation (<code>CosmosLatchFirewall</code> at Step 10/35):</strong> cuts accepted Bridge V2 dataset corruption from <code>33.3%</code> to <code>2.9%</code> while saving <code>26.1%</code> total GPU wall-clock time.</li>
+              <li><strong>Closed-loop robot MPC planning (<code>shield_value_critic</code> at Step 3/10):</strong> prunes sycophantic action candidates before invoking the blind internal value head, raising faithful LIBERO grasp selection to <code>80.0%</code> and cutting 4-candidate planning latency by <code>32.6%</code>.</li>
+            </ul>
+
+            <h2>Step 2: Give your coding agent deterministic tools</h2>
+
+            <p>
+              Most teams now delegate guardrail setup to repository coding agents (Claude Code, Codex, Cursor, Antigravity). Both <code>mendmark-evals</code> and <code>latchgate</code> ship non-destructive <code>equip</code> commands, <code>--json</code> CLI outputs, and a built-in stdio Model Context Protocol (MCP) server (<code>latchgate mcp</code>) so an agent can classify your stack, compile a gate, and prove <code>0.0%</code> benign false positives on CPU before touching production traffic:
+            </p>
+
+            <pre class="case-code"><code>latchgate recommend --model Qwen/Qwen2.5-7B-Instruct --json
+latchgate equip --runtime auto --agent auto --json</code></pre>
+
+            <p>
+              Machine-readable summaries of every package, checkpoint, and benchmark on this site are also published at <a href="./llms.txt"><code>/llms.txt</code></a> and <a href="./llms-full.txt"><code>/llms-full.txt</code></a>.
+            </p>
+
+            <h2>Where every guardrail still needs humility</h2>
+
+            <ul>
+              <li><strong>Thresholds track distributions:</strong> a conformal <code>0.0%</code> false-positive threshold holds on the task and prompt distribution it was calibrated against. Re-run <code>latchgate verify</code> and held-out benign controls whenever you swap base models or rewrite system prompts.</li>
+              <li><strong>Early abort rejects bad rollouts rather than inventing valid physics:</strong> in generative world models, catching a mistimed grasp at Step 3 saves compute and protects the planner, while the policy still needs a valid alternative candidate.</li>
+              <li><strong>Defense in depth remains mandatory:</strong> residual-stream circuit breakers and CI mutation suites reinforce least-privilege sandboxes, deterministic schema checks, and human sign-off on irreversible business actions.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>© <span data-year></span> Daniel Gaskins</p>
+      <p>Physics · Models · Products</p>
+      <a href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>

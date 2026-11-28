@@ -7,6 +7,13 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Nov 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://danielgaskins.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to prevent AI agents from hallucinating actions and silent mistakes</title>
+      <link>https://danielgaskins.com/prevent-ai-hallucinations.html</link>
+      <guid isPermaLink="true">https://danielgaskins.com/prevent-ai-hallucinations.html</guid>
+      <pubDate>Fri, 27 Nov 2026 12:00:00 GMT</pubDate>
+      <description>A practical decision guide matching closed-API agents to CI mutation audits (Mendmark) and self-hosted open-weights LLMs and world models to 57.1%-depth circuit breakers (LatchGate).</description>
+    </item>
     <!-- SCHEDULED_FEED_ITEMS_START -->
     <item>
       <title>The model can read the invoice and the bill can still be wrong</title>

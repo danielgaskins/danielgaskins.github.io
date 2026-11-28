@@ -8,6 +8,7 @@ const corePages = [
   "blog.html",
   "mendmark.html",
   "latchgate.html",
+  "prevent-ai-hallucinations.html",
   "agentic-sabotage.html",
   "sparse-temporal-latching.html",
   "sycophantic-world-models.html",
@@ -72,6 +73,7 @@ test("the homepage and published articles reinforce the Daniel Gaskins entity", 
     "human-review-ai-agents.html",
     "lightgbm-model-to-code.html",
     "latchgate.html",
+    "prevent-ai-hallucinations.html",
     "agentic-sabotage.html",
     "sparse-temporal-latching.html",
     "sycophantic-world-models.html",
@@ -112,5 +114,5 @@ test("RSS feed is discoverable and contains the published field notes", () => {
     assert.match(htmlByPage.get(page), /rel="alternate" type="application\/rss\+xml"/);
   }
   assert.match(feed, /<rss version="2\.0"/);
-  assert.equal((feed.match(/<item>/g) || []).length, 2 + scheduledPages.length);
+  assert.equal((feed.match(/<item>/g) || []).length, 3 + scheduledPages.length);
 });

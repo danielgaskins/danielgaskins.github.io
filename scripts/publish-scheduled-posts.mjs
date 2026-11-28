@@ -6,6 +6,7 @@ import { pathToFileURL } from "node:url";
 
 const SITE_URL = "https://danielgaskins.com";
 const EXISTING_POST_IDS = [
+  `${SITE_URL}/prevent-ai-hallucinations.html#article`,
   `${SITE_URL}/human-review-ai-agents.html#article`,
   `${SITE_URL}/agent-eval-mutation-testing.html#article`,
 ];

@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Machine-readable index for AI coding and research agents:
+# https://danielgaskins.com/llms.txt
+# https://danielgaskins.com/llms-full.txt
 Sitemap: https://danielgaskins.com/sitemap.xml
