@@ -73,7 +73,7 @@
             "description": "Mechanistic interpretability and closed-loop control study on Lightricks/LTX-Video-0.9.5 showing that 57.1%-depth 16k JumpReLU Sparse Autoencoders overcome 3D spatiotemporal superposition (+54.4 AUROC points over dense probes), detect silent drift 109.4x faster than Tweedie VAE+DINOv2 decoding, and prevent STG motion freezing and dense polysemantic collapse.",
             "image": "https://danielgaskins.com/assets/img/sparse-temporal-latching-og-v1.jpg",
             "datePublished": "2026-11-26",
-            "dateModified": "2026-11-26",
+            "dateModified": "2026-11-27",
             "author": {
               "@id": "https://danielgaskins.com/#daniel-gaskins",
               "@type": "Person",
@@ -84,9 +84,22 @@
             "sameAs": [
               "https://danielgaskins.com/papers/sparse_temporal_latching_preprint.pdf",
               "https://doi.org/10.5281/zenodo.24596273",
-              "https://github.com/danielgaskins/sparse-temporal-latching"
+              "https://github.com/danielgaskins/sparse-temporal-latching",
+              "https://youtu.be/hLvGv44Wbgo"
             ],
-            "about": {"@id": "https://danielgaskins.com/sparse-temporal-latching.html#software"}
+            "about": {
+              "@id": "https://danielgaskins.com/sparse-temporal-latching.html#software"
+            },
+            "video": {
+              "@type": "VideoObject",
+              "name": "Stopping Video World Drift 22 Steps Early: Sparse Temporal Latching & 16k SAE Circuit Breakers",
+              "description": "Companion overview of Layer-16 (57.1% depth) 16,384-latent JumpReLU Sparse Autoencoders in Lightricks LTX-Video-0.9.5, catching silent temporal drift 22.5 denoising steps early (109.4x faster than Tweedie VAE + DINOv2) and rescuing multi-chunk rollouts via zero-decode early-abort seed latching.",
+              "thumbnailUrl": "https://i.ytimg.com/vi/hLvGv44Wbgo/maxresdefault.jpg",
+              "uploadDate": "2026-11-27",
+              "duration": "PT8M2S",
+              "embedUrl": "https://www.youtube.com/embed/hLvGv44Wbgo",
+              "url": "https://www.youtube.com/watch?v=hLvGv44Wbgo"
+            }
           },
           {
             "@type": "SoftwareSourceCode",
@@ -157,6 +170,7 @@
         </div>
         <div class="case-hero__actions">
           <a class="button button--primary" href="https://github.com/danielgaskins/sparse-temporal-latching" target="_blank" rel="noopener">Inspect the code &amp; benchmark on GitHub</a>
+          <a class="button button--quiet" href="https://youtu.be/hLvGv44Wbgo" target="_blank" rel="noopener">Watch 8-min video overview ↗</a>
           <a class="button button--quiet" href="./papers/sparse_temporal_latching_preprint.pdf" target="_blank" rel="noopener">Read the 6-page academic preprint PDF</a>
           <a class="button button--quiet" href="https://doi.org/10.5281/zenodo.24596273" target="_blank" rel="noopener">Zenodo DOI: 10.5281/zenodo.24596273</a>
           <a class="button button--quiet" href="./latchgate.html">LatchGate Runtime Library →</a>
@@ -455,6 +469,7 @@
         </p>
         <div class="case-next__actions">
           <a class="button button--primary" href="https://github.com/danielgaskins/sparse-temporal-latching" target="_blank" rel="noopener">View sparse-temporal-latching on GitHub</a>
+          <a class="button button--quiet" href="https://youtu.be/hLvGv44Wbgo" target="_blank" rel="noopener">Watch on YouTube (@danielgaskinsml)</a>
           <a class="button button--quiet" href="./papers/sparse_temporal_latching_preprint.pdf" target="_blank" rel="noopener">Download the 6-page preprint PDF</a>
           <a class="button button--quiet" href="https://doi.org/10.5281/zenodo.24596273" target="_blank" rel="noopener">Zenodo Archive (v1.0.1)</a>
           <a class="button button--quiet" href="./latchgate.html">LatchGate Runtime Library →</a>
